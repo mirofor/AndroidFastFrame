@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Frame</string>
+    <string name="def_loading_text">加载中</string>
+    <string name="def_confirm_title">提示</string>
+    <string name="def_confirm_message">---</string>
+    <string name="def_confirm_cancel">取消</string>
+    <string name="def_confirm_ok">确定</string>
+</resources>

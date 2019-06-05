@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="FastLibCircleProgressBar">
+        <attr name="FastLibborder" format="dimension"/>
+        <attr name="FastLibcolorSequence" format="reference"/>
+        <attr name="FastLibsweepAnimationDurationMillis" format="integer" />
+        <attr name="FastLibangleAnimationDurationMillis" format="integer" />
+        <attr name="FastLibminSweepAngle" format="integer" />
+    </declare-styleable>
+    <array name="FastLib_circle_default_color_sequence">
+        <item>@color/FastLib_circular_red</item>
+        <item>@color/FastLib_circular_blue</item>
+        <item>@color/FastLib_circular_yellow</item>
+        <item>@color/FastLib_circular_green</item>
+    </array>
+    <color name="FastLib_circular_red">#F90101</color>
+    <color name="FastLib_circular_blue">#0266C8</color>
+    <color name="FastLib_circular_yellow">#F2B50F</color>
+    <color name="FastLib_circular_green">#00933B</color>
+</resources>

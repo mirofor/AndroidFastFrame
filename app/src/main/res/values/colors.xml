@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#e6127d</color>
+    <color name="colorPrimaryDark">#e6127d</color>
+    <color name="colorAccent">#2B66F5</color>
+    <color name="app">#262930</color>
+    <color name="app_dark">#2B66F5</color>
+    <color name="c_f2f2f2">#F2F2F2</color>
+    <color name="c_8f8f8f">#8f8f8f</color>
+    <color name="c_333333">#333333</color>
+    <color name="c_353535">#353535</color>
+    <color name="c_555555">#555555</color>
+    <color name="c_777777">#777777</color>
+    <color name="c_262930">#262930</color>
+    <color name="c_999999">#999999</color>
+    <color name="c_28292b">#28292b</color>
+    <color name="c_959596">#959596</color>
+    <color name="line">#eeeeee</color>
+    <color name="line_e2">#e2e2e2</color>
+    <color name="line_d2">#d2d2d2</color>
+    <color name="bg">#f6f6f6</color>
+    <color name="c_929292">#929292</color>
+    <color name="c_007aff">#007aff</color>
+    <color name="c_bb_white">#bbffffff</color>
+    <color name="soft_black">#cc000000</color>
+    <color name="btn_take_pic">#ffe66657</color>
+
+    <color name="aima_smart_colorAccent">#2B66F5</color>
+    <color name="aima_smart_green">#3b9e6f</color>
+    <color name="aima_smart_blue">#4ea3f2</color>
+    <color name="aima_smart_yellow">#f9aa56</color>
+    <color name="aima_smart_text_black">#565656</color>
+    <color name="aima_smart_text_gray">#f0f0f0</color>
+    <color name="aima_smart_alapha_1">#f393c9</color>
+    <color name="aima_smart_alapha_2">#2B66F5</color>
+    <color name="aima_smart_alapha_3">#D04300</color>
+    <color name="aima_smart_alapha_4">#e51c23</color>
+
+    <color name="navpage">#FFE1E8EB</color>
+
+    <color name="colorPDF">#eeeeee</color>
+    <color name="button_normal">#00000000</color>
+    <color name="text_normal">#fafafa</color>
+
+    <color name="colorDarkTrans">#80607d8b</color>
+
+    <color name="colorAccentTrans">#80ffa000</color>
+    <color name="text_normalTrans">#80fafafa</color>
+
+
+</resources>

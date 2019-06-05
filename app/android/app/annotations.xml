@@ -1,0 +1,5 @@
+<root>
+    <item name='android.app.ActivityManager void killBackgroundProcesses(java.lang.String)'>
+        <annotation name='java.lang.Deprecated' />
+    </item>
+</root>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="BannerView">
+        <attr name="canLoop" format="boolean"></attr>
+    </declare-styleable>
+    <declare-styleable name="SwitchButton">
+        <attr name="thumbDrawable" format="reference" />
+        <attr name="thumbColor" format="color|reference" />
+        <attr name="thumbMargin" format="dimension|reference" />
+        <attr name="thumbMarginTop" format="dimension|reference" />
+        <attr name="thumbMarginLeft" format="dimension|reference" />
+        <attr name="thumbMarginRight" format="dimension|reference" />
+        <attr name="thumbMarginBottom" format="dimension|reference" />
+        <attr name="thumbWidth" format="dimension|reference" />
+        <attr name="thumbHeight" format="dimension|reference" />
+        <attr name="thumbRadius" format="dimension|reference" />
+        <attr name="backRadius" format="dimension|reference" />
+        <attr name="backColor" format="color|reference" />
+        <attr name="backDrawable" format="reference" />
+        <attr name="fadeBack" format="boolean" />
+        <attr name="backMeasureRatio" format="float" />
+        <attr name="animationDuration" format="integer" />
+        <attr name="tintColor" format="color|reference" />
+    </declare-styleable>
+    <declare-styleable name="Frame_RoundButton">
+        <!-- 文字正常颜色 -->
+        <attr name="rbTextColor" format="color" />
+        <!--文字按下颜色-->
+        <attr name="rbTextPressedColor" format="color" />
+        <!-- 背景色 -->
+        <attr name="rbSolidColor" format="color" />
+        <!--按下的颜色-->
+        <attr name="rbPressedColor" format="color" />
+        <!--DisEnable的颜色-->
+        <attr name="rbDisEnableColor" format="color" />
+        <!-- 边框色 -->
+        <attr name="rbStrokeColor" format="color" />
+        <!-- 边框厚度 -->
+        <attr name="rbStrokeWidth" format="dimension" />
+        <!-- 边框虚线长度 -->
+        <attr name="rbStrokeDashWidth" format="dimension" />
+        <!-- 边框虚线间隙 -->
+        <attr name="rbStrokeDashGap" format="dimension" />
+        <attr name="rbCircle" format="boolean"></attr>
+        <!-- 圆角半径，stadium 表示半径为 min(height,width) / 2-->
+        <attr name="rbCornerRadius" format="dimension" />
+        <!-- 左上角圆角-->
+        <attr name="rbLeftTopCorner" format="dimension" />
+        <!-- 右上角圆角-->
+        <attr name="rbRightTopCorner" format="dimension" />
+        <!-- 左下角圆角-->
+        <attr name="rbLeftBottomCorner" format="dimension" />
+        <!-- 右下角圆角-->
+        <attr name="rbRightBottomCorner" format="dimension" />
+    </declare-styleable>
+    <declare-styleable name="Frame_RCRelativeLayout">
+        <!--圆形-->
+        <attr name="round_as_circle" format="boolean" />
+        <!--全部圆角半径-->
+        <attr name="round_corner" format="integer|dimension" />
+        <!--针对各个角的半径-->
+        <attr name="round_corner_top_left" format="integer|dimension" />
+        <attr name="round_corner_top_right" format="integer|dimension" />
+        <attr name="round_corner_bottom_left" format="integer|dimension" />
+        <attr name="round_corner_bottom_right" format="integer|dimension" />
+        <!--描边颜色／半径-->
+        <attr name="stroke_color" format="color|reference" />
+        <attr name="stroke_width" format="integer|dimension" />
+    </declare-styleable>
+
+    <!--底部Tab菜单-->
+    <declare-styleable name="BottomTabBar">
+        <attr name="tab_bar_background" format="color" />
+        <attr name="tab_img_width" format="dimension" />
+        <attr name="tab_img_height" format="dimension" />
+        <attr name="tab_font_size" format="dimension" />
+        <attr name="tab_padding_top" format="dimension" />
+        <attr name="tab_img_font_padding" format="dimension" />
+        <attr name="tab_padding_bottom" format="dimension" />
+        <attr name="tab_isshow_divider" format="boolean" />
+        <attr name="tab_divider_height" format="dimension" />
+        <attr name="tab_divider_background" format="color" />
+        <attr name="tab_selected_color" format="color" />
+        <attr name="tab_unselected_color" format="color" />
+    </declare-styleable>
+
+</resources>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="transparent">#00000000</color>
+    <color name="md_ripple_normal">#1E000000</color>
+    <color name="md_ripple_checked">#FF7EC2E2</color>
+    <color name="md_solid_shadow">#33000000</color>
+    <color name="md_solid_normal">#ECECEC</color>
+    <color name="md_solid_checked">#FF0187CE</color>
+    <color name="md_solid_disable">#FFFFFF</color>
+    <color name="md_solid_checked_disable">#aaaaaa</color>
+    <color name="md_back_color">#FF7EC2E2</color>
+    <color name="loading_footer_color">#258fe6</color>
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="red">#FF0000</color>
+    <color name="base_view_pressed_color">#ffe4e4e4</color>
+
+    <color name="frame_colorAccent">#2B66F5</color>
+    <color name="c_262930">#262930</color>
+
+    <drawable name="base_view_ripple_pressed_color">#ffe4e4e4</drawable>
+    <drawable name="base_view_white_color">#ffffff</drawable>
+</resources>

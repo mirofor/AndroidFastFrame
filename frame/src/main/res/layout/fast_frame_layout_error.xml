@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ll_error"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:visibility="gone">
+
+    <com.fast.library.view.CircleProgressView
+        android:id="@+id/cpv_loading"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_centerInParent="true"
+        app:FastLibborder="3dp" />
+
+    <TextView
+        android:id="@+id/tv_error_state"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="网络加载错误，请点击重试！"
+        android:textColor="#434343"
+        android:textSize="16sp" />
+</RelativeLayout>

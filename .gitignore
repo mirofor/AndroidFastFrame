@@ -1,0 +1,10 @@
+/build
+/.idea
+.idea
+.gradle/
+/app/build/generated
+/app/build/intermediates
+/frame/build/generated
+/frame/build/intermediates
+/.gradle/
+/ocr_ui/build

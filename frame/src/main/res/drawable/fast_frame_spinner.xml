@@ -1,0 +1,16 @@
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+                android:variablePadding="true"
+                android:oneshot="false">
+  <item android:duration="60" android:drawable="@drawable/fast_frame_spinner_0"/>
+  <item android:duration="60" android:drawable="@drawable/fast_frame_spinner_1"/>
+  <item android:duration="60" android:drawable="@drawable/fast_frame_spinner_2"/>
+  <item android:duration="60" android:drawable="@drawable/fast_frame_spinner_3"/>
+  <item android:duration="60" android:drawable="@drawable/fast_frame_spinner_4"/>
+  <item android:duration="60" android:drawable="@drawable/fast_frame_spinner_5"/>
+  <item android:duration="60" android:drawable="@drawable/fast_frame_spinner_6"/>
+  <item android:duration="60" android:drawable="@drawable/fast_frame_spinner_7"/>
+  <item android:duration="60" android:drawable="@drawable/fast_frame_spinner_8"/>
+  <item android:duration="60" android:drawable="@drawable/fast_frame_spinner_9"/>
+  <item android:duration="60" android:drawable="@drawable/fast_frame_spinner_10"/>
+  <item android:duration="60" android:drawable="@drawable/fast_frame_spinner_11"/>
+</animation-list>

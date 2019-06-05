@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+              android:paddingTop="15dp"
+              android:paddingBottom="15dp"
+                android:background="#eeeeee"
+                android:gravity="center"
+    android:orientation="horizontal">
+
+    <com.fast.library.view.CircleProgressView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/pull_to_refresh_load_progress"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        app:FastLibborder="3dp"/>
+
+    <TextView
+        android:id="@+id/pull_to_refresh_loadmore_text"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/pull_to_refresh_load_progress"
+        android:gravity="center"
+        android:text="加载中…"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#258fe6"
+        android:textSize="14sp"/>
+
+</LinearLayout>

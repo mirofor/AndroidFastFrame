@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="ThemeApp" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="colorAccent">@color/frame_colorAccent</item>
+        <item name="colorPrimaryDark">@color/frame_colorAccent</item>
+        <item name="colorPrimary">@color/frame_colorAccent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <!--<item name="android:windowTranslucentStatus" tools:targetApi="19">false</item>-->
+    </style>
+    <style name="PDFTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorAccent">@color/frame_colorAccent</item>
+        <item name="colorPrimaryDark">@color/frame_colorAccent</item>
+        <item name="colorPrimary">@color/frame_colorAccent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <!--<item name="android:windowTranslucentStatus" tools:targetApi="19">false</item>-->
+    </style>
+
+
+    <!--竖屏-->
+    <style name="ThemePortraitActivity" parent="ThemeApp">
+        <item name="android:windowBackground">@color/white</item>
+        <item name="android:screenOrientation">portrait</item>
+    </style>
+    <style name="ThemePortraitFullScreen" parent="ThemePortraitActivity">
+        <item name="android:windowFullscreen">true</item>
+    </style>
+    <style name="ThemePortraitFullWindows" parent="ThemePortraitActivity">
+        <!--<item name="android:fitsSystemWindows">false</item>-->
+    </style>
+    <!--横屏-->
+    <style name="ThemeLandscapeActivity" parent="ThemeApp">
+        <item name="android:windowBackground">@color/white</item>
+        <item name="android:screenOrientation">landscape</item>
+    </style>
+    <style name="ThemeLandscapeFullScreen" parent="ThemeLandscapeActivity">
+        <item name="android:windowFullscreen">true</item>
+    </style>
+    <style name="ThemeLandscapeFullWindows" parent="ThemeLandscapeActivity">
+        <!--<item name="android:fitsSystemWindows">false</item>-->
+    </style>
+    <!--横屏，竖屏切换-->
+    <style name="ThemeSensorActivity" parent="ThemeApp">
+        <item name="android:windowBackground">@color/white</item>
+        <item name="android:configChanges">keyboardHidden|orientation|screenSize</item>
+    </style>
+    <style name="ThemeSensorFullScreen" parent="ThemeSensorActivity">
+        <item name="android:windowFullscreen">true</item>
+    </style>
+    <style name="ThemeSensorFullWindows" parent="ThemeSensorActivity">
+        <item name="android:fitsSystemWindows">false</item>
+    </style>
+
+    <style name="ThemeTransparent" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <!--<item name="android:windowAnimationStyle">@android:style/Animation.Translucent</item>-->
+    </style>
+
+    <style name="XXDialog" parent="android:style/Theme.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@color/transparent</item>
+    </style>
+    <style name="Dialog_Anim_Bottom" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/fast_frame_dialog_bottom_enter</item>
+        <item name="android:windowExitAnimation">@anim/fast_frame_dialog_bottom_exit</item>
+    </style>
+    <!--Dialog-->
+    <style name="NiceDialog" parent="android:style/Theme.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowSoftInputMode">adjustPan</item>
+        <item name="android:windowIsFloating">true</item>
+    </style>
+    <!--dialog底部进入退出动画-->
+    <style name="DialogBottomAnimation" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/nick_dialog_enter_anim</item>
+        <item name="android:windowExitAnimation">@anim/nick_dialog_exit_anim</item>
+    </style>
+</resources>

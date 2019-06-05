@@ -1,0 +1,151 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion Integer.parseInt(System.properties['compileSdkVersion'])
+//    buildToolsVersion System.properties['buildToolsVersion']
+    defaultConfig {
+        applicationId "com.demo.frame"
+        minSdkVersion Integer.parseInt(System.properties['minSdkVersion'])
+        targetSdkVersion Integer.parseInt(System.properties['targetSdkVersion'])
+        versionCode getSelfDefinedVersion('code')
+        versionName getSelfDefinedVersion('title')
+        ndk {
+//            abiFilters 'armeabi', 'armeabi-v7a',  'x86'
+            abiFilters 'arm64-v8a', 'armeabi-v7a'
+        }
+        multiDexEnabled true
+        javaCompileOptions {
+            annotationProcessorOptions {
+                includeCompileClasspath = true
+            }
+        }
+    }
+    packagingOptions {
+        exclude 'LICENSE.txt'
+        exclude 'META-INF/rxjava.properties'
+    }
+    dataBinding {
+        enabled = true
+    }
+    repositories {
+        flatDir {
+            dirs 'libs' //this way we can find the .aar file in libs folder
+        }
+    }
+
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+    signingConfigs {
+        debug {
+            storeFile file("fastlib_debug.jks")
+            storePassword "androidDebug"
+            keyAlias "android"
+            keyPassword "androidDebug"
+        }
+        release {
+            storeFile file("fastlib_debug.jks")
+            storePassword "androidDebug"
+            keyAlias "android"
+            keyPassword "androidDebug"
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            shrinkResources false
+            zipAlignEnabled false
+            aaptOptions.cruncherEnabled = false
+            aaptOptions.useNewCruncher = false
+            buildConfigField 'Boolean', 'AppDebug', AppDebug
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            aaptOptions.cruncherEnabled = false
+            aaptOptions.useNewCruncher = false
+            buildConfigField 'Boolean', 'AppDebug', AppDebug
+        }
+    }
+
+    android.applicationVariants.all { variant ->
+        variant.outputs.all { output ->
+            def outputFile = output.outputFile
+            def date = new Date().format("yyyyMMdd", TimeZone.getTimeZone("GMT+08"))
+
+            if (outputFile != null && outputFile.name.endsWith('.apk')) {
+                def fileName = outputFile.name.replace("app", "fastframe_${date}_${defaultConfig.versionName}.${defaultConfig.versionCode}")
+//                outputFileName = new File(outputFile.parent, fileName)
+                //outputFileName = new File("../../../release/", fileName)
+                outputFileName = fileName
+            }
+        }
+    }
+    configurations.all {
+        resolutionStrategy.eachDependency {  details ->
+            def requested = details.requested
+            if (requested.group == 'com.android.support') {
+                if (!requested.name.startsWith("multidex")) {
+                    details.useVersion '26.0.2'
+                }
+            }
+        }
+
+    }
+
+    lintOptions {
+        abortOnError false
+        checkReleaseBuilds false
+        disable 'MissingTranslation'
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation project(':frame')
+    implementation 'com.android.support:multidex:1.0.3'
+
+    api("com.github.bumptech.glide:glide:4.8.0") {
+        exclude group: "com.android.support"
+    }
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
+    implementation 'com.android.support:cardview-v7:26.0.2'
+    implementation 'io.reactivex.rxjava2:rxjava:2.0.8'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    implementation 'com.just.agentweb:agentweb:1.2.5'
+    implementation 'de.hdodenhof:circleimageview:2.1.0'
+    implementation 'com.yanzhenjie:recyclerview-swipe:1.1.2'
+    implementation 'cn.simonlee.xcodescanner:zbar:1.1.6'
+    implementation 'com.github.EthanCo:DropDownMenu:1.0.8'
+    implementation 'liji.library.dev:citypickerview:3.1.8'
+    implementation 'com.github.billy96322:EasyPermission:0.0.5'
+    implementation 'com.aliyun.dpa:oss-android-sdk:+'
+    implementation 'com.github.codbking:PickTime:v1.0.1'
+    implementation 'org.devio.takephoto:takephoto_library:4.1.0'
+
+    implementation "com.github.vondear.RxTool:RxKit:v2.2.7"
+    implementation "com.github.vondear.RxTool:RxUI:v2.2.7"
+    implementation "com.github.vondear.RxTool:RxFeature:v2.3.9"
+}
+
+
+def getSelfDefinedVersion(type) {
+    int code = Integer.parseInt(new Date().format("yyMMddHHmm"))
+    int name = Integer.parseInt(new Date().format("MMddHH"))
+    String versionName = "1.0.1"
+    if ("code".equals(type)) {
+        return 1
+    } else if ("title".equals(type)) {
+        return versionName
+    }
+}
