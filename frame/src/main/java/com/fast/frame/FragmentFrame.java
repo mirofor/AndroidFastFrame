@@ -11,6 +11,7 @@ import com.fast.library.utils.UIUtils;
 import com.fast.library.view.BaseLazyFragment;
 
 import butterknife.ButterKnife;
+import butterknife.Unbinder;
 
 /**
  * 说明：FragmentFrame
@@ -19,6 +20,8 @@ public abstract class FragmentFrame extends BaseLazyFragment implements IFrameRe
 
     protected ActivityFrame mActivity;
     public ILoadingDialog mLoadingDialog;
+
+    Unbinder unbinder;
 
     @Override
     protected void onUserVisible() {
@@ -36,7 +39,7 @@ public abstract class FragmentFrame extends BaseLazyFragment implements IFrameRe
         }
         mActivity = (ActivityFrame) getActivity();
         if (isBindButterKnife()) {
-            ButterKnife.bind(this, view);
+            unbinder = ButterKnife.bind(this, view);
         }
         //初始化沉浸式
         if (isImmersionBarEnabled()) {
@@ -51,7 +54,10 @@ public abstract class FragmentFrame extends BaseLazyFragment implements IFrameRe
             EventUtils.unRegisterEventBus(this);
         }
         if (isBindButterKnife()) {
-            ButterKnife.unbind(this);
+            if (unbinder != null) {
+                unbinder.unbind();
+            }
+
         }
     }
 

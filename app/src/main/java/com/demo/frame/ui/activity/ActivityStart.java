@@ -14,22 +14,24 @@ import com.demo.frame.R;
 import com.demo.frame.helper.RouterHelper;
 import com.demo.frame.ui.ActivityCommon;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import io.reactivex.annotations.Nullable;
 import me.salmonzhg.easypermission.EasyPermission;
 
 @ContentView(R.layout.activity_smart_start)
 public class ActivityStart extends ActivityCommon {
 
-    @Bind(R.id.iv_img_start)
+    @Nullable
+    @BindView(R.id.iv_img_start)
     ImageView ivBgImg;
 
     // 版本号
     @Nullable
-    @Bind(R.id.tv_start_version_name)
+    @BindView(R.id.tv_start_version_name)
     TextView tvVersionName;
 
-    @Bind(R.id.rb_skip)
+    @Nullable
+    @BindView(R.id.rb_skip)
     RoundButton rbSkip;
 
     String pushExtra;

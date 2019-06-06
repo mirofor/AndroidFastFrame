@@ -19,6 +19,7 @@ import com.fast.library.utils.StringUtils;
 import com.fast.library.utils.UIUtils;
 
 import butterknife.ButterKnife;
+import butterknife.Unbinder;
 
 /**
  * 说明：BaseNiceDialog
@@ -49,6 +50,7 @@ public abstract class BaseNiceDialog extends DialogFragment {
 
     public abstract void convertView(ViewHolder holder, BaseNiceDialog dialog);
 
+    Unbinder unbinder ;
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -72,7 +74,7 @@ public abstract class BaseNiceDialog extends DialogFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(layoutId, container, false);
-        ButterKnife.bind(this,view);
+        unbinder=ButterKnife.bind(this,view);
         convertView(ViewHolder.create(view), this);
         return view;
     }
@@ -184,7 +186,9 @@ public abstract class BaseNiceDialog extends DialogFragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        ButterKnife.unbind(this);
+        if (unbinder !=null){
+            unbinder.unbind();
+        }
     }
 
 //    public int show(FragmentTransaction transaction, String tag) {

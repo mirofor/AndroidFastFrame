@@ -27,6 +27,7 @@ import com.fast.mvp.presenter.MvpPresenter;
 import com.gyf.barlibrary.ImmersionBar;
 
 import butterknife.ButterKnife;
+import butterknife.Unbinder;
 
 /**
  * 说明：ActivityFrame
@@ -41,12 +42,13 @@ public abstract class ActivityFrame<Presenter extends MvpPresenter> extends Base
     private View mToolbarTopView;
     private View mCustomTitleView;
     protected TextView mTvTitle;
+    Unbinder unbinder;
 
 
     @Override
     public void onInitCreate(Bundle bundle) {
         if (isBindButterKnife()){
-            ButterKnife.bind(this);
+            unbinder= ButterKnife.bind(this);
         }
         //初始化沉浸式
         if (isImmersionBarEnabled()){
@@ -110,7 +112,9 @@ public abstract class ActivityFrame<Presenter extends MvpPresenter> extends Base
             EventUtils.unRegisterEventBus(this);
         }
         if (isBindButterKnife()){
-            ButterKnife.unbind(this);
+            if (unbinder !=null){
+                unbinder.unbind();
+            }
         }
         super.onDestroy();
         if (mImmersionBar != null){

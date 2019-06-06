@@ -5,9 +5,21 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.1.0'
+        classpath 'com.android.tools.build:gradle:3.1.1'
+        classpath 'com.novoda:bintray-release:0.8.1'
+        classpath 'com.jakewharton:butterknife-gradle-plugin:8.4.0'
+
+//        classpath 'me.tatarka:gradle-retrolambda:3.7.0'
     }
 }
+/**
+ * 工程中所有的module 都将能使用common_config 中的配置
+ */
+//subprojects {
+//    apply from: "${project.rootDir}/common_config.gradle"
+//    dependencies {
+//    }
+//}
 
 allprojects {
     repositories {
@@ -15,6 +27,15 @@ allprojects {
         mavenCentral()
         maven { url "https://jitpack.io"}
         jcenter()
+    }
+
+    //加上这些
+    tasks.withType(Javadoc) {
+        options {
+            encoding "UTF-8"
+            charSet 'UTF-8'
+            links "http://docs.oracle.com/javase/7/docs/api/"
+        }
     }
 }
 

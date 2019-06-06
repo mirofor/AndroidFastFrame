@@ -1,4 +1,7 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.novoda.bintray-release'
+apply plugin: 'com.jakewharton.butterknife'
+//apply plugin: 'me.tatarka.retrolambda'
 
 android {
     compileSdkVersion Integer.parseInt(System.properties['compileSdkVersion'])
@@ -47,18 +50,51 @@ android {
     lintOptions {
         abortOnError false
         checkReleaseBuilds false
+        disable 'TypographyFractions','TypographyQuotes'
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 //    buildToolsVersion '27.0.3'
 }
+allprojects {
+    gradle.projectsEvaluated {
+        tasks.withType(JavaCompile) {
+            options.compilerArgs << "-Xlint:unchecked" << "-Xlint:deprecation"
+        }
+    }
+}
+
+//使用下列代码,会将代码编译到兼容1.6的字节码格式,android2.3.3-4.4使用的jdk6
+//retrolambda {
+//    javaVersion JavaVersion.VERSION_1_6
+//}
 
 dependencies {
     api fileTree(include: ['*.jar'], dir: 'libs')
 //    api 'com.android.support:appcompat-v7:26.0.2'
     api 'com.android.support:design:26.0.2'
-    api 'com.jakewharton:butterknife:7.0.1'
+//    api 'com.jakewharton:butterknife:7.0.1'
     api 'com.google.code.gson:gson:2.8.2'
     api 'com.gyf.barlibrary:barlibrary:2.3.0'
     api 'com.squareup.okhttp3:okhttp:3.12.0'
     api 'org.greenrobot:eventbus:3.1.1'
 //    api 'com.android.support:multidex:1.0.3'
+
+    // 添加 ButterKnife 依赖
+    api 'com.jakewharton:butterknife:8.4.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.4.0'
+}
+
+//gradlew clean build bintrayUpload -PbintrayUser=BINTRAY_USERNAME -PbintrayKey=BINTRAY_KEY -PdryRun=false
+publish {
+    userOrg = 'brightmi'
+    groupId = 'com.fast.frame'
+    artifactId = 'xFastFrame'
+    publishVersion = '1.0.1'
+    desc = 'A base Android seed project ,include common activities,uitls,fragment etc。'
+    website = 'https://github.com/Android-MI/AndroidFastFrame.git'
+    dryRun = false
 }
