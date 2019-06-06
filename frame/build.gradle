@@ -1,7 +1,6 @@
 apply plugin: 'com.android.library'
 apply plugin: 'com.novoda.bintray-release'
 apply plugin: 'com.jakewharton.butterknife'
-//apply plugin: 'me.tatarka.retrolambda'
 
 android {
     compileSdkVersion Integer.parseInt(System.properties['compileSdkVersion'])
@@ -66,11 +65,6 @@ allprojects {
         }
     }
 }
-
-//使用下列代码,会将代码编译到兼容1.6的字节码格式,android2.3.3-4.4使用的jdk6
-//retrolambda {
-//    javaVersion JavaVersion.VERSION_1_6
-//}
 
 dependencies {
     api fileTree(include: ['*.jar'], dir: 'libs')
