@@ -463,10 +463,6 @@ public class HttpConfig {
         return mCommonHeader;
     }
 
-    /**
-     * 说明：获取网络拦截器
-     * @return  List<Interceptor>
-     */
     public List<Interceptor> getNetworkInterceptorList() {
         return networkInterceptorList;
     }
