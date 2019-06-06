@@ -70,7 +70,6 @@ dependencies {
     api fileTree(include: ['*.jar'], dir: 'libs')
 //    api 'com.android.support:appcompat-v7:26.0.2'
     api 'com.android.support:design:26.0.2'
-//    api 'com.jakewharton:butterknife:7.0.1'
     api 'com.google.code.gson:gson:2.8.2'
     api 'com.gyf.barlibrary:barlibrary:2.3.0'
     api 'com.squareup.okhttp3:okhttp:3.12.0'
@@ -87,7 +86,7 @@ publish {
     userOrg = 'brightmi'
     groupId = 'com.fast.frame'
     artifactId = 'xFastFrame'
-    publishVersion = '1.0.1'
+    publishVersion = '1.0.2'
     desc = 'A base Android seed project ,include common activities,uitls,fragment etc。'
     website = 'https://github.com/Android-MI/AndroidFastFrame.git'
     dryRun = false

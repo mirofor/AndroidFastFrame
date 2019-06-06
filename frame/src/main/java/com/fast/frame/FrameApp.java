@@ -12,12 +12,6 @@ public class FrameApp extends Application{
 
     private HttpConfig.Builder mHttpBuilder;
 
-//    @Override
-//    protected void attachBaseContext(Context base) {
-//        super.attachBaseContext(base);
-//        MultiDex.install(this);
-//    }
-
     @Override
     public void onCreate() {
         super.onCreate();
@@ -27,6 +21,7 @@ public class FrameApp extends Application{
             mHttpBuilder.build().init();
         }
         FrameCrashHandler.getInstance().init();
+        disableApiDialog();
     }
 
     protected HttpConfig.Builder setHttpBuilder(){
@@ -59,4 +54,10 @@ public class FrameApp extends Application{
             e.printStackTrace();
         }
     }
+
+    //    @Override
+//    protected void attachBaseContext(Context base) {
+//        super.attachBaseContext(base);
+//        MultiDex.install(this);
+//    }
 }
