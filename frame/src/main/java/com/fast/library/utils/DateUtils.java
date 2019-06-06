@@ -402,6 +402,9 @@ public final class DateUtils {
 
     /**
      * 说明：根据不同时区，转换时间 2015年7月31日
+     * @param  date 日期
+     * @param  oldZone 旧时区
+     * @param newZone 新时区
      */
     public static final Date transformTime(Date date, TimeZone oldZone,
                                            TimeZone newZone) {
@@ -417,7 +420,7 @@ public final class DateUtils {
     /**
      * 说明：判断用户的设备时区是否为东八区（中国） 2015年7月31日
      *
-     * @return
+     * @return true/false
      */
     public static boolean isInEasternEightZones() {
         boolean defaultVaule = true;

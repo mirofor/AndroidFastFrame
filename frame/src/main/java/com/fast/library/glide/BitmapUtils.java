@@ -41,11 +41,6 @@ public class BitmapUtils {
         return clipped;
     }
 
-    /**
-     * 说明：圆形图片
-     * @param source
-     * @return
-     */
     public static Bitmap circleBitmap(Bitmap source) {
         if (source == null){
             throw new NullPointerException("BitmapUtils 处理的 source 为null!");
@@ -72,20 +67,10 @@ public class BitmapUtils {
         return target;
     }
 
-    /**
-     * 说明：资源文件->bitmap
-     * @param context
-     * @param resId
-     * @return
-     */
     public static Bitmap bitmap(Context context,int resId){
         return BitmapFactory.decodeResource(context.getResources(),resId);
     }
 
-    /**
-     * 说明：回收Bitmap
-     * @param bitmaps
-     */
     public static void recycle(Bitmap... bitmaps){
         if (bitmaps == null){
             return;
@@ -97,12 +82,6 @@ public class BitmapUtils {
         }
     }
 
-    /**
-     * 说明：bitmap->byte[]
-     * @param bitmap
-     * @param needRecyle 是否需要回收
-     * @return
-     */
     public static byte[] bmpToByteArray(Bitmap bitmap,boolean needRecyle){
         ByteArrayOutputStream output = new ByteArrayOutputStream();
         bitmap.compress(Bitmap.CompressFormat.PNG, 100, output);

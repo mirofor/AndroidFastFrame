@@ -28,7 +28,6 @@ import okio.Buffer;
  *         //初始化HttpConfig
  *                 HttpConfig.Builder httpBuilder = new HttpConfig.Builder(this);
  *                 httpBuilder.build().init();
- * <p/>
  */
 public class HttpConfig {
 
@@ -144,8 +143,8 @@ public class HttpConfig {
 
         /**
          * 说明：添加公共参数
-         * @param params
-         * @return
+         * @param params 参数
+         * @return Builder
          */
         public Builder setCommonParams(List<Part> params){
             this.mCommonParams = params;
@@ -154,8 +153,8 @@ public class HttpConfig {
 
         /**
          * 说明：添加公共Header
-         * @param header
-         * @return
+         * @param header header
+         * @return Builder
          */
         public Builder setCommonHeaders(Headers header){
             this.mCommonHeader = header;
@@ -164,8 +163,8 @@ public class HttpConfig {
 
         /**
          * 说明：添加证书
-         * @param certificates
-         * @return
+         * @param certificates certificates
+         * @return Builder
          */
         public Builder setCertificates(InputStream...certificates){
             for (InputStream is : certificates){
@@ -178,8 +177,8 @@ public class HttpConfig {
 
         /**
          * 说明：添加证书
-         * @param certificates
-         * @return
+         * @param certificates certificates...
+         * @return Builder
          */
         public Builder setCertificates(String...certificates){
             for (String s : certificates){
@@ -197,8 +196,8 @@ public class HttpConfig {
 
         /**
          * 说明：设置超时时间
-         * @param timeout
-         * @return
+         * @param timeout  超时时间
+         * @return Builder
          */
         public Builder setTimeout(int timeout){
             this.mTimeout = timeout;
@@ -207,8 +206,8 @@ public class HttpConfig {
 
         /**
          * 说明：开启调试模式（输出Log日志）
-         * @param debug
-         * @return
+         * @param debug true/false
+         * @return 调试模式
          */
         public Builder setDebug(boolean debug){
             this.mDebug = debug;
@@ -227,8 +226,8 @@ public class HttpConfig {
 
         /**
          * 说明：设置网络拦截器
-         * @param interceptors
-         * @return
+         * @param interceptors 拦截器
+         * @return Builder
          */
         public Builder setNetworkInterceptors(List<Interceptor> interceptors){
             if (interceptors != null){
@@ -251,8 +250,8 @@ public class HttpConfig {
 
         /**
          * 说明：应用网络拦截器
-         * @param interceptors
-         * @return
+         * @param interceptors 拦截器
+         * @return Builder
          */
         public Builder setInterceptors(List<Interceptor> interceptors){
             this.interceptorList = interceptors;
@@ -262,7 +261,7 @@ public class HttpConfig {
         /**
          * 说明：失败重试
          * @param retryConnectionFailue
-         * @return
+         * @return Builder
          */
         public Builder setRetryConnectionFailue(boolean retryConnectionFailue){
             this.retryConnectionFailure = retryConnectionFailue;
@@ -272,7 +271,7 @@ public class HttpConfig {
         /**
          * 说明：设置重定向
          * @param redirect
-         * @return
+         * @return Builder
          */
         public Builder setRedirect(boolean redirect){
             this.redirects = redirect;
@@ -282,7 +281,7 @@ public class HttpConfig {
         /**
          * 说明：设置SSL重定向
          * @param redirects
-         * @return
+         * @return Builder
          */
         public Builder setSslRedirect(boolean redirects){
             this.sslRedirects = redirects;
@@ -292,7 +291,7 @@ public class HttpConfig {
         /**
          * 设置cookie jar
          * @param cookieJar
-         * @return
+         * @return Builder
          */
         public Builder setCookieJar(CookieJar cookieJar) {
             this.cookieJar = cookieJar;
@@ -302,7 +301,7 @@ public class HttpConfig {
         /**
          * 设置缓存
          * @param cache
-         * @return
+         * @return Builder
          */
         public Builder setCache(Cache cache) {
             this.cache = cache;
@@ -312,9 +311,9 @@ public class HttpConfig {
         /**
          * 设置缓存-并且添加网络拦截器修改响应头(有无网络都先读缓存)
          * 强制响应缓存者根据该值校验新鲜性.即与自身的Age值,与请求时间做比较.如果超出max-age值,则强制去服务器端验证.以确保返回一个新鲜的响应.
-         * @param cache
+         * @param cache cache
          * @param cacheTime 缓存时间 单位秒
-         * @return
+         * @return Builder
          */
         public Builder setCacheAge(Cache cache, final int cacheTime) {
             setCache(cache, String.format("max-age=%d", cacheTime));
@@ -325,9 +324,9 @@ public class HttpConfig {
         /**
          * 设置缓存-并且添加网络拦截器修改响应头(有无网络都先读缓存)
          * 允许缓存者发送一个过期不超过指定秒数的陈旧的缓存.
-         * @param cache
+         * @param cache cache
          * @param cacheTime 缓存时间 单位秒
-         * @return
+         * @return Builder
          */
         public Builder setCacheStale(Cache cache, final int cacheTime) {
             setCache(cache, String.format("max-stale=%d", cacheTime));
@@ -336,9 +335,9 @@ public class HttpConfig {
 
         /**
          * 设置缓存-并且添加网络拦截器修改响应头(有无网络都先读缓存)
-         * @param cache
+         * @param cache cache
          * @param cacheControlValue Cache-Control值
-         * @return
+         * @return Builder
          */
         public Builder setCache(Cache cache, final String cacheControlValue) {
             Interceptor REWRITE_CACHE_CONTROL_INTERCEPTOR = new Interceptor() {
@@ -358,8 +357,8 @@ public class HttpConfig {
 
         /**
          * 设置Authenticator
-         * @param authenticator
-         * @return
+         * @param authenticator authenticator
+         * @return Builder
          */
         public Builder setAuthenticator(Authenticator authenticator) {
             this.authenticator = authenticator;
@@ -373,8 +372,8 @@ public class HttpConfig {
 
         /**
          * 设置Dispatcher实例
-         * @param dispatcher
-         * @return
+         * @param dispatcher dispatcher
+         * @return Builder
          */
         public Builder setDispatcher(Dispatcher dispatcher) {
             this.dispatcher = dispatcher;
@@ -388,7 +387,7 @@ public class HttpConfig {
 
     /**
      * 说明：获取Http配置器
-     * @return
+     * @return HttpConfig
      */
     public static HttpConfig get(){
         if (mHttpConfig == null){
@@ -400,7 +399,7 @@ public class HttpConfig {
 
     /**
      * 说明：获取默认的配置器
-     * @return
+     * @return HttpConfig
      */
     private static HttpConfig getDefaultHttpConfig(){
         if (mDefaultHttpConfig == null){
@@ -412,24 +411,16 @@ public class HttpConfig {
 
     /**
      * 说明：获取OkHttpClient客户端
-     * @return
+     * @return OkHttpClient
      */
     public OkHttpClient getOkHttpClient(){
         return mOkHttpClient;
     }
 
-    /**
-     * 说明：获取公共参数
-     * @return
-     */
     public List<Part> getCommonParams() {
         return mCommonParams;
     }
 
-    /**
-     * 说明：获取证书列表
-     * @return
-     */
     public List<InputStream> getCertificateList() {
         return mCertificateList;
     }
@@ -441,7 +432,7 @@ public class HttpConfig {
 
     /**
      * 说明：获取超时时间
-     * @return
+     * @return 超时时间
      */
     public int getTimeout() {
         LogUtils.d("HttpConfig timeout = "+mTimeout);
@@ -450,7 +441,7 @@ public class HttpConfig {
 
     /**
      * 说明：是否开启调试
-     * @return
+     * @return 是否调试模式
      */
     public boolean getDebug(){
         return mDebug;
@@ -458,7 +449,7 @@ public class HttpConfig {
 
     /**
      * 说明：信任所有证书（开发模式使用）
-     * @return
+     * @return 是否信任证书
      */
     public boolean getTrustAll(){
         return mTrustAll;
@@ -466,7 +457,7 @@ public class HttpConfig {
 
     /**
      * 说明：获取头信息
-     * @return
+     * @return Headers
      */
     public Headers getCommonHeader() {
         return mCommonHeader;
@@ -474,16 +465,13 @@ public class HttpConfig {
 
     /**
      * 说明：获取网络拦截器
-     * @return
+     * @return  List<Interceptor>
      */
     public List<Interceptor> getNetworkInterceptorList() {
         return networkInterceptorList;
     }
 
-    /**
-     * 说明：获取应用拦截器
-     * @return
-     */
+    //说明：获取应用拦截器
     public List<Interceptor> getInterceptorList() {
         return interceptorList;
     }
@@ -526,8 +514,8 @@ public class HttpConfig {
 
     /**
      * 说明：修改公共请求参数信息
-     * @param key
-     * @param value
+     * @param key key
+     * @param value value
      */
     public void updateCommonParams(String key,String value){
         boolean add = false;
@@ -548,8 +536,8 @@ public class HttpConfig {
 
     /**
      * 说明：修改公共header信息
-     * @param key
-     * @param value
+     * @param key key
+     * @param value value
      */
     public void updateCommonHeader(String key,String value){
         Headers headers = getCommonHeader();

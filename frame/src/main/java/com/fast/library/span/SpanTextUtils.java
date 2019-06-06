@@ -18,11 +18,6 @@ public class SpanTextUtils {
 
     private static float fontScale = 0.0f;
 
-    /**
-     * 说明：设置多种自定义的文字
-     *
-     * @param settings
-     */
     public static void setText(TextView tv, SpanSetting... settings) {
         if (settings.length > 0) {
             List<SpanSetting> list = new ArrayList<SpanSetting>();
@@ -33,12 +28,6 @@ public class SpanTextUtils {
         }
     }
 
-    /**
-     * 说明：设置多种自定义的文字
-     *
-     * @param tv
-     * @param charSequences
-     */
     public static void setText(TextView tv, List<SpanSetting> charSequences) {
         if (tv == null) {
             return;

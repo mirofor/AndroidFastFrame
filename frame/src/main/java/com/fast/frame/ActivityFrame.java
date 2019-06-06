@@ -185,7 +185,6 @@ public abstract class ActivityFrame<Presenter extends MvpPresenter> extends Base
     }
     /**
      * 设置标题名称
-     * @return
      */
     @Override
     public void setTitleBarText(String titleText){

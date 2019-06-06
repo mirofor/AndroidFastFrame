@@ -84,9 +84,6 @@ public abstract class BaseDialog extends Dialog {
         return mDialogView;
     }
 
-    /**
-     * <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
-     */
     public void isSystemAlert(){
         getWindow().setType(WindowManager.LayoutParams.TYPE_SYSTEM_ALERT);
     }

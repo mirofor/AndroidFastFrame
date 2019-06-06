@@ -87,7 +87,6 @@ public abstract class FrameActivity extends AppCompatActivity implements OnClick
 
     /**
      * 说明:设置界面之前调用
-     * @return
      */
     protected void setViewBefor(){}
 

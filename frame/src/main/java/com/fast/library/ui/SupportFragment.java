@@ -45,17 +45,21 @@ public abstract class SupportFragment extends Fragment implements OnClickListene
 
     /**
      * 说明：获取数据
+     * @param bundle bundle
      */
     protected void getBundleData(Bundle bundle) {
     }
 
     /**
      * 说明：初始化数据onActivityCreated
+     * @param savedInstanceState bundle
+     * @param view view
      */
     protected abstract void onInit(Bundle savedInstanceState, View view);
 
     /**
      * 说明：初始化数据onCreateView
+     * @param view view
      */
     protected void onInitCreateView(View view) {
     }
@@ -70,15 +74,28 @@ public abstract class SupportFragment extends Fragment implements OnClickListene
 
     /**
      * 说明：点击事件
+     * @param v view
+     * @param id id
      */
     protected void clickView(View v, int id) {
     }
 
+    /**
+     * 说明：点击事件
+     * @param v view
+     */
     @Override
     public void onClick(View v) {
         clickView(v, v.getId());
     }
 
+    /**
+     * onCreateView
+     * @param inflater LayoutInflater
+     * @param container ViewGroup Container
+     * @param savedInstanceState Bundle
+     * @return View
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

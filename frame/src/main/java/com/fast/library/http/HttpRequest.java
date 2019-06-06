@@ -11,6 +11,10 @@ import okhttp3.Call;
 public class HttpRequest {
 
     /**********GET****************/
+    /**
+     * get
+     * @param url 请求url
+     */
     public static void get(String url){
         get(url,null,null);
     }
@@ -33,6 +37,10 @@ public class HttpRequest {
         executeRequest(FrameConstant.Http.GET, url, params, callback, timeout);
     }
     /**********POST****************/
+    /**
+     * post请求
+     * @param url 请求url
+     */
     public static void post(String url){
         post(url, null, null);
     }
@@ -69,6 +77,14 @@ public class HttpRequest {
     public static void put(String url,RequestParams params,BaseHttpCallBack callback){
         put(url, params, callback, 0);
     }
+
+    /**
+     * put 请求
+     * @param url url地址
+     * @param params 参数
+     * @param callback 回调
+     * @param timeout 超时时间
+     */
     public static void put(String url,RequestParams params,BaseHttpCallBack callback,int timeout){
         if (timeout == 0){
             timeout = HttpConfig.get().getTimeout();

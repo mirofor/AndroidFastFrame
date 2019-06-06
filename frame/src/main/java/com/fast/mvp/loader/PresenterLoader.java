@@ -21,6 +21,7 @@ public class PresenterLoader<T extends MvpPresenter> extends Loader {
      * Activity instances.
      *
      * @param context used to retrieve the application context.
+     * @param factory factory
      */
     public PresenterLoader(Context context,PresenterFactory<T> factory) {
         super(context);

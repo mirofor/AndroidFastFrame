@@ -546,10 +546,6 @@ public class ACache {
         mCache.clear();
     }
 
-    /**
-     * @title 缓存管理器
-     * @version 1.0
-     */
     public class ACacheManager {
         private final AtomicLong cacheSize;
         private final AtomicInteger cacheCount;

@@ -51,6 +51,10 @@ public abstract class BaseFragment extends SupportFragment implements HttpTaskKe
 
     /***************************************************************************************/
 
+    /**
+     * 容器
+     * @param containerId 容器
+     */
     public void setContainerId(int containerId) {
         this.containerId = containerId;
     }
@@ -61,26 +65,47 @@ public abstract class BaseFragment extends SupportFragment implements HttpTaskKe
 
     /***************************************************************************************/
 
+    /**
+     * Activity跳转
+     * @param cls 类
+     */
     public void skipActivity(Class<?> cls) {
         skipActivity(cls);
         mFragmentActivity.finish();
     }
 
+    /**
+     *  Activity跳转
+     * @param intent intent
+     */
     public void skipActivity(Intent intent) {
         skipActivity(intent);
         mFragmentActivity.finish();
     }
 
+    /**
+     * Activity跳转
+     * @param cls Activity
+     * @param bundle 携带数据
+     */
     public void skipActivity(Class<?> cls, Bundle bundle) {
         skipActivity(cls, bundle);
         mFragmentActivity.finish();
     }
 
+    /**
+     * Activity跳转
+     * @param cls Activity
+     */
     public void showActivity(Class<?> cls) {
         Intent intent = new Intent(mFragmentActivity,cls);
         mFragmentActivity.startActivity(intent);
     }
 
+    /**
+     * Activity跳转
+     * @param intent intent
+     */
     public void showActivity(Intent intent) {
         mFragmentActivity.startActivity(intent);
     }
@@ -95,6 +120,10 @@ public abstract class BaseFragment extends SupportFragment implements HttpTaskKe
 
     /***************************************************************************************/
 
+    /**
+     * getSupportFragmentManager
+     * @return FragmentManager
+     */
     public FragmentManager getSupportFragmentManager() {
         if (mFragmentActivity != null){
             return mFragmentActivity.getSupportFragmentManager();

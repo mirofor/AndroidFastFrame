@@ -7,14 +7,6 @@ import org.greenrobot.eventbus.EventBus;
 
 /**
  * 说明：EventBus事件中心
- * <p/>
- * 作者：fanly
- * <p/>
- * 类型：Class
- * <p/>
- * 时间：2016/11/15 9:13
- * <p/>
- * 版本：verson 1.0
  */
 public class EventUtils {
 

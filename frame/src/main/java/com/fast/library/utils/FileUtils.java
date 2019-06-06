@@ -99,6 +99,8 @@ public final class FileUtils {
 
     /**
      * 说明：从指定文件夹获取文件
+     * @param folderPath 文件路径
+     * @param  fileNmae 文件名
      *
      * @return 如果文件不存在则创建, 如果如果无法创建文件或文件名为空则返回null
      */

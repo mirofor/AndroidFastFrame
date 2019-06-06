@@ -68,7 +68,7 @@ public class RandomUtils {
     /**
      * 说明：返回0-max之间的随机数
      * @param max
-     * @return 当max<=0时，返回0
+     * @return 当max
 	 */
     public static int getRandom(int max) {
         return getRandom(0, max);
@@ -78,7 +78,7 @@ public class RandomUtils {
      * 说明：返回min-max之间的随机数
      * @param min 最小值
      * @param max 最大值
-     * @return 当min>max时返回0
+     * @return 当min max时返回0
      */
     public static int getRandom(int min, int max) {
         if (min > max) {

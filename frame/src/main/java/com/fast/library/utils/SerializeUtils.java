@@ -30,7 +30,7 @@ public class SerializeUtils {
     }
 
     /**
-     * 说明：反序列化，文件->对象
+     * 说明：反序列化，文件-对象
      *
      * @param filePath
      *            文件路径
@@ -55,7 +55,7 @@ public class SerializeUtils {
     }
 
     /**
-     * 说明：序列化，对象->文件
+     * 说明：序列化，对象-文件
      *
      * @param filePath
      *            文件路径

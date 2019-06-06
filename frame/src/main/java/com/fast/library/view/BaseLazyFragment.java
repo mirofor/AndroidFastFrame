@@ -38,8 +38,8 @@ public abstract class BaseLazyFragment extends BaseFragment{
 
     /**
      * 创建View时调用
-     * @param savedInstanceState
-     * @param view
+     * @param savedInstanceState Bundle
+     * @param view view
      */
     protected abstract void onInitCreate(Bundle savedInstanceState, View view);
 

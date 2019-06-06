@@ -112,6 +112,8 @@ public class BannerView<T> extends LinearLayout {
 
     /**
      * 说明：刷新数据
+     * @param holderCreator holder
+     * @param data 数据
      */
     public void refresh(BannerHolderCreator holderCreator,List<T> data){
         if (data != null && !data.isEmpty()){
@@ -128,9 +130,9 @@ public class BannerView<T> extends LinearLayout {
 
     /**
      * 说明：设置数据
-     * @param holderCreator
-     * @param data
-     * @return
+     * @param holderCreator holder
+     * @param data 数据
+     * @return BannerView
      */
     public BannerView setPages(BannerHolderCreator holderCreator,List<T> data){
         this.mDatas = data;
@@ -141,9 +143,9 @@ public class BannerView<T> extends LinearLayout {
 
     /**
      * 说明：设置指示器资源
-     * @param selectedRes
-     * @param normalRes
-     * @return
+     * @param selectedRes resId
+     * @param normalRes resId
+     * @return BannerView
      */
     public BannerView setPoint(int selectedRes,int normalRes){
         ll_dots.removeAllViews();
@@ -175,8 +177,8 @@ public class BannerView<T> extends LinearLayout {
 
     /**
      * 说明：控制指示器是否显示
-     * @param isVisible
-     * @return
+     * @param isVisible 是否可见
+     * @return BannerView
      */
     public BannerView setPointVisible(boolean isVisible){
         if (ll_dots != null){
@@ -187,7 +189,7 @@ public class BannerView<T> extends LinearLayout {
 
     /**
      * 说明：是否开启轮播
-     * @return
+     * @return 是否开启了自动轮播
      */
     public boolean isCanLoop(){
         return mViewPager.isCanLoop();
@@ -195,7 +197,7 @@ public class BannerView<T> extends LinearLayout {
 
     /**
      * 说明：设置是否要循序，在设置数据之前调用
-     * @param canLoop
+     * @param canLoop true:循环
      */
     public void setCanLoop(boolean canLoop){
         this.canLoop = canLoop;
@@ -204,7 +206,7 @@ public class BannerView<T> extends LinearLayout {
 
     /**
      * 说明：获取ViewPager
-     * @return
+     * @return BannerViewPager
      */
     public BannerViewPager getViewPager(){
         return mViewPager;
@@ -212,8 +214,8 @@ public class BannerView<T> extends LinearLayout {
 
     /**
      * 说明：设置Item的点击
-     * @param listener
-     * @return
+     * @param listener 点击事件监听
+     * @return BannerView
      */
     public BannerView setOnItemClickListener(OnItemClickListener listener){
         mViewPager.setOnItemClickListener(listener);
@@ -222,7 +224,7 @@ public class BannerView<T> extends LinearLayout {
 
     /**
      * 说明：是否正在轮播
-     * @return
+     * @return 是否正在轮播
      */
     public boolean isLoop(){
         return isLoop;
@@ -230,8 +232,8 @@ public class BannerView<T> extends LinearLayout {
 
     /**
      * 说明：开启自动轮播
-     * @param delayTime
-     * @return
+     * @param delayTime 延时
+     * @return BannerView
      */
     public BannerView start(long delayTime){
         if (delayTime <= 0){
@@ -250,7 +252,6 @@ public class BannerView<T> extends LinearLayout {
 
     /**
      * 说明：停止自动轮播
-     * @return
      */
     public void stop(){
         isLoop = false;

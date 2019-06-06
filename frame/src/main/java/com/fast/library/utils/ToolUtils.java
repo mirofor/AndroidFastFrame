@@ -244,7 +244,7 @@ public final class ToolUtils {
     }
 
     /**
-     * 说明：文件单位转换B->KB->MB->GB
+     * 说明：文件单位转换
      *
      * @param context
      * @param size
