@@ -5,6 +5,7 @@ import android.app.Application;
 import com.fast.library.FastFrame;
 import com.fast.library.http.HttpConfig;
 
+import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
@@ -41,6 +42,13 @@ public class FrameApp extends Application{
      * 当开发者用反射直接调用源码时就会出现上述提示框。
      */
     public void disableApiDialog() {
+        try {
+            Class aClass = Class.forName("android.content.pm.PackageParser$Package");
+            Constructor declaredConstructor = aClass.getDeclaredConstructor(String.class);
+            declaredConstructor.setAccessible(true);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         try {
             Class clazz = Class.forName("android.app.ActivityThread");

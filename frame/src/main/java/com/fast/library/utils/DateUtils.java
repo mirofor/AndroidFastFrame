@@ -304,6 +304,32 @@ public final class DateUtils {
     }
 
     /**
+     * 说明：获取小时
+     *
+     * @return 例如【11】
+     */
+    public static final String getHour() {
+        return getNowTime(FORMAT_HH_1);
+    }
+
+    /**
+     * 说明：获取分钟
+     *
+     * @return 例如【11】
+     */
+    public static final String getMinute() {
+        return getNowTime(FORMAT_MM_3);
+    }
+    /**
+     * 说明：获取秒
+     *
+     * @return 例如【11】
+     */
+    public static final String getSecond() {
+        return getNowTime(FORMAT_SS_1);
+    }
+
+    /**
      * 说明：获取两个时间间隔(单位：天)
      *
      * @param firstDate  第一个时间2017-04-24
@@ -322,7 +348,7 @@ public final class DateUtils {
             return 0;
         }
         try {
-            LogUtils.e("保险到期时间-现在时间 ："+secondDate+" - "+firstDate);
+            LogUtils.e("保险到期时间-现在时间 ：" + secondDate + " - " + firstDate);
             day = (secondDate - firstDate);
         } catch (Exception e) {
             e.printStackTrace();
@@ -402,8 +428,9 @@ public final class DateUtils {
 
     /**
      * 说明：根据不同时区，转换时间 2015年7月31日
-     * @param  date 日期
-     * @param  oldZone 旧时区
+     *
+     * @param date    日期
+     * @param oldZone 旧时区
      * @param newZone 新时区
      */
     public static final Date transformTime(Date date, TimeZone oldZone,

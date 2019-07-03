@@ -8,8 +8,8 @@ android {
     defaultConfig {
         minSdkVersion Integer.parseInt(System.properties['minSdkVersion'])
         targetSdkVersion Integer.parseInt(System.properties['targetSdkVersion'])
-        versionCode 1
-        versionName "1.0"
+        versionCode 3
+        versionName "1.0.3"
         javaCompileOptions {
             annotationProcessorOptions {
                 includeCompileClasspath = true
@@ -77,8 +77,8 @@ dependencies {
 //    api 'com.android.support:multidex:1.0.3'
 
     // 添加 ButterKnife 依赖
-    api 'com.jakewharton:butterknife:8.4.0'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:8.4.0'
+    api 'com.jakewharton:butterknife:8.5.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
 }
 
 //gradlew clean build bintrayUpload -PbintrayUser=BINTRAY_USERNAME -PbintrayKey=BINTRAY_KEY -PdryRun=false
@@ -86,7 +86,7 @@ publish {
     userOrg = 'brightmi'
     groupId = 'com.fast.frame'
     artifactId = 'xFastFrame'
-    publishVersion = '1.0.2'
+    publishVersion = '1.0.3'
     desc = 'A base Android seed project ,include common activities,uitls,fragment etc。'
     website = 'https://github.com/Android-MI/AndroidFastFrame.git'
     dryRun = false

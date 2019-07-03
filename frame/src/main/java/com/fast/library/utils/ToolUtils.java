@@ -42,11 +42,26 @@ import java.util.TimerTask;
  */
 public final class ToolUtils {
     private static long lastClickTime;
+    /**
+     * 上次点击view id
+     */
+    private static long lastClickId;
+
+    public static boolean isFastDoubleClick(int id) {
+        long time = System.currentTimeMillis();
+        long timeD = time - lastClickTime;
+        if (lastClickId == id && (0 < timeD && timeD < 1000)) {
+            return true;
+        }
+        lastClickId = id;
+        lastClickTime = time;
+        return false;
+    }
 
     public static boolean isFastDoubleClick() {
         long time = System.currentTimeMillis();
         long timeD = time - lastClickTime;
-        if (0 < timeD && timeD < 600) {
+        if (0 < timeD && timeD < 1000) {
             return true;
         }
         lastClickTime = time;
