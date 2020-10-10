@@ -6,6 +6,8 @@ import com.fast.library.utils.ToolUtils;
 
 import java.lang.reflect.Method;
 
+import androidx.fragment.app.Fragment;
+
 /**
  * 说明：注解工具类[Activity,Fragment]
  */
@@ -39,7 +41,7 @@ public class AnnotateViewUtils {
      * @param fragment
      */
     private static String initContentView(SupportFragment fragment){
-        Class<? extends android.support.v4.app.Fragment> clazz = fragment.getClass();
+        Class<? extends Fragment> clazz = fragment.getClass();
         ContentView bindView = clazz.getAnnotation(ContentView.class);
         String response = "";
         if (bindView != null){

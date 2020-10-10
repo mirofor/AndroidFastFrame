@@ -1,8 +1,8 @@
 package com.fast.library;
 
+import android.app.LoaderManager;
 import android.content.Intent;
-import android.support.v4.app.LoaderManager;
-import android.support.v4.content.Loader;
+import android.content.Loader;
 import android.view.View;
 
 import com.fast.library.http.HttpTaskKey;
@@ -13,7 +13,7 @@ import com.fast.mvp.presenter.MvpPresenter;
 /**
  * 说明：Activity基类
  */
-public abstract class BaseActivity<Presenter extends MvpPresenter> extends AbstractActivity implements HttpTaskKey,LoaderManager.LoaderCallbacks<Presenter> {
+public abstract class BaseActivity<Presenter extends MvpPresenter> extends AbstractActivity implements HttpTaskKey, LoaderManager.LoaderCallbacks<Presenter> {
 
     private Presenter mPresenter;
 

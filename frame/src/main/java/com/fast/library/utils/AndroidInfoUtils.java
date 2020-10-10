@@ -10,7 +10,6 @@ import android.os.Build;
 import android.os.Environment;
 import android.os.StatFs;
 import android.provider.Settings.Secure;
-import android.support.v4.app.ActivityCompat;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import android.util.Log;
@@ -19,6 +18,8 @@ import com.fast.library.BuildConfig;
 import com.fast.library.FastFrame;
 
 import java.io.File;
+
+import androidx.core.app.ActivityCompat;
 
 /**
  * 说明：手机信息相关工具类

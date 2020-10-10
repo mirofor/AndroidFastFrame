@@ -19,18 +19,21 @@ public class WebViewLoader {
     private WebView webView;
     private Adapter mAdapter;
 
-    public interface Adapter{
+    public interface Adapter {
         boolean shouldOverrideUrlLoading(WebView view, String url);
+
         void onProgressChanged(WebView view, int newProgress);
     }
 
-    public WebViewLoader(WebView webView, Adapter adapter){
+    public WebViewLoader(WebView webView, Adapter adapter) {
         this.webView = webView;
         this.mAdapter = adapter;
     }
 
     public void init() {
-        if (webView == null) return;
+        if (webView == null) {
+            return;
+        }
         WebSettings settings = webView.getSettings();
         //支持获取手势焦点
         webView.requestFocusFromTouch();
@@ -69,17 +72,19 @@ public class WebViewLoader {
     }
 
     @SuppressLint("JavascriptInterface")
-    public void addJavascriptInterface(Object object, String name){
-        if (webView != null){
+    public void addJavascriptInterface(Object object, String name) {
+        if (webView != null) {
             //设置js回调
-            webView.addJavascriptInterface(object,name);
+            webView.addJavascriptInterface(object, name);
         }
     }
 
-    private WebChromeClient mWebChromeClient = new WebChromeClient(){
+    private WebChromeClient mWebChromeClient = new WebChromeClient() {
         @Override
         public void onProgressChanged(WebView view, int newProgress) {
-            if (mAdapter != null) mAdapter.onProgressChanged(view,newProgress);
+            if (mAdapter != null) {
+                mAdapter.onProgressChanged(view, newProgress);
+            }
         }
     };
 
@@ -90,9 +95,10 @@ public class WebViewLoader {
 
         @Override
         public boolean shouldOverrideUrlLoading(WebView view, String url) {
-            if (mAdapter != null)
-                return mAdapter.shouldOverrideUrlLoading(view,url);
-            return super.shouldOverrideUrlLoading(view,url);
+            if (mAdapter != null) {
+                return mAdapter.shouldOverrideUrlLoading(view, url);
+            }
+            return super.shouldOverrideUrlLoading(view, url);
         }
 
         /**
@@ -133,10 +139,11 @@ public class WebViewLoader {
 
     /**
      * 加载网页
+     *
      * @param url
      */
-    public void loadUrl(final String url){
-        if (!StringUtils.isEmpty(url)){
+    public void loadUrl(final String url) {
+        if (!StringUtils.isEmpty(url)) {
             webView.post(new Runnable() {
                 @Override
                 public void run() {

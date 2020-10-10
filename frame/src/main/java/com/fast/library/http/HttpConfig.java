@@ -96,7 +96,7 @@ public class HttpConfig {
             return;
         }else {
             this.mOkHttpClient = OkHttpFactory.create(this);
-            this.mHttpConfig = this;
+            mHttpConfig = this;
         }
     }
 

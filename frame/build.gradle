@@ -49,7 +49,7 @@ android {
     lintOptions {
         abortOnError false
         checkReleaseBuilds false
-        disable 'TypographyFractions','TypographyQuotes'
+        disable 'TypographyFractions', 'TypographyQuotes'
     }
 
     compileOptions {
@@ -68,17 +68,21 @@ allprojects {
 
 dependencies {
     api fileTree(include: ['*.jar'], dir: 'libs')
-//    api 'com.android.support:appcompat-v7:26.0.2'
-    api 'com.android.support:design:26.0.2'
-    api 'com.google.code.gson:gson:2.8.2'
-    api 'com.gyf.barlibrary:barlibrary:2.3.0'
-    api 'com.squareup.okhttp3:okhttp:3.12.0'
-    api 'org.greenrobot:eventbus:3.1.1'
-//    api 'com.android.support:multidex:1.0.3'
+    api 'com.google.code.gson:gson:2.8.6'
+
+    // 基础依赖包，必须要依赖
+    implementation 'com.gyf.immersionbar:immersionbar:3.0.0'
+    // fragment快速实现（可选）
+    implementation 'com.gyf.immersionbar:immersionbar-components:3.0.0'
+
+    api 'com.squareup.okhttp3:okhttp:3.14.4'
+    api 'org.greenrobot:eventbus:3.2.0'
 
     // 添加 ButterKnife 依赖
-    api 'com.jakewharton:butterknife:8.5.1'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
+    implementation 'com.jakewharton:butterknife:10.2.3'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.3'
+
+    implementation 'androidx.appcompat:appcompat:1.2.0'
 }
 
 //gradlew clean build bintrayUpload -PbintrayUser=BINTRAY_USERNAME -PbintrayKey=BINTRAY_KEY -PdryRun=false
@@ -86,8 +90,8 @@ publish {
     userOrg = 'brightmi'
     groupId = 'com.fast.frame'
     artifactId = 'xFastFrame'
-    publishVersion = '1.0.3'
-    desc = 'A base Android seed project ,include common activities,uitls,fragment etc。'
+    publishVersion = '1.0.4'
+    desc = 'A base Android seed project（Android X appcompat） ,include common activities,uitls,fragment etc。'
     website = 'https://github.com/Android-MI/AndroidFastFrame.git'
     dryRun = false
 }

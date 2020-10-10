@@ -1,6 +1,5 @@
 package com.fast.frame.dialog.base;
 
-import android.support.v4.app.FragmentManager;
 import com.fast.frame.dialog.BaseNiceDialog;
 import com.fast.frame.dialog.ViewHolder;
 import com.fast.frame.interrface.ILoadingDialog;
@@ -8,6 +7,8 @@ import com.fast.library.R;
 import com.fast.library.utils.StringUtils;
 import com.fast.library.utils.ToolUtils;
 import com.fast.library.utils.UIUtils;
+
+import androidx.fragment.app.FragmentManager;
 
 /**
  * 说明：FrameLoadingDialog

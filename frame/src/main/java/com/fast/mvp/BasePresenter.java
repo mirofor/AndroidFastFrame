@@ -5,6 +5,7 @@ import com.fast.mvp.presenter.MvpPresenter;
 
 /**
  * 说明：BasePresenter
+ * @author xiaomi
  */
 public abstract class BasePresenter<T extends BaseView> implements MvpPresenter<T> {
 
@@ -39,11 +40,13 @@ public abstract class BasePresenter<T extends BaseView> implements MvpPresenter<
 
     @Override
     public void checkViewAttached() {
-        if (!isViewAttached()) throw new MvpViewNotAttachedException();
+        if (!isViewAttached()) {
+            throw new MvpViewNotAttachedException();
+        }
     }
 
     public static class MvpViewNotAttachedException extends RuntimeException {
-        public MvpViewNotAttachedException(){
+        MvpViewNotAttachedException(){
             super("请先在请求Presenter数据之前调用attachView()");
         }
     }

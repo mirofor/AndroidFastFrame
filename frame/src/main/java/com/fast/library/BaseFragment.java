@@ -2,8 +2,6 @@ package com.fast.library;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +9,9 @@ import android.view.ViewGroup;
 import com.fast.library.http.HttpTaskKey;
 import com.fast.library.ui.SupportFragment;
 import com.fast.library.ui.ToastUtils;
+
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentManager;
 
 /**
  * 说明：Fragment基类(V4)

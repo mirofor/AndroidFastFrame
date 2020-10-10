@@ -3,13 +3,14 @@ buildscript {
     repositories {
         google()
         jcenter()
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+        maven{ url 'http://maven.aliyun.com/nexus/content/repositories/jcenter'}
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.1.1'
-        classpath 'com.novoda:bintray-release:0.8.1'
-        classpath 'com.jakewharton:butterknife-gradle-plugin:8.4.0'
+        classpath 'com.android.tools.build:gradle:3.6.1'
+        classpath 'com.novoda:bintray-release:0.9.1'
+        classpath 'com.jakewharton:butterknife-gradle-plugin:10.2.3'
 
-//        classpath 'me.tatarka:gradle-retrolambda:3.7.0'
     }
 }
 /**
@@ -23,10 +24,12 @@ buildscript {
 
 allprojects {
     repositories {
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+        maven{ url 'http://maven.aliyun.com/nexus/content/repositories/jcenter'}
         google()
+        jcenter()
         mavenCentral()
         maven { url "https://jitpack.io"}
-        jcenter()
     }
 
     //加上这些
@@ -36,6 +39,8 @@ allprojects {
             charSet 'UTF-8'
             links "http://docs.oracle.com/javase/7/docs/api/"
         }
+        options.addStringOption('Xdoclint:none', '-quiet')
+        options.addStringOption('encoding', 'UTF-8')
     }
 }
 

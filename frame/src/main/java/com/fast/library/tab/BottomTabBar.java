@@ -5,14 +5,6 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
-import android.support.annotation.ColorInt;
-import android.support.annotation.DrawableRes;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v4.content.ContextCompat;
-import android.support.v4.view.ViewPager;
-import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -28,7 +20,15 @@ import com.fast.library.R;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BottomTabBar extends LinearLayout implements OnPageChangeListener, OnClickListener {
+import androidx.annotation.ColorInt;
+import androidx.annotation.DrawableRes;
+import androidx.core.content.ContextCompat;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.viewpager.widget.ViewPager;
+
+public class BottomTabBar extends LinearLayout implements ViewPager.OnPageChangeListener, OnClickListener {
     private Context context;
     private LinearLayout mLayout;
     private View mDivider;
@@ -58,9 +58,11 @@ public class BottomTabBar extends LinearLayout implements OnPageChangeListener, 
     private BottomTabBar.OnTabChangeListener listener = null;
     View last = null;
 
+    @Override
     public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
     }
 
+    @Override
     public void onPageSelected(int position) {
         this.changeTab(position);
         if (this.listener !=null){
@@ -90,9 +92,11 @@ public class BottomTabBar extends LinearLayout implements OnPageChangeListener, 
         }
     }
 
+    @Override
     public void onPageScrollStateChanged(int state) {
     }
 
+    @Override
     public void onClick(View v) {
         if (this.last == v) {
             Log.e("BottomTabBar", "重复点击");
@@ -125,14 +129,14 @@ public class BottomTabBar extends LinearLayout implements OnPageChangeListener, 
         }
     }
 
-    private android.support.v4.app.Fragment currentSupportFragment;
+    private Fragment currentSupportFragment;
 
     public void showOrHideFragment(int srcView, int position) {
         Fragment targetFragment = mFragments.get(position);
         if (targetFragment.equals(currentSupportFragment)) {
             return;
         }
-        android.support.v4.app.FragmentTransaction transaction = mFragmentManager
+        FragmentTransaction transaction = mFragmentManager
                 .beginTransaction();
         if (!targetFragment.isAdded()) {
             transaction.add(srcView, targetFragment, targetFragment.getClass()

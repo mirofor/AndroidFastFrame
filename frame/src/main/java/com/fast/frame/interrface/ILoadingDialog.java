@@ -1,6 +1,6 @@
 package com.fast.frame.interrface;
 
-import android.support.v4.app.FragmentManager;
+import androidx.fragment.app.FragmentManager;
 
 /**
  * 说明：加载框
