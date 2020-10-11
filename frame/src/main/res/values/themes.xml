@@ -37,9 +37,6 @@
     <style name="ThemeLandscapeFullScreen" parent="ThemeLandscapeActivity">
         <item name="android:windowFullscreen">true</item>
     </style>
-    <style name="ThemeLandscapeFullWindows" parent="ThemeLandscapeActivity">
-        <!--<item name="android:fitsSystemWindows">false</item>-->
-    </style>
     <!--横屏，竖屏切换-->
     <style name="ThemeSensorActivity" parent="ThemeApp">
         <item name="android:windowBackground">@color/white</item>

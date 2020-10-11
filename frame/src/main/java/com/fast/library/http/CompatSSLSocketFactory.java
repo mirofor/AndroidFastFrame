@@ -38,7 +38,9 @@ public class CompatSSLSocketFactory extends SSLSocketFactory {
     private static void setSupportProtocolAndCipherSuites(Socket socket) {
         if (socket instanceof SSLSocket)
             // https://developer.android.com/about/versions/android-5.0-changes.html#ssl
+        {
             ((SSLSocket) socket).setEnabledProtocols(PROTOCOL_ARRAY);
+        }
     }
 
     private SSLSocketFactory delegate;

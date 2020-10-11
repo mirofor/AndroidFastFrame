@@ -25,6 +25,7 @@ import okhttp3.OkHttpClient;
 /**
  * 说明：Https证书管理
  */
+@SuppressWarnings("deprecation")
 public class HttpsCerManager {
 
     /**

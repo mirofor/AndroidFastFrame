@@ -8,18 +8,12 @@ android {
     defaultConfig {
         minSdkVersion Integer.parseInt(System.properties['minSdkVersion'])
         targetSdkVersion Integer.parseInt(System.properties['targetSdkVersion'])
-        versionCode 3
-        versionName "1.0.3"
+        versionCode 201
+        versionName "2.0.1"
         javaCompileOptions {
             annotationProcessorOptions {
                 includeCompileClasspath = true
             }
-        }
-    }
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
     packagingOptions {
@@ -56,7 +50,7 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-//    buildToolsVersion '27.0.3'
+//    buildToolsVersion '28.0.3'
 }
 allprojects {
     gradle.projectsEvaluated {
@@ -71,26 +65,27 @@ dependencies {
     api 'com.google.code.gson:gson:2.8.6'
 
     // 基础依赖包，必须要依赖
-    implementation 'com.gyf.immersionbar:immersionbar:3.0.0'
+    api 'com.gyf.immersionbar:immersionbar:3.0.0'
     // fragment快速实现（可选）
-    implementation 'com.gyf.immersionbar:immersionbar-components:3.0.0'
+    api 'com.gyf.immersionbar:immersionbar-components:3.0.0'
 
     api 'com.squareup.okhttp3:okhttp:3.14.4'
     api 'org.greenrobot:eventbus:3.2.0'
 
     // 添加 ButterKnife 依赖
-    implementation 'com.jakewharton:butterknife:10.2.3'
+    api 'com.jakewharton:butterknife:10.2.3'
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.3'
 
-    implementation 'androidx.appcompat:appcompat:1.2.0'
+    api 'androidx.annotation:annotation:1.1.0'
+    api 'androidx.appcompat:appcompat:1.2.0'
 }
 
-//gradlew clean build bintrayUpload -PbintrayUser=BINTRAY_USERNAME -PbintrayKey=BINTRAY_KEY -PdryRun=false
+//gradlew clean build bintrayUpload -PbintrayUser=brightmi -PbintrayKey=BINTRAY_KEY -PdryRun=false
 publish {
     userOrg = 'brightmi'
     groupId = 'com.fast.frame'
     artifactId = 'xFastFrame'
-    publishVersion = '1.0.4'
+    publishVersion = '2.0.1'
     desc = 'A base Android seed project（Android X appcompat） ,include common activities,uitls,fragment etc。'
     website = 'https://github.com/Android-MI/AndroidFastFrame.git'
     dryRun = false

@@ -41,16 +41,17 @@
         android:required="true" />
 
     <application
-        android:name="com.demo.frame.BikeApp"
+        android:name="com.demo.frame.GlobalApp"
+        android:allowBackup="false"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/ThemeApp"
-        android:allowBackup="false"
         tools:replace="android:theme,android:allowBackup">
 
         <activity
             android:name="com.demo.frame.ui.activity.ActivityStart"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -59,11 +60,13 @@
         <activity
             android:name="com.demo.frame.ui.activity.ActivityStartLogin"
             android:configChanges="orientation|keyboardHidden|screenSize"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
         <activity
             android:name="com.demo.frame.common.ActivityBindFragment"
             android:screenOrientation="portrait"
-            android:theme="@style/ThemeBindFragment" />
+            android:theme="@style/ThemeBindFragment"
+            tools:ignore="LockedOrientationActivity" />
 
     </application>
 

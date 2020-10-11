@@ -4,12 +4,14 @@ import android.app.Dialog;
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.WindowManager;
 import android.widget.LinearLayout;
+
 import com.fast.library.utils.UIUtils;
 
 /**
  * 说明：对话框基类
+ *
+ * @author xiaomi
  */
 public abstract class BaseDialog extends Dialog {
 
@@ -22,7 +24,7 @@ public abstract class BaseDialog extends Dialog {
         init(setDialogView());
     }
 
-    public BaseDialog(Context context, int themeResId,int layoutId) {
+    public BaseDialog(Context context, int themeResId, int layoutId) {
         super(context, themeResId);
         this.mContext = context;
         init(layoutId);
@@ -34,32 +36,32 @@ public abstract class BaseDialog extends Dialog {
     private void init(int layoutId) {
         initViewBefore();
         mDialogView = UIUtils.inflate(layoutId);
-        if (isFullScreen()){
+        if (isFullScreen()) {
             getDialogView().setMinimumWidth(UIUtils.screenWidth());
             getDialogView().setMinimumHeight(UIUtils.screenHeight());
             ViewGroup.LayoutParams params = new ViewGroup.LayoutParams(
                     LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
             addContentView(mDialogView, params);
-        }else if (setParams() != null){
+        } else if (setParams() != null) {
             addContentView(mDialogView, setParams());
-        }else {
+        } else {
             setContentView(mDialogView);
         }
-        if (addWindowAnimations() > 0){
+        if (addWindowAnimations() > 0) {
             getWindow().setWindowAnimations(addWindowAnimations());
         }
         onInit();
     }
 
-    public int addWindowAnimations(){
+    public int addWindowAnimations() {
         return 0;
     }
 
-    public boolean isFullScreen(){
+    public boolean isFullScreen() {
         return false;
     }
 
-    public LinearLayout.LayoutParams setParams(){
+    public LinearLayout.LayoutParams setParams() {
         return null;
     }
 
@@ -68,27 +70,26 @@ public abstract class BaseDialog extends Dialog {
      */
     public abstract void onInit();
 
-    public void initViewBefore(){}
+    public void initViewBefore() {
+    }
 
     /**
      * 说明：设置自定义布局
+     *
      * @return
      */
     public abstract int setDialogView();
 
     /**
      * 说明：获取自定义布局
+     *
      * @return
      */
-    public View getDialogView(){
+    public View getDialogView() {
         return mDialogView;
     }
 
-    public void isSystemAlert(){
-        getWindow().setType(WindowManager.LayoutParams.TYPE_SYSTEM_ALERT);
-    }
-
-    public void onDestroy(){
+    public void onDestroy() {
         this.mContext = null;
     }
 }

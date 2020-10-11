@@ -11,7 +11,6 @@
 
     <TextView
         android:id="@+id/tv_title_smart"
-        style="@style/OneText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
@@ -20,7 +19,6 @@
 
     <TextView
         android:id="@+id/tv_desc_smart"
-        style="@style/TwoText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginRight="@dimen/dp_10"
@@ -29,6 +27,5 @@
     <ImageView
         android:id="@+id/iv_arrow_smart"
         android:layout_width="12dp"
-        android:layout_height="12dp"
-        android:src="@drawable/ic_smart_arrow_right" />
+        android:layout_height="12dp" />
 </LinearLayout>

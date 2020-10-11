@@ -2,13 +2,13 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/rl_top_notaria_mine_title"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/aima_smart_title_bar_height"
+    android:layout_height="@dimen/common_cus_title_height"
     android:background="@drawable/ic_hexin_mine_bg_1">
 
     <RelativeLayout
         android:id="@+id/rl_top_notaria_common_setting"
         android:layout_width="55dp"
-        android:layout_height="@dimen/aima_smart_title_bar_height"
+        android:layout_height="@dimen/common_cus_title_height"
         android:layout_alignParentLeft="true"
         android:visibility="gone">
 
@@ -20,8 +20,7 @@
             android:paddingLeft="@dimen/dp_15"
             android:paddingTop="@dimen/dp_12"
             android:paddingRight="@dimen/dp_15"
-            android:paddingBottom="@dimen/dp_12"
-            android:src="@drawable/ic_wy_top_setting" />
+            android:paddingBottom="@dimen/dp_12" />
     </RelativeLayout>
 
     <LinearLayout
@@ -47,7 +46,7 @@
     <RelativeLayout
         android:id="@+id/rl_top_title_common_close"
         android:layout_width="55dp"
-        android:layout_height="@dimen/aima_smart_title_bar_height"
+        android:layout_height="@dimen/common_cus_title_height"
         android:layout_alignParentRight="true">
 
         <ImageView

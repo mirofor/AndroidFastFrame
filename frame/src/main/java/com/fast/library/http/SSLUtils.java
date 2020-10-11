@@ -13,6 +13,7 @@ import javax.net.ssl.X509TrustManager;
 public class SSLUtils {
 
     private static final HostnameVerifier HOSTNAME_VERIFIER = new HostnameVerifier() {
+        @Override
         public boolean verify(String hostname, SSLSession session) {
             return true;
         }
@@ -43,8 +44,9 @@ public class SSLUtils {
     }
 
     public static SSLSocketFactory fixSSLLowerThanLollipop(SSLSocketFactory socketFactory) {
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP && !(socketFactory instanceof CompatSSLSocketFactory))
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP && !(socketFactory instanceof CompatSSLSocketFactory)) {
             socketFactory = new CompatSSLSocketFactory(socketFactory);
+        }
         return socketFactory;
     }
 
