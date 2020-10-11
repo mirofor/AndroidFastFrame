@@ -1,16 +1,13 @@
 package com.demo.frame.common.fragment;
 
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import com.demo.frame.common.ActivityBindFragment;
 import com.fast.frame.interrface.IFragmentTitleBar;
 
-import androidx.appcompat.widget.Toolbar;
-
 /**
  * 说明：FragmentBind
- *
- * @author xiaomi
  */
 public abstract class FragmentBind extends FragmentCommon implements IFragmentTitleBar {
 
@@ -31,7 +28,6 @@ public abstract class FragmentBind extends FragmentCommon implements IFragmentTi
     public int bindTitleBar() {
         return 0;
     }
-
     @Override
     public boolean isCustomCancelAction() {
         return false;

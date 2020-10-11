@@ -2,6 +2,9 @@ package com.fast.library.tools;
 
 import android.app.Activity;
 import android.app.Dialog;
+import android.graphics.drawable.Drawable;
+import android.support.annotation.DrawableRes;
+import android.support.annotation.Size;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -11,8 +14,6 @@ import android.widget.TextView;
 
 import com.fast.library.utils.StringUtils;
 import com.fast.library.utils.UIUtils;
-
-import androidx.annotation.Size;
 
 /**
  * 说明：View的帮助类，赋值等功能
@@ -90,7 +91,32 @@ public final class ViewTools {
         setText(v,String.format(UIUtils.getString(resFormat),obj));
     }
 
-
+    /**
+     * 给TextView设置图片
+     * @param tv
+     * @param drawable
+     * @param direction
+     */
+    public static void setTextDrawable(TextView tv, @DrawableRes int drawable,int direction){
+        if (tv != null){
+            Drawable d = tv.getContext().getResources().getDrawable(drawable);
+            d.setBounds(0,0,d.getMinimumWidth(),d.getMinimumHeight());
+            switch (direction){
+                case Direction.Left:
+                    tv.setCompoundDrawables(d,null,null,null);
+                    break;
+                case Direction.Right:
+                    tv.setCompoundDrawables(null,null,d,null);
+                    break;
+                case Direction.Top:
+                    tv.setCompoundDrawables(null,d,null,null);
+                    break;
+                case Direction.Bottom:
+                    tv.setCompoundDrawables(null,null,null,d);
+                    break;
+            }
+        }
+    }
 
     /**
      * 说明：设置View为GONE
@@ -215,7 +241,7 @@ public final class ViewTools {
      * @return
      */
     public static <T extends View> T find(View view, int id, View.OnClickListener listener) {
-        T t = view.findViewById(id);
+        T t = (T) view.findViewById(id);
         if (t != null && listener != null){
             t.setOnClickListener(listener);
         }

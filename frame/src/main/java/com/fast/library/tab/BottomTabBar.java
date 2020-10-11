@@ -44,11 +44,11 @@ public class BottomTabBar extends LinearLayout implements ViewPager.OnPageChange
     private boolean isShowDivider = false;
     private int dividerBackgroundColor = Color.parseColor("#CCCCCC");
     private int tabBarBackgroundColor = Color.parseColor("#FFFFFF");
-    private List<String> tabIdList = new ArrayList<>();
-    private List<Class> FragmentList = new ArrayList<>();
-    private List<Fragment> mFragments = new ArrayList<>();
-    private List<Drawable> selectdrawableList = new ArrayList<>();
-    private List<Drawable> unselectdrawableList = new ArrayList<>();
+    private List<String> tabIdList = new ArrayList();
+    private List<Class> FragmentList = new ArrayList();
+    private List<Fragment> mFragments = new ArrayList();
+    private List<Drawable> selectdrawableList = new ArrayList();
+    private List<Drawable> unselectdrawableList = new ArrayList();
     private ViewPager mViewpager;
     private FragmentManager mFragmentManager;
     private LinearLayout mTabContent;

@@ -3,15 +3,11 @@ package com.fast.frame.dialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.os.Parcelable;
+import android.support.annotation.LayoutRes;
+import android.support.annotation.Nullable;
 
 import com.fast.frame.interrface.OnDismissListener;
 
-import androidx.annotation.LayoutRes;
-import androidx.annotation.Nullable;
-
-/**
- * @author xiaomi
- */
 public class NiceDialog extends BaseNiceDialog {
     private ViewConvertListener convertListener;
     private OnDismissListener onDismissListener;

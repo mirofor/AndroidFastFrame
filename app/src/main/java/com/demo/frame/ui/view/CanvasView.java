@@ -170,9 +170,8 @@ public class CanvasView extends View {
         } else if (w < h && h > hh) {//如果高度高的话根据宽度固定大小缩放
             be = (int) (newOpts.outHeight / hh);
         }
-        if (be <= 0) {
+        if (be <= 0)
             be = 1;
-        }
         newOpts.inSampleSize = be; // 设置缩放比例
         // newOpts.inPreferredConfig = Config.RGB_565;//降低图片从ARGB888到RGB565
 

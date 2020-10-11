@@ -20,7 +20,6 @@ public class PayHandler extends Handler {
     public PayHandler() {
     }
 
-    @Override
     public void handleMessage(Message msg) {
         switch (msg.what) {
             case SDK_PAY_FLAG: {

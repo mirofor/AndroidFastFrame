@@ -1,8 +1,6 @@
 package com.fast.library.ui;
 
-
 import android.app.Activity;
-
 import java.lang.ref.WeakReference;
 import java.util.Stack;
 

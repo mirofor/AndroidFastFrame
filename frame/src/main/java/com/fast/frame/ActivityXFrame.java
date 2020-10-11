@@ -1,8 +1,7 @@
 package com.fast.frame;
 
 import android.os.Bundle;
-
-import androidx.loader.content.Loader;
+import android.support.v4.content.Loader;
 
 /**
  * 说明：ActivityXFrame

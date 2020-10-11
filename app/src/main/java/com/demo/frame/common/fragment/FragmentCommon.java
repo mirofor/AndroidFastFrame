@@ -5,7 +5,6 @@ import com.fast.library.HttpUtils;
 
 /**
  * 说明：FragmentCommon
- * @author xiaomi
  */
 public abstract class FragmentCommon extends FragmentFrame {
 

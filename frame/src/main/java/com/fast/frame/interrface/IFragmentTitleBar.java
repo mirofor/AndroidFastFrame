@@ -1,8 +1,7 @@
 package com.fast.frame.interrface;
 
+import android.support.v7.widget.Toolbar;
 import android.view.View;
-
-import androidx.appcompat.widget.Toolbar;
 
 /**
  * 说明：IFragmentTitleBar

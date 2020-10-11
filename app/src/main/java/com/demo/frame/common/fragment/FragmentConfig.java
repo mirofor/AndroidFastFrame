@@ -7,7 +7,6 @@ import com.demo.frame.common.ActivityBindFragment;
 
 /**
  * 说明：FragmentConfig
- * @author xiaomi
  */
 public class FragmentConfig{
 
@@ -16,6 +15,14 @@ public class FragmentConfig{
     public static String URL = "URL";
     public static String URL_CONTENT = "URL_CONTENT";
     public static String USE_RECEIVED_TITLE = "USE_RECEIVED_TITLE";
+
+    public static String ORDER_FILE_ID = "ORDER_FILE_ID"; // 文件id
+    public static String SIGN_USER_ID = "SIGN_USER_ID"; // 签署人user_id
+    public static String SIGN_RECORD_ID = "SIGN_RECORD_ID"; // 签署sign表记录id
+    public static String SIGN_FILE_DETAIL = "SIGN_FILE_DETAIL"; // 签署文件详情
+    public static String SIGN_IS_PREVIEW = "SIGN_IS_PREVIEW"; // 只预览
+    public static String SIGN_FILE_URL = "SIGN_FILE_URL";// 签署文件地址
+    public static String IS_FROM_CUSTOM_SIGNN = "IS_FROM_CUSTOM_SIGNN"; // 是否从手签版页面进入
 
     private FragmentConfig(){}
 

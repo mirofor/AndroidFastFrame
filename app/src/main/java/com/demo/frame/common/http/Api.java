@@ -7,7 +7,7 @@ import com.fast.library.utils.GsonUtils;
 import com.fast.library.utils.LogUtils;
 import com.fast.library.utils.StringUtils;
 import com.fast.library.utils.ToolUtils;
-import com.demo.frame.GlobalApp;
+import com.demo.frame.BikeApp;
 import com.demo.frame.utils.XContant;
 import com.vondear.rxtool.view.RxToast;
 
@@ -23,7 +23,7 @@ public class Api {
     }
 
     public static String getApi() {
-        if (GlobalApp.APP_DUBUG) { //测试环境
+        if (BikeApp.APP_DUBUG) { //测试环境
             return "http://tech.com";
         }
         return "http://techl.com";
