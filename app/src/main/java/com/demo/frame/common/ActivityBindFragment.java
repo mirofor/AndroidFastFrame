@@ -1,6 +1,7 @@
 package com.demo.frame.common;
 
 import android.content.Intent;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import com.demo.frame.R;
@@ -9,11 +10,8 @@ import com.demo.frame.common.fragment.FragmentConfig;
 import com.demo.frame.ui.ActivityCommon;
 import com.fast.library.ui.ContentView;
 
-import androidx.appcompat.widget.Toolbar;
-
 /**
  * 说明：ActivityBindFragment
- * @author xiaomi
  */
 @ContentView(R.layout.activity_bind_fragment)
 public class ActivityBindFragment extends ActivityCommon {

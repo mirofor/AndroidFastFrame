@@ -14,7 +14,6 @@ import java.io.ByteArrayOutputStream;
 
 /**
  * 说明：位图工具
- * @author xiaomi
  */
 public class BitmapUtils {
 

@@ -23,7 +23,7 @@
             android:layout_height="?attr/actionBarSize"
             android:background="@color/frame_colorAccent">
 
-            <androidx.appcompat.widget.Toolbar
+            <android.support.v7.widget.Toolbar
                 android:id="@+id/id_tool_bar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"

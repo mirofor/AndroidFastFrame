@@ -9,9 +9,6 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
-/**
- * @author xiaomi
- */
 public class FrameApp extends Application{
 
     private HttpConfig.Builder mHttpBuilder;

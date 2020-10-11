@@ -5,13 +5,14 @@ import android.app.NotificationManager;
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Build;
+import android.support.multidex.MultiDex;
 
 import com.fast.frame.FrameApp;
 import com.fast.library.http.HttpConfig;
 import com.vondear.rxtool.RxTool;
 
 
-public class GlobalApp extends FrameApp {
+public class BikeApp extends FrameApp {
     public static boolean APP_DUBUG = false;
 
     @Override
@@ -47,7 +48,7 @@ public class GlobalApp extends FrameApp {
 
     @Override
     protected HttpConfig.Builder setHttpBuilder() {
-        HttpConfig.Builder builder = new HttpConfig.Builder();
+        HttpConfig.Builder builder = new HttpConfig.Builder();//配置HttpConfig
         builder.setTrustAll(true);
         builder.setDebug(BuildConfig.AppDebug);
         return builder;
@@ -56,7 +57,7 @@ public class GlobalApp extends FrameApp {
     @Override
     protected void attachBaseContext(Context context) {
         super.attachBaseContext(context);
-//        MultiDex.install(this);
+        MultiDex.install(this);
     }
 
 }

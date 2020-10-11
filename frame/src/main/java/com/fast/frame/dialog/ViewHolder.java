@@ -4,9 +4,6 @@ import android.util.SparseArray;
 import android.view.View;
 import android.widget.TextView;
 
-/**
- * @author xiaomi
- */
 public class ViewHolder {
 
     private SparseArray<View> views;

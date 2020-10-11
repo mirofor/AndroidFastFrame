@@ -1,5 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <declare-styleable name="BannerView">
+        <attr name="canLoop" format="boolean"></attr>
+    </declare-styleable>
+    <declare-styleable name="SwitchButton">
+        <attr name="thumbDrawable" format="reference" />
+        <attr name="thumbColor" format="color|reference" />
+        <attr name="thumbMargin" format="dimension|reference" />
+        <attr name="thumbMarginTop" format="dimension|reference" />
+        <attr name="thumbMarginLeft" format="dimension|reference" />
+        <attr name="thumbMarginRight" format="dimension|reference" />
+        <attr name="thumbMarginBottom" format="dimension|reference" />
+        <attr name="thumbWidth" format="dimension|reference" />
+        <attr name="thumbHeight" format="dimension|reference" />
+        <attr name="thumbRadius" format="dimension|reference" />
+        <attr name="backRadius" format="dimension|reference" />
+        <attr name="backColor" format="color|reference" />
+        <attr name="backDrawable" format="reference" />
+        <attr name="fadeBack" format="boolean" />
+        <attr name="backMeasureRatio" format="float" />
+        <attr name="animationDuration" format="integer" />
+        <attr name="tintColor" format="color|reference" />
+    </declare-styleable>
     <declare-styleable name="Frame_RoundButton">
         <!-- 文字正常颜色 -->
         <attr name="rbTextColor" format="color" />
@@ -30,6 +52,20 @@
         <attr name="rbLeftBottomCorner" format="dimension" />
         <!-- 右下角圆角-->
         <attr name="rbRightBottomCorner" format="dimension" />
+    </declare-styleable>
+    <declare-styleable name="Frame_RCRelativeLayout">
+        <!--圆形-->
+        <attr name="round_as_circle" format="boolean" />
+        <!--全部圆角半径-->
+        <attr name="round_corner" format="integer|dimension" />
+        <!--针对各个角的半径-->
+        <attr name="round_corner_top_left" format="integer|dimension" />
+        <attr name="round_corner_top_right" format="integer|dimension" />
+        <attr name="round_corner_bottom_left" format="integer|dimension" />
+        <attr name="round_corner_bottom_right" format="integer|dimension" />
+        <!--描边颜色／半径-->
+        <attr name="stroke_color" format="color|reference" />
+        <attr name="stroke_width" format="integer|dimension" />
     </declare-styleable>
 
     <!--底部Tab菜单-->

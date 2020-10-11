@@ -6,9 +6,6 @@ import com.fast.library.utils.FrameConstant;
 
 import java.io.File;
 
-/**
- * @author xiaomi
- */
 public class FrameCrashHandler extends CrashHandler {
 
     private static FrameCrashHandler crashHandler = new FrameCrashHandler();
@@ -24,7 +21,7 @@ public class FrameCrashHandler extends CrashHandler {
 
     @Override
     public String setFileName() {
-        return "frameCrash_" + DateUtils.getNowTime(DateUtils.FORMAT_YYYY_MM_DD_HH_MM_SS_4) + ".txt";
+        return "crash_" + DateUtils.getNowTime(DateUtils.FORMAT_YYYY_MM_DD_HH_MM_SS_4) + ".txt";
     }
 
     @Override

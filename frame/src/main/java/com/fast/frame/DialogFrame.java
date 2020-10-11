@@ -1,11 +1,10 @@
 package com.fast.frame;
 
+import android.support.v7.app.AppCompatActivity;
 import com.fast.frame.dialog.base.FrameConfirmDialog;
 import com.fast.frame.dialog.base.FrameLoadingDialog;
 import com.fast.frame.interrface.ILoadingDialog;
 import com.fast.frame.interrface.OnConfirmListener;
-
-import androidx.appcompat.app.AppCompatActivity;
 
 /**
  * 说明：DialogFrame
@@ -18,7 +17,7 @@ public class DialogFrame {
         return FrameLoadingDialog.newInstance();
     }
 
-    public static void showConfirmDialog(AppCompatActivity activity, String message,
+    public static void showConfirmDialog(AppCompatActivity activity,String message,
                                          OnConfirmListener listener){
         showConfirmDialog(activity,null,message,null,null,listener);
     }

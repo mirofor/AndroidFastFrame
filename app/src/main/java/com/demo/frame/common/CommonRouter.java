@@ -7,7 +7,6 @@ import com.fast.frame.ActivityFrame;
 
 /**
  * 说明：CommonRouter
- * @author xiaomi
  */
 public class CommonRouter {
 
