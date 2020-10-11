@@ -7,16 +7,17 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Build;
-import android.support.annotation.ColorRes;
-import android.support.v7.widget.AppCompatTextView;
 import android.util.AttributeSet;
 
 import com.fast.library.R;
 
+import androidx.annotation.ColorRes;
+import androidx.appcompat.widget.AppCompatTextView;
+
 /**
  * 说明：RoundButton
  */
-public class RoundButton extends AppCompatTextView{
+public class RoundButton extends AppCompatTextView {
 
     private ColorStateList solidColor,pressedColor,disEnableColor;
     private RoundDrawable rd;

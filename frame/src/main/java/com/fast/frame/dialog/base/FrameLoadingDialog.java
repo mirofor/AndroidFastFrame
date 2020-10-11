@@ -12,6 +12,8 @@ import androidx.fragment.app.FragmentManager;
 
 /**
  * 说明：FrameLoadingDialog
+ *
+ * @author xiaomi
  */
 public class FrameLoadingDialog extends BaseNiceDialog implements ILoadingDialog {
 
@@ -26,7 +28,7 @@ public class FrameLoadingDialog extends BaseNiceDialog implements ILoadingDialog
     @Override
     public ILoadingDialog setText(String text) {
         loadingText = text;
-        if (StringUtils.isEmpty(loadingText)){
+        if (StringUtils.isEmpty(loadingText)) {
             loadingText = UIUtils.getString(R.string.def_loading_text);
         }
         return this;
@@ -62,7 +64,7 @@ public class FrameLoadingDialog extends BaseNiceDialog implements ILoadingDialog
 
     @Override
     public void convertView(ViewHolder holder, BaseNiceDialog dialog) {
-        holder.setText(R.id.tv_loading_text,loadingText);
+        holder.setText(R.id.tv_loading_text, loadingText);
     }
 
 }

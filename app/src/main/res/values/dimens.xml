@@ -12,15 +12,10 @@
     <dimen name="text_size_normal">16sp</dimen>
     <dimen name="text_size_big">18sp</dimen>
 
-    <dimen name="aima_smart_et_height">45dp</dimen>
-    <dimen name="aima_smart_edit_text_height">55dp</dimen>
-
-    <dimen name="aima_smart_title_bar_height">55dp</dimen>
-    <dimen name="aima_smart_bottom_bar_height">40dp</dimen>
-
-
     <dimen name="content_padding_half">8dp</dimen>
     <dimen name="drawer_text_size">15sp</dimen>
-    <dimen name="drawer_text_padding">8dp</dimen>s
+    <dimen name="drawer_text_padding">8dp</dimen>
+
+    <dimen name="common_cus_title_height">55dp</dimen>
 
 </resources>

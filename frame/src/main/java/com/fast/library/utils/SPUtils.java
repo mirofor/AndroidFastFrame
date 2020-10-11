@@ -34,7 +34,7 @@ public final class SPUtils {
         if (spMap.get(fileName) == null) {
             spUtils = new SPUtils(fileName);
             spMap.put(fileName, FastFrame.getApplication().getSharedPreferences(fileName,
-                    Context.MODE_MULTI_PROCESS));
+                    Context.MODE_PRIVATE));
             spUtilsMap.put(fileName,spUtils);
         }else {
             spUtils = spUtilsMap.get(fileName);

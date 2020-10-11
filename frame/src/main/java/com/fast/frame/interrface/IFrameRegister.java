@@ -2,6 +2,7 @@ package com.fast.frame.interrface;
 
 /**
  * 说明：IFrameRegister
+ * @author xiaomi
  */
 public interface IFrameRegister {
     /**

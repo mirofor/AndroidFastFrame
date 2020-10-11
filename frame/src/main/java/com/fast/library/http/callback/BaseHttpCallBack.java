@@ -5,6 +5,7 @@ import okhttp3.Response;
 
 /**
  * 说明：HttpCallBack基类
+ * @author xiaomi
  */
 public abstract class BaseHttpCallBack<T> {
 

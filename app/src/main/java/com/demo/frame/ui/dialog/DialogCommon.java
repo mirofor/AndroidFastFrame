@@ -1,12 +1,12 @@
 package com.demo.frame.ui.dialog;
 
 import android.content.Context;
-import android.support.annotation.StringRes;
 
 import com.demo.frame.R;
 import com.fast.library.dialog.BaseDialog;
 import com.fast.library.ui.ToastUtils;
 
+import androidx.annotation.StringRes;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 

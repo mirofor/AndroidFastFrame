@@ -21,11 +21,9 @@
             android:orientation="vertical">
 
             <TextView
-                style="@style/H1Text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center|left"
-                android:text="@string/login_title_tip" />
+                android:gravity="center|left" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -36,8 +34,7 @@
 
                 <ImageView
                     android:layout_width="25dp"
-                    android:layout_height="26dp"
-                    android:background="@drawable/ic_wy_login_username" />
+                    android:layout_height="26dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -54,7 +51,6 @@
                     android:layout_height="match_parent"
                     android:background="@null"
                     android:gravity="center|left"
-                    android:hint="@string/login_tip_input_mobile"
                     android:inputType="number"
                     android:maxLength="11"
                     android:paddingLeft="@dimen/dp_10"
@@ -80,8 +76,7 @@
 
                 <ImageView
                     android:layout_width="25dp"
-                    android:layout_height="26dp"
-                    android:background="@drawable/ic_wy_login_password" />
+                    android:layout_height="26dp"/>
 
                 <EditText
                     android:id="@+id/et_smart_login_mobile_code"
@@ -90,7 +85,7 @@
                     android:layout_weight="1"
                     android:background="@null"
                     android:gravity="center|left"
-                    android:hint="@string/login_tip_input_smscode"
+                    android:hint="请输入验证码"
                     android:inputType="number"
                     android:maxLength="11"
                     android:paddingLeft="@dimen/dp_10"
@@ -106,7 +101,7 @@
                     android:layout_gravity="right|center"
                     android:background="@drawable/smart_btn_send_code_stroke"
                     android:gravity="center"
-                    android:text="@string/login_tip_send_smscode"
+                    android:text="发送验证码"
                     android:textColor="@color/colorAccent"
                     android:textSize="@dimen/text_size_15" />
             </LinearLayout>
@@ -160,8 +155,8 @@
             <TextView
                 android:id="@+id/tv_smart_login_btn"
                 style="@style/StyleBtn"
-                android:layout_marginTop="@dimen/dp_50"
-                android:text="@string/login_btn_sign_in" />
+                android:text="登录"
+                android:layout_marginTop="@dimen/dp_50" />
         </LinearLayout>
     </LinearLayout>
 

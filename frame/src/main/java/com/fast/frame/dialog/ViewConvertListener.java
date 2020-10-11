@@ -3,6 +3,9 @@ package com.fast.frame.dialog;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+/**
+ * @author xiaomi
+ */
 public class ViewConvertListener implements Parcelable {
     protected ViewConvertListener() {
     }

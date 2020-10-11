@@ -24,7 +24,7 @@ public abstract class ActivityBase<Presenter extends MvpPresenter> extends Activ
 //    public void onCustomToolBar(Toolbar toolbar) {
 //        super.onCustomToolBar(toolbar);
 //        toolbar.setNavigationIcon(R.drawable.lefta);
-//    }
+//}
 
     @Override
     public String getHttpTaskKey() {
