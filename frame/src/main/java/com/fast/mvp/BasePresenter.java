@@ -5,6 +5,7 @@ import com.fast.mvp.presenter.MvpPresenter;
 
 /**
  * 说明：BasePresenter
+ * @author xiaomi
  */
 public abstract class BasePresenter<T extends BaseView> implements MvpPresenter<T> {
 

@@ -8,8 +8,8 @@ android {
     defaultConfig {
         minSdkVersion Integer.parseInt(System.properties['minSdkVersion'])
         targetSdkVersion Integer.parseInt(System.properties['targetSdkVersion'])
-        versionCode 3
-        versionName "1.0.3"
+        versionCode 4
+        versionName "1.0.4"
         javaCompileOptions {
             annotationProcessorOptions {
                 includeCompileClasspath = true
@@ -86,7 +86,7 @@ publish {
     userOrg = 'brightmi'
     groupId = 'com.fast.frame'
     artifactId = 'xFastFrame'
-    publishVersion = '1.0.3'
+    publishVersion = '1.0.4'
     desc = 'A base Android seed project ,include common activities,uitls,fragment etc。'
     website = 'https://github.com/Android-MI/AndroidFastFrame.git'
     dryRun = false

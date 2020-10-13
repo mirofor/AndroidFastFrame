@@ -10,8 +10,7 @@
         android:id="@+id/icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:scaleType="centerInside"
-        android:src="@drawable/fast_frame_icon_face_smile" />
+        android:scaleType="centerInside"/>
 
     <TextView
         android:id="@+id/description"
