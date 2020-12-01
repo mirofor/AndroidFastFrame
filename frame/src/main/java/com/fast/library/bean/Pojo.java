@@ -5,6 +5,7 @@ import com.fast.library.utils.GsonUtils;
 
 /**
  * 说明：Bean继承该类
+ * @author xiaomi
  */
 public class Pojo implements I_POJO {
     @Override

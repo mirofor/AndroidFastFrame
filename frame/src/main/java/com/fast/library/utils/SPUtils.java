@@ -11,8 +11,8 @@ import java.util.Map;
 
 /**
  * 说明：SharedPreferences操作工具类
+ * @author xiaomi
  */
-
 public final class SPUtils {
 
     private static Map<String,SharedPreferences> spMap = new HashMap<>();
@@ -34,7 +34,7 @@ public final class SPUtils {
         if (spMap.get(fileName) == null) {
             spUtils = new SPUtils(fileName);
             spMap.put(fileName, FastFrame.getApplication().getSharedPreferences(fileName,
-                    Context.MODE_MULTI_PROCESS));
+                    Context.MODE_PRIVATE));
             spUtilsMap.put(fileName,spUtils);
         }else {
             spUtils = spUtilsMap.get(fileName);

@@ -2,13 +2,17 @@ package com.fast.library.utils;
 
 import android.text.TextUtils;
 import android.util.Log;
+
 import com.fast.library.FastFrame;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 /**
  * 说明：日志工具类，【DEBUG为true输出日志，为false不输出日志】
+ *
+ * @author xiaomi
  */
 
 public class LogUtils {
@@ -195,6 +199,8 @@ public class LogUtils {
                 printLine(tag, false);
             }
             break;
+            default:
+                break;
         }
 
     }

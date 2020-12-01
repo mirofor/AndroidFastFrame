@@ -2,9 +2,12 @@ package com.demo.frame.ui;
 
 import android.os.Build;
 
+import com.demo.frame.R;
 import com.fast.frame.ActivityFrame;
 import com.fast.library.HttpUtils;
 import com.fast.mvp.presenter.MvpPresenter;
+
+import androidx.appcompat.widget.Toolbar;
 
 /**
  * 说明：ActivityBase
@@ -20,11 +23,11 @@ public abstract class ActivityBase<Presenter extends MvpPresenter> extends Activ
         HttpUtils.cancelKey(getHttpTaskKey());
     }
 
-//    @Override
-//    public void onCustomToolBar(Toolbar toolbar) {
-//        super.onCustomToolBar(toolbar);
-//        toolbar.setNavigationIcon(R.drawable.lefta);
-//    }
+    @Override
+    public void onCustomToolBar(Toolbar toolbar) {
+        super.onCustomToolBar(toolbar);
+        toolbar.setNavigationIcon(R.drawable.lefta);
+    }
 
     @Override
     public String getHttpTaskKey() {

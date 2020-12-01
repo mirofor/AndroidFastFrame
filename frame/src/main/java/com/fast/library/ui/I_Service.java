@@ -5,12 +5,12 @@ package com.fast.library.ui;
  */
 public interface I_Service {
     /**
-     * 注册广播
+     * 注册服务
      */
     void registerService();
 
     /**
-     * 解除注册广播
+     * 解除服务
      */
     void unRegisterService();
 }

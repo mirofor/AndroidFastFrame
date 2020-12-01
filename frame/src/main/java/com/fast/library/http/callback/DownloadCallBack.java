@@ -4,6 +4,7 @@ import java.io.File;
 
 /**
  * 说明：下载文件回调
+ * @author xiaomi
  */
 public abstract class DownloadCallBack {
 

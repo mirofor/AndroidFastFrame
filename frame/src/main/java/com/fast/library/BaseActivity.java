@@ -1,23 +1,27 @@
 package com.fast.library;
 
 import android.content.Intent;
-import android.support.v4.app.LoaderManager;
-import android.support.v4.content.Loader;
 import android.view.View;
 
 import com.fast.library.http.HttpTaskKey;
 import com.fast.library.ui.AbstractActivity;
-import com.fast.library.ui.ToastUtils;
+import com.fast.library.utils.ToastUtils;
 import com.fast.mvp.presenter.MvpPresenter;
+
+import androidx.loader.app.LoaderManager;
+import androidx.loader.content.Loader;
+
 
 /**
  * 说明：Activity基类
+ * @author xiaomi
  */
-public abstract class BaseActivity<Presenter extends MvpPresenter> extends AbstractActivity implements HttpTaskKey,LoaderManager.LoaderCallbacks<Presenter> {
+public abstract class BaseActivity<Presenter extends MvpPresenter> extends AbstractActivity implements HttpTaskKey, LoaderManager.LoaderCallbacks<Presenter> {
 
     private Presenter mPresenter;
 
-    protected final String HTTP_TASK_KEY = "key_"+hashCode();
+    protected final String HTTP_TASK_KEY = "key_" + hashCode();
+
     @Override
     public String getHttpTaskKey() {
         return HTTP_TASK_KEY;
@@ -29,19 +33,23 @@ public abstract class BaseActivity<Presenter extends MvpPresenter> extends Abstr
 
     /***************************************************************************************/
 
-    public void shortToast(int res){
+    public void shortToast(int res) {
         ToastUtils.get().shortToast(res);
     }
-    public void shortToast(String res){
+
+    public void shortToast(String res) {
         ToastUtils.get().shortToast(res);
     }
-    public void longToast(String res){
+
+    public void longToast(String res) {
         ToastUtils.get().longToast(res);
     }
-    public void longToast(int res){
+
+    public void longToast(int res) {
         ToastUtils.get().longToast(res);
     }
-    public void cancelToast(){
+
+    public void cancelToast() {
         ToastUtils.get().cancelToast();
     }
 
@@ -56,14 +64,16 @@ public abstract class BaseActivity<Presenter extends MvpPresenter> extends Abstr
 
     public abstract int createLoaderID();
 
-    public Presenter getPresenter(){
+    public Presenter getPresenter() {
         return mPresenter;
     }
+
 
     @Override
     public void onLoadFinished(Loader<Presenter> loader, Presenter data) {
         mPresenter = data;
     }
+
 
     @Override
     public void onLoaderReset(Loader<Presenter> loader) {

@@ -8,9 +8,9 @@ import com.fast.library.ui.ContentView;
 import com.fast.library.view.RoundButton;
 import com.vondear.rxtool.view.RxToast;
 
+import androidx.annotation.Nullable;
 import butterknife.BindView;
 import butterknife.OnClick;
-import io.reactivex.annotations.Nullable;
 
 @ContentView(R.layout.activity_smart_start_login)
 public class ActivityStartLogin extends ActivityCommon {
@@ -19,6 +19,7 @@ public class ActivityStartLogin extends ActivityCommon {
     @BindView(R.id.btn_start_login)
     RoundButton mBtnLogin;
 
+    @Override
     @OnClick({R.id.btn_start_login, R.id.btn_start_register})
     public void onClick(View view) {
         switch (view.getId()) {
@@ -39,6 +40,5 @@ public class ActivityStartLogin extends ActivityCommon {
     public void onBackPressed() {
         finish();
     }
-
 
 }

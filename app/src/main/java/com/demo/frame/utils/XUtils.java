@@ -8,19 +8,11 @@ import android.content.DialogInterface;
 import android.os.Build;
 import android.os.Vibrator;
 import android.text.TextUtils;
-import android.view.View;
 
-import com.demo.frame.R;
 import com.demo.frame.ui.dialog.DialogHelper;
 import com.fast.frame.ActivityFrame;
 import com.fast.library.FastFrame;
-import com.fast.library.tools.TaskEngine;
-import com.fast.library.utils.AndroidInfoUtils;
-import com.fast.library.utils.KeyBoardUtils;
-import com.fast.library.utils.NumberUtils;
 import com.fast.library.utils.StringUtils;
-import com.fast.library.utils.ToolUtils;
-import com.vondear.rxtool.RxEncryptTool;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -29,55 +21,13 @@ import java.io.IOException;
 import java.util.Calendar;
 import java.util.List;
 import java.util.Locale;
-import java.util.TimerTask;
 
 import static android.content.Context.VIBRATOR_SERVICE;
-import static com.demo.frame.BikeApp.APP_DUBUG;
 
 public class XUtils {
-    /**
-     * 延迟显示输入法
-     */
-    public static void showSoftInput(final ActivityFrame activityFrame, final View view) {
-        TaskEngine.getInstance().schedule(new TimerTask() {
-            @Override
-            public void run() {
-                if (ToolUtils.isNotFinish(activityFrame)) {
-                    activityFrame.runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            KeyBoardUtils.showSoftInput(view);
-                        }
-                    });
-                }
-            }
-        }, 300);
-    }
-
     public static void vibrate(ActivityFrame activityFrame) {
         Vibrator vibrator = (Vibrator) activityFrame.getSystemService(VIBRATOR_SERVICE);
         vibrator.vibrate(200);
-    }
-
-    /**
-     * @return
-     */
-    public static String getUniqimei() {
-        if (APP_DUBUG) {
-            return "debug";
-        } else {
-            return AndroidInfoUtils.getTerminalCode();
-        }
-    }
-
-    public static boolean isAimaBike(String text) {
-        if (StringUtils.isNotEmpty(text)) {
-            if (text.length() == 10 && text.startsWith("E")) {
-                return true;
-            }
-            return false;
-        }
-        return false;
     }
 
 
@@ -223,16 +173,6 @@ public class XUtils {
     }
 
 
-    public final static String getNormalDistance(int meter) {
-        String disStr;
-        if (meter > 1000) {
-            disStr = String.valueOf(NumberUtils.saveDecimal(meter * 1.0f / 1000, 2)) + "公里";
-        } else {
-            disStr = meter + "米";
-        }
-        return disStr;
-    }
-
     public static boolean isForeground(Activity activity) {
         return isForeground(activity, activity.getClass().getName());
     }
@@ -293,71 +233,10 @@ public class XUtils {
         return nums;
     }
 
-    /**
-     * 电压数字图片
-     *
-     * @param showNum
-     * @return
-     */
-    public static int parseVoltageImg(int showNum) {
-        switch (showNum) {
-            case 0:
-                return R.drawable.num_0;
-            case 1:
-                return R.drawable.num_1;
-            case 2:
-                return R.drawable.num_2;
-            case 3:
-                return R.drawable.num_3;
-            case 4:
-                return R.drawable.num_4;
-            case 5:
-                return R.drawable.num_5;
-            case 6:
-                return R.drawable.num_6;
-            case 7:
-                return R.drawable.num_7;
-            case 8:
-                return R.drawable.num_8;
-            case 9:
-                return R.drawable.num_9;
-            default:
-                return R.drawable.num_0;
-        }
-    }
-
-    /**
-     * 信号图片
-     *
-     * @param showNum
-     * @return
-     */
-    public static int parseSingleImg(int showNum) {
-        switch (showNum) {
-            case 0:
-                return R.drawable.signal_1;
-            case 1:
-                return R.drawable.signal_1;
-            case 2:
-                return R.drawable.signal_2;
-            case 3:
-                return R.drawable.signal_3;
-            case 4:
-                return R.drawable.signal_4;
-            case 5:
-                return R.drawable.signal_5;
-            default:
-                return R.drawable.signal_1;
-        }
-    }
 
     public static File getSaveFile(Context context) {
         File file = new File(context.getFilesDir(), "pic.jpg");
         return file;
     }
 
-    public static String encyptPassword(String mobile, String password) {
-        String temp =mobile + "+" + password + "+" + XContant.ENCYPT_KEY;
-        return RxEncryptTool.encryptSHA256ToString(temp);
-    }
 }

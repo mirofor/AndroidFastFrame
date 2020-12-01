@@ -5,6 +5,7 @@ import org.json.JSONObject;
 
 /**
  * 说明：返回JSON对象
+ * @author xiaomi
  */
 @Deprecated
 public abstract class JsonHttpCallBack extends StringCallBack {

@@ -1,8 +1,6 @@
 package com.fast.frame.helper;
 
 import android.content.Context;
-import android.support.annotation.LayoutRes;
-import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,8 +8,12 @@ import android.widget.LinearLayout;
 
 import com.fast.library.R;
 
+import androidx.annotation.LayoutRes;
+import androidx.appcompat.widget.Toolbar;
+
 /**
  * 说明：ToolbarHelper
+ * @author xiaomi
  */
 public class ToolbarHelper {
     //上下文

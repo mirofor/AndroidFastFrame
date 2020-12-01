@@ -50,7 +50,7 @@
 
         <activity
             android:name="com.demo.frame.ui.activity.ActivityStart"
-            android:screenOrientation="portrait">
+            android:screenOrientation="fullSensor">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -59,10 +59,10 @@
         <activity
             android:name="com.demo.frame.ui.activity.ActivityStartLogin"
             android:configChanges="orientation|keyboardHidden|screenSize"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="fullSensor" />
         <activity
             android:name="com.demo.frame.common.ActivityBindFragment"
-            android:screenOrientation="portrait"
+            android:screenOrientation="fullSensor"
             android:theme="@style/ThemeBindFragment" />
 
     </application>

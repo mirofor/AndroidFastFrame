@@ -9,6 +9,9 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
+/**
+ * @author xiaomi
+ */
 public class FrameApp extends Application{
 
     private HttpConfig.Builder mHttpBuilder;
@@ -22,11 +25,11 @@ public class FrameApp extends Application{
             mHttpBuilder.build().init();
         }
         FrameCrashHandler.getInstance().init();
-        disableApiDialog();
+//        disableApiDialog();
     }
 
     protected HttpConfig.Builder setHttpBuilder(){
-        HttpConfig.Builder builder = new HttpConfig.Builder();//配置HttpConfig
+        HttpConfig.Builder builder = new HttpConfig.Builder();
         builder.setDebug(setDebug());
         return builder;
     }

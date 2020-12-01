@@ -3,10 +3,11 @@ package com.demo.frame.ui.dialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.support.v7.app.AlertDialog;
 import android.view.View;
 
 import com.fast.library.utils.StringUtils;
+
+import androidx.appcompat.app.AlertDialog;
 
 public class DialogHelper {
 
@@ -83,7 +84,7 @@ public class DialogHelper {
     }
 
     public static DialogSelected selectSignViewType(Context context, String itemText1, final View.OnClickListener takeListener,
-                                                    String itemText2, final View.OnClickListener selectedListener,String titleTip) {
+                                                    String itemText2, final View.OnClickListener selectedListener, String titleTip) {
         DialogSelected.SelectBuilder selectBuilder = new DialogSelected.SelectBuilder(context);
 
         DialogSelected.SelectSpan takePhotoSpan = new DialogSelected.SelectSpan();

@@ -1,12 +1,6 @@
 package com.fast.frame.dialog;
 
 import android.os.Bundle;
-import android.support.annotation.LayoutRes;
-import android.support.annotation.Nullable;
-import android.support.annotation.StyleRes;
-import android.support.v4.app.DialogFragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,11 +12,19 @@ import com.fast.library.R;
 import com.fast.library.utils.StringUtils;
 import com.fast.library.utils.UIUtils;
 
+import androidx.annotation.LayoutRes;
+import androidx.annotation.Nullable;
+import androidx.annotation.StyleRes;
+import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
 /**
  * 说明：BaseNiceDialog
+ *
+ * @author xiaomi
  */
 public abstract class BaseNiceDialog extends DialogFragment {
 
@@ -50,7 +52,8 @@ public abstract class BaseNiceDialog extends DialogFragment {
 
     public abstract void convertView(ViewHolder holder, BaseNiceDialog dialog);
 
-    Unbinder unbinder ;
+    Unbinder unbinder;
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -74,7 +77,7 @@ public abstract class BaseNiceDialog extends DialogFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(layoutId, container, false);
-        unbinder=ButterKnife.bind(this,view);
+        unbinder = ButterKnife.bind(this, view);
         convertView(ViewHolder.create(view), this);
         return view;
     }
@@ -168,17 +171,18 @@ public abstract class BaseNiceDialog extends DialogFragment {
         return this;
     }
 
-    public void dismiss(){
-        if (isVisible()){
+    @Override
+    public void dismiss() {
+        if (isVisible()) {
             super.dismissAllowingStateLoss();
         }
     }
 
-    public String getBundleString(String key,String defValue){
+    public String getBundleString(String key, String defValue) {
         Bundle bundle = getArguments();
-        if (StringUtils.isEmpty(key) || bundle == null || !bundle.containsKey(key)){
+        if (StringUtils.isEmpty(key) || bundle == null || !bundle.containsKey(key)) {
             return defValue;
-        }else {
+        } else {
             return bundle.getString(key);
         }
     }
@@ -186,7 +190,7 @@ public abstract class BaseNiceDialog extends DialogFragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        if (unbinder !=null){
+        if (unbinder != null) {
             unbinder.unbind();
         }
     }

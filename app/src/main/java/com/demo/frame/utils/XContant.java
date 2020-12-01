@@ -12,7 +12,6 @@ public class XContant {
     public final static String TOKEN_INVAILED = "重新登录";
     public final static String EMPTY = "";
 
-
     //上传图片缓存路径
     public final static String UPLOAD_IMAGE_CACHE = SDCardUtils.getExternalStorage() + File.separator + APP + File.separator;
 

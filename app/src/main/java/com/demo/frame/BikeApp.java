@@ -5,11 +5,12 @@ import android.app.NotificationManager;
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Build;
-import android.support.multidex.MultiDex;
 
 import com.fast.frame.FrameApp;
 import com.fast.library.http.HttpConfig;
 import com.vondear.rxtool.RxTool;
+
+import androidx.multidex.MultiDex;
 
 
 public class BikeApp extends FrameApp {
@@ -50,7 +51,7 @@ public class BikeApp extends FrameApp {
     protected HttpConfig.Builder setHttpBuilder() {
         HttpConfig.Builder builder = new HttpConfig.Builder();//配置HttpConfig
         builder.setTrustAll(true);
-        builder.setDebug(BuildConfig.AppDebug);
+        builder.setDebug(true);
         return builder;
     }
 

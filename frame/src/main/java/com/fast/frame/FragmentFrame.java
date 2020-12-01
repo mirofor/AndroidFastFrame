@@ -1,7 +1,6 @@
 package com.fast.frame;
 
 import android.os.Bundle;
-import android.support.annotation.StringRes;
 import android.view.View;
 
 import com.fast.frame.event.EventUtils;
@@ -10,6 +9,7 @@ import com.fast.frame.interrface.ILoadingDialog;
 import com.fast.library.utils.UIUtils;
 import com.fast.library.view.BaseLazyFragment;
 
+import androidx.annotation.StringRes;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 

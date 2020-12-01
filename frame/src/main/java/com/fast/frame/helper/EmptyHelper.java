@@ -3,6 +3,9 @@ package com.fast.frame.helper;
 import android.view.View;
 import android.view.ViewGroup;
 
+/**
+ * @author xiaomi
+ */
 public interface EmptyHelper {
 
     void init(ViewGroup group);

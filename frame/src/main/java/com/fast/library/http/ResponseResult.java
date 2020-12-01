@@ -6,6 +6,7 @@ import java.util.List;
 
 /**
  * 说明：返回结果集合
+ * @author xiaomi
  */
 public class ResponseResult<T> implements Serializable{
 

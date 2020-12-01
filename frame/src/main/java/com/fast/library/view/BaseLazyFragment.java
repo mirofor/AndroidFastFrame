@@ -2,23 +2,28 @@ package com.fast.library.view;
 
 import android.os.Bundle;
 import android.view.View;
+
 import com.fast.library.BaseFragment;
 
 /**
  * 说明：懒加载Fragment
+ *
+ * @author xiaomi
  */
-public abstract class BaseLazyFragment extends BaseFragment{
-
-    private boolean isPrepared = false;//是否创建好视图
+public abstract class BaseLazyFragment extends BaseFragment {
+    /**
+     * 是否创建好视图
+     */
+    private boolean isPrepared = false;
 
     @Override
     protected void onInit(Bundle savedInstanceState, View view) {
-        onInitCreate(savedInstanceState,view);
+        onInitCreate(savedInstanceState, view);
         initPrepare();
     }
 
-    private synchronized void initPrepare(){
-        if (!isPrepared){
+    private synchronized void initPrepare() {
+        if (!isPrepared) {
             isPrepared = true;
             onFirstUserVisible();
         }
@@ -27,10 +32,10 @@ public abstract class BaseLazyFragment extends BaseFragment{
     @Override
     public void setUserVisibleHint(boolean isVisibleToUser) {
         super.setUserVisibleHint(isVisibleToUser);
-        if (isPrepared){
-            if (isVisibleToUser){
+        if (isPrepared) {
+            if (isVisibleToUser) {
                 onUserVisible();
-            }else {
+            } else {
                 onUserInvisible();
             }
         }
@@ -38,8 +43,9 @@ public abstract class BaseLazyFragment extends BaseFragment{
 
     /**
      * 创建View时调用
+     *
      * @param savedInstanceState Bundle
-     * @param view view
+     * @param view               view
      */
     protected abstract void onInitCreate(Bundle savedInstanceState, View view);
 

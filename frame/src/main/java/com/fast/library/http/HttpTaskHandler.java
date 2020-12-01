@@ -7,6 +7,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * 说明：Http请求辅助类
+ * @author xiaomi
  */
 public class HttpTaskHandler {
 

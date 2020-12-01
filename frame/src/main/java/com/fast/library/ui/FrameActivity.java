@@ -1,15 +1,19 @@
 package com.fast.library.ui;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.ViewGroup;
 
 import com.fast.library.utils.LogUtils;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentTransaction;
+
 /**
  * 说明：FrameActivity为Activity基类
+ * @author xiaomi
  */
 public abstract class FrameActivity extends AppCompatActivity implements OnClickListener,
         I_Broadcast, I_Activity, I_SkipActivity,I_Service{
@@ -99,7 +103,7 @@ public abstract class FrameActivity extends AppCompatActivity implements OnClick
         if (targetFragment.equals(currentSupportFragment)) {
             return;
         }
-        android.support.v4.app.FragmentTransaction transaction = getSupportFragmentManager()
+        FragmentTransaction transaction = getSupportFragmentManager()
                 .beginTransaction();
         if (!targetFragment.isAdded()) {
             transaction.add(srcView, targetFragment, targetFragment.getClass()
@@ -114,6 +118,13 @@ public abstract class FrameActivity extends AppCompatActivity implements OnClick
         }
         currentSupportFragment = targetFragment;
         transaction.commitAllowingStateLoss();
+    }
+
+    protected void removeFromParent(View view) {
+        ViewGroup viewGroup = (ViewGroup) view.getParent();
+        if (viewGroup != null) {
+            viewGroup.removeView(view);
+        }
     }
 }
 

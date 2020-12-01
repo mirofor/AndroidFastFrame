@@ -2,15 +2,17 @@ package com.demo.frame.helper;
 
 import android.content.Context;
 import android.graphics.Rect;
-import android.support.v4.view.ViewCompat;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 
 import com.demo.frame.BuildConfig;
 
 import java.lang.reflect.Field;
+
+import androidx.core.view.ViewCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 
 /**
  * Created by aimi on 2018/6/21.

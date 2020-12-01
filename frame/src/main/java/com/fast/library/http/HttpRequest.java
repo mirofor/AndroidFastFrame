@@ -7,6 +7,7 @@ import okhttp3.Call;
 
 /**
  * 说明：Http请求类
+ * @author xiaomi
  */
 public class HttpRequest {
 

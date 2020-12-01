@@ -1,11 +1,14 @@
 package com.fast.library.ui;
 
+
 import android.app.Activity;
+
 import java.lang.ref.WeakReference;
 import java.util.Stack;
 
 /**
  * 说明：应用程序Activity管理类：用于Activity管理和应用程序退出
+ * @author xiaomi
  */
 public class ActivityStack {
 

@@ -1,21 +1,20 @@
-package com.fast.library.ui;
+package com.fast.library.utils;
 
 import android.view.Gravity;
+import android.widget.Toast;
 
 import com.fast.library.FastFrame;
-import com.fast.library.utils.StringUtils;
-import com.fast.library.utils.UIUtils;
 
 /**
  * 说明：View提示的工具类
+ * @author xiaomi
  */
-
 public class ToastUtils {
 
     private static ToastUtils inject;
-    private android.widget.Toast mToast;
+    private Toast mToast;
 
-    /*禁止实例化*/
+    /**禁止实例化*/
     private ToastUtils() {
     }
 
@@ -35,8 +34,8 @@ public class ToastUtils {
      *
      * @param msg
      */
-    public android.widget.Toast shortToast(String msg) {
-        return showToast(msg, android.widget.Toast.LENGTH_SHORT);
+    public Toast shortToast(String msg) {
+        return showToast(msg, Toast.LENGTH_SHORT);
     }
 
 
@@ -45,7 +44,7 @@ public class ToastUtils {
      *
      * @param msg
      */
-    public android.widget.Toast shortToast(int msg) {
+    public Toast shortToast(int msg) {
         return shortToast(UIUtils.getString(msg));
     }
 
@@ -55,9 +54,9 @@ public class ToastUtils {
      * @param time
      * @return
      */
-    private android.widget.Toast showToast(String msg, int time) {
+    private Toast showToast(String msg, int time) {
         if (mToast == null) {
-            mToast = android.widget.Toast.makeText(FastFrame.getApplication(), msg, time);
+            mToast = Toast.makeText(FastFrame.getApplication(), msg, time);
             mToast.setGravity(Gravity.CENTER,0,0);
         } else {
             mToast.setText(msg);
@@ -83,8 +82,8 @@ public class ToastUtils {
      *
      * @param msg
      */
-    public android.widget.Toast longToast(String msg) {
-        return showToast(msg, android.widget.Toast.LENGTH_LONG);
+    public Toast longToast(String msg) {
+        return showToast(msg, Toast.LENGTH_LONG);
     }
 
     /**
@@ -92,7 +91,7 @@ public class ToastUtils {
      *
      * @param msg
      */
-    public android.widget.Toast longToast(int msg) {
+    public Toast longToast(int msg) {
         return longToast(UIUtils.getString(msg));
     }
 

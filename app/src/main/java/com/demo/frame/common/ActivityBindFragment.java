@@ -1,20 +1,25 @@
 package com.demo.frame.common;
 
 import android.content.Intent;
-import android.support.v7.widget.Toolbar;
+import android.os.Bundle;
 import android.view.View;
 
 import com.demo.frame.R;
 import com.demo.frame.common.fragment.FragmentBind;
 import com.demo.frame.common.fragment.FragmentConfig;
-import com.demo.frame.ui.ActivityCommon;
+import com.demo.frame.ui.ActivityBase;
 import com.fast.library.ui.ContentView;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.widget.Toolbar;
+import androidx.loader.content.Loader;
 
 /**
  * 说明：ActivityBindFragment
  */
 @ContentView(R.layout.activity_bind_fragment)
-public class ActivityBindFragment extends ActivityCommon {
+public class ActivityBindFragment extends ActivityBase {
 
     private FragmentBind mFragment;
 
@@ -91,5 +96,16 @@ public class ActivityBindFragment extends ActivityCommon {
         if (mFragment != null){
             mFragment.onActivityResult(requestCode,resultCode,data);
         }
+    }
+
+    @NonNull
+    @Override
+    public Loader onCreateLoader(int id, @Nullable Bundle args) {
+        return null;
+    }
+
+    @Override
+    public void onLoadFinished(@NonNull Loader loader, Object data) {
+
     }
 }

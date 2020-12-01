@@ -6,6 +6,7 @@ import okhttp3.MediaType;
 
 /**
  * 说明：包装文件
+ * @author xiaomi
  */
 public class FileWrapper {
 

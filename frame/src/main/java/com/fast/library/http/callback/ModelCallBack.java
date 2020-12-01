@@ -5,6 +5,7 @@ import java.lang.reflect.Type;
 
 /**
  * 说明：返回Bean对象
+ * @author xiaomi
  */
 public abstract class ModelCallBack<T> extends BaseHttpCallBack<T>{
 

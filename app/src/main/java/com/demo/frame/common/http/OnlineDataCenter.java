@@ -5,6 +5,7 @@ import com.fast.library.utils.GsonUtils;
 
 /**
  * 说明：正式接口
+ * @author xiaomi
  */
 public class OnlineDataCenter {
 

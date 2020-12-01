@@ -4,6 +4,7 @@ import android.content.Intent;
 
 /**
  * 说明：获取Intent数据
+ * @author xiaomi
  */
 public class IntentUtils {
 

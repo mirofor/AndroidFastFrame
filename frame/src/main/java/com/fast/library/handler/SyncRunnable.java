@@ -2,6 +2,7 @@ package com.fast.library.handler;
 
 /**
  * 说明：同步任务
+ * @author xiaomi
  */
 public class SyncRunnable {
 

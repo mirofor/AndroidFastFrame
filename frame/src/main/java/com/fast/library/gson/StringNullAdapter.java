@@ -9,6 +9,7 @@ import java.io.IOException;
 
 /**
  * 说明：StringNullAdapter
+ * @author xiaomi
  */
 public class StringNullAdapter extends TypeAdapter<String> {
     @Override

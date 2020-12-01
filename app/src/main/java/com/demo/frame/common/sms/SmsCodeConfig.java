@@ -1,7 +1,8 @@
 package com.demo.frame.common.sms;
 
-import android.support.annotation.ColorInt;
 import android.widget.TextView;
+
+import androidx.annotation.ColorInt;
 
 /**
  * 说明：SmsCodeConfig

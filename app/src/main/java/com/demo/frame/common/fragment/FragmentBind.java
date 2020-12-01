@@ -1,10 +1,11 @@
 package com.demo.frame.common.fragment;
 
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import com.demo.frame.common.ActivityBindFragment;
 import com.fast.frame.interrface.IFragmentTitleBar;
+
+import androidx.appcompat.widget.Toolbar;
 
 /**
  * 说明：FragmentBind

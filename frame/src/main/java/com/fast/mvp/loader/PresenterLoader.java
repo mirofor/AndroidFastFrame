@@ -1,11 +1,16 @@
 package com.fast.mvp.loader;
 
 import android.content.Context;
-import android.support.v4.content.Loader;
+
 import com.fast.mvp.presenter.MvpPresenter;
+
+import androidx.loader.content.Loader;
+
 
 /**
  * 说明：PresenterLoader
+ *
+ * @author xiaomi
  */
 public class PresenterLoader<T extends MvpPresenter> extends Loader {
 
@@ -23,7 +28,7 @@ public class PresenterLoader<T extends MvpPresenter> extends Loader {
      * @param context used to retrieve the application context.
      * @param factory factory
      */
-    public PresenterLoader(Context context,PresenterFactory<T> factory) {
+    public PresenterLoader(Context context, PresenterFactory<T> factory) {
         super(context);
         this.factory = factory;
     }
@@ -31,7 +36,7 @@ public class PresenterLoader<T extends MvpPresenter> extends Loader {
 
     @Override
     protected void onStartLoading() {
-        if (presenter != null){
+        if (presenter != null) {
             deliverResult(presenter);
             return;
         }

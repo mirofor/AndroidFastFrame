@@ -29,6 +29,7 @@ import okhttp3.Response;
 
 /**
  * 说明：Http请求
+ * @author xiaomi
  */
 public class HttpTask extends AsyncTask<Void, Long, ResponseData> {
 
@@ -86,13 +87,13 @@ public class HttpTask extends AsyncTask<Void, Long, ResponseData> {
                     builder.get();
                     break;
                 case FrameConstant.Http.POST:
-//                    params.isApplicationJson();
                     RequestBody body = params.getRequestBody();
                     if (body != null) {
                         builder.post(new ProgressRequestBody(body, this));
                     }
                     break;
                 case FrameConstant.Http.PUT:
+                case FrameConstant.Http.PATCH:
                     RequestBody bodyPut = params.getRequestBody();
                     if (bodyPut != null) {
                         builder.put(new ProgressRequestBody(bodyPut, this));
@@ -106,11 +107,7 @@ public class HttpTask extends AsyncTask<Void, Long, ResponseData> {
                     url = UrlUtils.getFullUrl(url, params.getFormParams(), params.isUrlEncoder());
                     builder.head();
                     break;
-                case FrameConstant.Http.PATCH:
-                    RequestBody bodyPatch = params.getRequestBody();
-                    if (bodyPatch != null) {
-                        builder.put(new ProgressRequestBody(bodyPatch, this));
-                    }
+                default:
                     break;
             }
             if (params.cacheControl != null) {
@@ -208,12 +205,11 @@ public class HttpTask extends AsyncTask<Void, Long, ResponseData> {
         }
         //请求得到响应
         if (!responseData.isResponseNull()) {
-            if (responseData.isSuccess()) {//成功的请求
+            if (responseData.isSuccess()) {
                 String respBody = responseData.getResponse();
                 if (debug) {
                     Headers headers = responseData.getHeaders();
                     if (headers != null) {
-//                        LogUtils.i("url="+url+"\nresult="+respBody+"\n header="+headers.toString());
                         LogUtils.i("\n" + respBody + "\n" );
                         LogUtils.i(method + "╚════════════════返回数据════════════════╝ \n");
                         LogUtils.i(" \n \n");

@@ -10,6 +10,7 @@ import java.util.Queue;
 
 /**
  * 说明：在主线程中运行任务
+ * @author xiaomi
  */
 public class UIHandlerPost extends Handler {
 

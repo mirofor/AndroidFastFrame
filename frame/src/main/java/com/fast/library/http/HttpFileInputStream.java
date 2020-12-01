@@ -5,6 +5,7 @@ import java.io.Serializable;
 
 /**
  * 说明：上传文件数据模型
+ * @author xiaomi
  */
 public class HttpFileInputStream implements Serializable{
 

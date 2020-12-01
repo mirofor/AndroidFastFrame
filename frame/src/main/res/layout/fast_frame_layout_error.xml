@@ -19,7 +19,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:text="网络加载错误，请点击重试！"
+        android:text="加载错误，请点击重试！"
         android:textColor="#434343"
         android:textSize="16sp" />
 </RelativeLayout>

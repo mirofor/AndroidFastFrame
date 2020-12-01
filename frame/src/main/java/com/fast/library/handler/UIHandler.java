@@ -4,6 +4,7 @@ import android.os.Looper;
 
 /**
  * 说明：在主线程(子线程)中运行任务
+ * @author xiaomi
  */
 public class UIHandler {
 

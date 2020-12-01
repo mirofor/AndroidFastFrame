@@ -24,8 +24,8 @@ import java.util.Map;
 
 /**
  * 说明：手机日志的工具类
+ * @author xiaomi
  */
-
 public abstract class CrashHandler implements UncaughtExceptionHandler {
 
     private static String crashFile;

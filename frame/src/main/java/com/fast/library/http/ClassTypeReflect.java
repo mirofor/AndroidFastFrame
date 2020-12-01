@@ -5,6 +5,7 @@ import java.lang.reflect.Type;
 
 /**
  * 说明：获取class类型
+ * @author xiaomi
  */
 public class ClassTypeReflect {
 

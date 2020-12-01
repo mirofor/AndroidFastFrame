@@ -8,14 +8,15 @@ import java.util.List;
 
 /**
  * 说明：工具类，补全url
+ * @author xiaomi
  */
 public class UrlUtils {
-
+    private static final String KEY_QA = "?";
     public static String getFullUrl(String url,List<Part> params,boolean urlEncoder){
         StringBuffer urlFull = new StringBuffer();
         urlFull.append(url);
-        if (urlFull.indexOf("?",0) < 0 && !params.isEmpty()){
-            urlFull.append("?");
+        if (urlFull.indexOf(KEY_QA,0) < 0 && !params.isEmpty()){
+            urlFull.append(KEY_QA);
         }
         int flag = 0;
         for (Part part:params){

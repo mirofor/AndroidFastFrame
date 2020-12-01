@@ -2,7 +2,6 @@ package com.fast.library.tools;
 
 import android.app.Activity;
 import android.app.Dialog;
-import android.support.annotation.Size;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -13,8 +12,11 @@ import android.widget.TextView;
 import com.fast.library.utils.StringUtils;
 import com.fast.library.utils.UIUtils;
 
+import androidx.annotation.Size;
+
 /**
  * 说明：View的帮助类，赋值等功能
+ * @author xiaomi
  */
 public final class ViewTools {
 
@@ -88,6 +90,7 @@ public final class ViewTools {
     public static void setText(View v,int resFormat,Object...obj){
         setText(v,String.format(UIUtils.getString(resFormat),obj));
     }
+
 
 
     /**
@@ -213,7 +216,7 @@ public final class ViewTools {
      * @return
      */
     public static <T extends View> T find(View view, int id, View.OnClickListener listener) {
-        T t = (T) view.findViewById(id);
+        T t = view.findViewById(id);
         if (t != null && listener != null){
             t.setOnClickListener(listener);
         }

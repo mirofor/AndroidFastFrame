@@ -4,12 +4,13 @@ import android.app.Application;
 
 /**
  * 说明：初始化
+ * @author xiaomi
  */
 public class FastFrame {
 
-    //上下文
+    /**上下文*/
     private static Application mApplication;
-    //是否调试
+    /**是否调试*/
     public static boolean isDebug = true;
 
     /**
@@ -43,7 +44,7 @@ public class FastFrame {
      */
     public static Application getApplication(){
         if (mApplication == null){
-            throw new RuntimeException("FastFrame框架没有初始化，请在Applciation中调用init()，进行初始化");
+            throw new RuntimeException("FastFrame框架没有初始化，请在Application中调用init()，进行初始化");
         }
         return mApplication;
     }

@@ -19,16 +19,22 @@ import com.fast.library.R;
 
 /**
  * 说明：圈圈ProgressBar
+ *
+ * @author xiaomi
  */
-public class CircleProgressView extends View{
+public class CircleProgressView extends View {
 
-    //圈圈的粗细
+    /**
+     * 圈圈的粗细
+     */
     private float mBorderWidth;
-    //圈圈角度动画时间
+    /**圈圈角度动画时间*/
     private int angleAnimatorDuration;
     private int sweepAnimatorDuration;
     private int minSweepAngle;
-    //圈圈颜色
+    /**
+     * 圈圈颜色
+     */
     private int[] mColors;
 
     private boolean mRunning;
@@ -57,19 +63,19 @@ public class CircleProgressView extends View{
 
     public CircleProgressView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        TypedArray array = context.obtainStyledAttributes(attrs, R.styleable.FastLibCircleProgressBar,defStyleAttr,0);
+        TypedArray array = context.obtainStyledAttributes(attrs, R.styleable.FastLibCircleProgressBar, defStyleAttr, 0);
         mBorderWidth = array.getDimension(R.styleable.FastLibCircleProgressBar_FastLibborder, 4.0f);
         angleAnimatorDuration = array.getInt(R.styleable.FastLibCircleProgressBar_FastLibangleAnimationDurationMillis, 2000);
         sweepAnimatorDuration = array.getInt(R.styleable.FastLibCircleProgressBar_FastLibsweepAnimationDurationMillis, 900);
-        minSweepAngle = array.getInt(R.styleable.FastLibCircleProgressBar_FastLibminSweepAngle,30);
-        int colorArrayId = array.getResourceId(R.styleable.FastLibCircleProgressBar_FastLibcolorSequence,R.array.FastLib_circle_default_color_sequence);
-        if (isInEditMode()){
+        minSweepAngle = array.getInt(R.styleable.FastLibCircleProgressBar_FastLibminSweepAngle, 30);
+        int colorArrayId = array.getResourceId(R.styleable.FastLibCircleProgressBar_FastLibcolorSequence, R.array.FastLib_circle_default_color_sequence);
+        if (isInEditMode()) {
             mColors = new int[4];
             mColors[0] = getResources().getColor(R.color.FastLib_circular_blue);
             mColors[1] = getResources().getColor(R.color.FastLib_circular_green);
             mColors[2] = getResources().getColor(R.color.FastLib_circular_red);
             mColors[3] = getResources().getColor(R.color.FastLib_circular_yellow);
-        }else {
+        } else {
             mColors = getResources().getIntArray(colorArrayId);
         }
         array.recycle();
@@ -91,9 +97,9 @@ public class CircleProgressView extends View{
     @Override
     protected void onVisibilityChanged(View changedView, int visibility) {
         super.onVisibilityChanged(changedView, visibility);
-        if (visibility == VISIBLE){
+        if (visibility == VISIBLE) {
             start();
-        }else {
+        } else {
             stop();
         }
     }
@@ -103,14 +109,14 @@ public class CircleProgressView extends View{
         super.draw(canvas);
         float startAngle = mCurrentGlobalAngle - mCurrentGlobalAngleOffset;
         float sweepAngle = mCurrentSweepAngle;
-        if (mModeAppearing){
-            mPaint.setColor(gradient(mColors[mCurrentColorIndex],mColors[mNextColorIndex],mCurrentSweepAngle/(360-minSweepAngle*2)));
-            sweepAngle+=minSweepAngle;
-        }else {
-            startAngle = startAngle+sweepAngle;
-            sweepAngle = 360-sweepAngle-minSweepAngle;
+        if (mModeAppearing) {
+            mPaint.setColor(gradient(mColors[mCurrentColorIndex], mColors[mNextColorIndex], mCurrentSweepAngle / (360 - minSweepAngle * 2)));
+            sweepAngle += minSweepAngle;
+        } else {
+            startAngle = startAngle + sweepAngle;
+            sweepAngle = 360 - sweepAngle - minSweepAngle;
         }
-        canvas.drawArc(fBounds,startAngle,sweepAngle,false,mPaint);
+        canvas.drawArc(fBounds, startAngle, sweepAngle, false, mPaint);
     }
 
     @Override
@@ -124,11 +130,12 @@ public class CircleProgressView extends View{
 
     /**
      * 说明：设置圈圈颜色
+     *
      * @param colors
      */
-    public void setCircleColos(int ...colors){
-        if (colors != null && colors.length > 0){
-            switch (colors.length){
+    public void setCircleColos(int... colors) {
+        if (colors != null && colors.length > 0) {
+            switch (colors.length) {
                 case 1:
                     mColors[0] = getResources().getColor(colors[0]);
                     mColors[1] = getResources().getColor(colors[0]);
@@ -182,15 +189,15 @@ public class CircleProgressView extends View{
         super.onDetachedFromWindow();
     }
 
-    private boolean isRunning(){
+    private boolean isRunning() {
         return mRunning;
     }
 
     /**
      * 说明：开始显示
      */
-    private void start(){
-        if (isRunning()){
+    private void start() {
+        if (isRunning()) {
             return;
         }
         mRunning = true;
@@ -202,8 +209,8 @@ public class CircleProgressView extends View{
     /**
      * 说明：停止显示
      */
-    private void stop(){
-        if (!isRunning()){
+    private void stop() {
+        if (!isRunning()) {
             return;
         }
         mRunning = false;
@@ -215,8 +222,8 @@ public class CircleProgressView extends View{
     /**
      * 说明：设置动画
      */
-    private void setupAnimations(){
-        mObjectAnimatorAngle = ObjectAnimator.ofFloat(this,mAngleProperty,360f);
+    private void setupAnimations() {
+        mObjectAnimatorAngle = ObjectAnimator.ofFloat(this, mAngleProperty, 360f);
         mObjectAnimatorAngle.setInterpolator(ANGLE_INTERPOLATOR);
         mObjectAnimatorAngle.setDuration(angleAnimatorDuration);
         mObjectAnimatorAngle.setRepeatCount(ValueAnimator.INFINITE);
@@ -271,7 +278,7 @@ public class CircleProgressView extends View{
         }
     };
 
-    private Property<CircleProgressView,Float> mAngleProperty = new Property<CircleProgressView, Float>(Float.class,"angle") {
+    private Property<CircleProgressView, Float> mAngleProperty = new Property<CircleProgressView, Float>(Float.class, "angle") {
         @Override
         public Float get(CircleProgressView object) {
             return object.getCurrentGlobalAngle();
@@ -292,10 +299,11 @@ public class CircleProgressView extends View{
         return mCurrentSweepAngle;
     }
 
-    public float getCurrentGlobalAngle(){
+    public float getCurrentGlobalAngle() {
         return mCurrentGlobalAngle;
     }
-    public void setCurrentGlobalAngle(float currentGlobalAngle){
+
+    public void setCurrentGlobalAngle(float currentGlobalAngle) {
         mCurrentGlobalAngle = currentGlobalAngle;
         invalidate();
     }
