@@ -135,7 +135,7 @@ dependencies {
     implementation "com.github.vondear.RxTool:RxUI:v2.2.7"
     implementation "com.github.vondear.RxTool:RxFeature:v2.3.9"
 
-    implementation 'com.jakewharton:butterknife:10.2.3'
+//    implementation 'com.jakewharton:butterknife:10.2.3'
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.3'
 
 

@@ -1,5 +1,6 @@
 package com.fast.library.ui;
 
+
 import android.app.Activity;
 
 import com.fast.library.utils.ToolUtils;

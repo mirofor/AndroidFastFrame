@@ -7,6 +7,7 @@ import java.lang.annotation.Target;
 
 /**
  * 说明：设置View
+ * @author xiaomi
  */
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)

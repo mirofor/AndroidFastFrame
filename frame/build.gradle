@@ -90,6 +90,7 @@ dependencies {
 
 //gradlew clean build bintrayUpload -PbintrayUser=BINTRAY_USERNAME -PbintrayKey=BINTRAY_KEY -PdryRun=false
 publish {
+    repoName = 'maven'
     userOrg = 'brightmi'
     groupId = 'com.fast.frame'
     artifactId = 'xFastFrame'

@@ -9,7 +9,7 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.6.1'
-        classpath 'com.novoda:bintray-release:0.9.1'
+        classpath 'com.novoda:bintray-release:0.9.2'
         classpath 'com.jakewharton:butterknife-gradle-plugin:10.2.3'
 
     }
@@ -32,6 +32,7 @@ allprojects {
         mavenCentral()
         maven { url "https://jitpack.io"}
         jcenter()
+        maven { url 'https://dl.bintray.com/brightmi/maven' }
     }
 
     //加上这些
