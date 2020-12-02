@@ -36,13 +36,15 @@ allprojects {
     }
 
     //加上这些
-    tasks.withType(Javadoc) {
-        options {
-            encoding "UTF-8"
-            charSet 'UTF-8'
-            links "http://docs.oracle.com/javase/7/docs/api/"
-        }
-    }
+//    tasks.withType(Javadoc) {
+//        options {
+//            encoding "UTF-8"
+//            charSet 'UTF-8'
+//            links "http://docs.oracle.com/javase/7/docs/api/"
+//        }
+//    }
+//
+    tasks.getByPath(":frame:javadocRelease").enabled = false
 }
 
 task clean(type: Delete) {
