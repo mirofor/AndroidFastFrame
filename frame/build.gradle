@@ -8,8 +8,8 @@ android {
     defaultConfig {
         minSdkVersion Integer.parseInt(System.properties['minSdkVersion'])
         targetSdkVersion Integer.parseInt(System.properties['targetSdkVersion'])
-        versionCode 201
-        versionName "2.0.1"
+        versionCode 202
+        versionName "2.0.2"
         javaCompileOptions {
             annotationProcessorOptions {
                 includeCompileClasspath = true
@@ -88,13 +88,13 @@ dependencies {
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.3'
 }
 
-//gradlew clean build bintrayUpload -PbintrayUser=BINTRAY_USERNAME -PbintrayKey=BINTRAY_KEY -PdryRun=false
+//gradlew clean build bintrayUpload -PbintrayUser=brightmi -PbintrayKey=BINTRAY_KEY -PdryRun=false
 publish {
     repoName = 'maven'
     userOrg = 'brightmi'
     groupId = 'com.fast.frame'
     artifactId = 'xFastFrame'
-    publishVersion = '2.0.1'
+    publishVersion = '2.0.2'
     desc = 'A base Android seed project（androidx） ,include common activities,uitls,fragment etc。'
     website = 'https://github.com/Android-MI/AndroidFastFrame.git'
     dryRun = false

@@ -8,15 +8,13 @@ import com.fast.library.ui.AbstractActivity;
 import com.fast.library.utils.ToastUtils;
 import com.fast.mvp.presenter.MvpPresenter;
 
-import androidx.loader.app.LoaderManager;
-import androidx.loader.content.Loader;
-
 
 /**
  * 说明：Activity基类
+ *
  * @author xiaomi
  */
-public abstract class BaseActivity<Presenter extends MvpPresenter> extends AbstractActivity implements HttpTaskKey, LoaderManager.LoaderCallbacks<Presenter> {
+public abstract class BaseActivity<Presenter extends MvpPresenter> extends AbstractActivity implements HttpTaskKey {
 
     private Presenter mPresenter;
 
@@ -60,25 +58,25 @@ public abstract class BaseActivity<Presenter extends MvpPresenter> extends Abstr
 
     }
 
-    /***************************************************************************************/
+    /***************************************LoaderManager**************************************/
+
 
     public abstract int createLoaderID();
-
     public Presenter getPresenter() {
         return mPresenter;
     }
 
-
-    @Override
-    public void onLoadFinished(Loader<Presenter> loader, Presenter data) {
-        mPresenter = data;
-    }
-
-
-    @Override
-    public void onLoaderReset(Loader<Presenter> loader) {
-        mPresenter = null;
-    }
+    // implements  LoaderManager.LoaderCallbacks<Presenter>
+//    @Override
+//    public void onLoadFinished(Loader<Presenter> loader, Presenter data) {
+//        mPresenter = data;
+//    }
+//
+//
+//    @Override
+//    public void onLoaderReset(Loader<Presenter> loader) {
+//        mPresenter = null;
+//    }
     /***************************************************************************************/
 
 }
