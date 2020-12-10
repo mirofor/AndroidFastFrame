@@ -1,7 +1,6 @@
 package com.demo.frame.common;
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.view.View;
 
 import com.demo.frame.R;
@@ -10,10 +9,7 @@ import com.demo.frame.common.fragment.FragmentConfig;
 import com.demo.frame.ui.ActivityBase;
 import com.fast.library.ui.ContentView;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
-import androidx.loader.content.Loader;
 
 /**
  * 说明：ActivityBindFragment
@@ -98,14 +94,14 @@ public class ActivityBindFragment extends ActivityBase {
         }
     }
 
-    @NonNull
-    @Override
-    public Loader onCreateLoader(int id, @Nullable Bundle args) {
-        return null;
-    }
-
-    @Override
-    public void onLoadFinished(@NonNull Loader loader, Object data) {
-
-    }
+//    @NonNull
+//    @Override
+//    public Loader onCreateLoader(int id, @Nullable Bundle args) {
+//        return null;
+//    }
+//
+//    @Override
+//    public void onLoadFinished(@NonNull Loader loader, Object data) {
+//
+//    }
 }

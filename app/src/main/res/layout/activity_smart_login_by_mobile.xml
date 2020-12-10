@@ -25,7 +25,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center|left"
-                android:text="@string/login_title_tip" />
+                android:text="标题" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -54,7 +54,7 @@
                     android:layout_height="match_parent"
                     android:background="@null"
                     android:gravity="center|left"
-                    android:hint="@string/login_tip_input_mobile"
+                    android:hint="请输入手机号"
                     android:inputType="number"
                     android:maxLength="11"
                     android:paddingLeft="@dimen/dp_10"
@@ -90,7 +90,7 @@
                     android:layout_weight="1"
                     android:background="@null"
                     android:gravity="center|left"
-                    android:hint="@string/login_tip_input_smscode"
+                    android:hint="请输入验证码"
                     android:inputType="number"
                     android:maxLength="11"
                     android:paddingLeft="@dimen/dp_10"
@@ -106,7 +106,7 @@
                     android:layout_gravity="right|center"
                     android:background="@drawable/smart_btn_send_code_stroke"
                     android:gravity="center"
-                    android:text="@string/login_tip_send_smscode"
+                    android:text="发送验证码"
                     android:textColor="@color/colorAccent"
                     android:textSize="@dimen/text_size_15" />
             </LinearLayout>
@@ -161,7 +161,7 @@
                 android:id="@+id/tv_smart_login_btn"
                 style="@style/StyleBtn"
                 android:layout_marginTop="@dimen/dp_50"
-                android:text="@string/login_btn_sign_in" />
+                android:text="登录" />
         </LinearLayout>
     </LinearLayout>
 
