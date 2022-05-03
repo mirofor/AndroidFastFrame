@@ -147,8 +147,6 @@ dependencies {
 
 
 def getSelfDefinedVersion(type) {
-    int code = Integer.parseInt(new Date().format("yyMMddHHmm"))
-    int name = Integer.parseInt(new Date().format("MMddHH"))
     String versionName = "1.0.1"
     if ("code".equals(type)) {
         return 1

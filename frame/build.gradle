@@ -1,6 +1,7 @@
 apply plugin: 'com.android.library'
 apply plugin: 'com.novoda.bintray-release'
 apply plugin: 'com.jakewharton.butterknife'
+apply plugin: 'com.github.dcendents.android-maven'
 
 android {
     compileSdkVersion Integer.parseInt(System.properties['compileSdkVersion'])
@@ -8,8 +9,8 @@ android {
     defaultConfig {
         minSdkVersion Integer.parseInt(System.properties['minSdkVersion'])
         targetSdkVersion Integer.parseInt(System.properties['targetSdkVersion'])
-        versionCode 202
-        versionName "2.0.2"
+        versionCode 210
+        versionName "2.1.0"
         javaCompileOptions {
             annotationProcessorOptions {
                 includeCompileClasspath = true
@@ -94,8 +95,23 @@ publish {
     userOrg = 'brightmi'
     groupId = 'com.fast.frame'
     artifactId = 'xFastFrame'
-    publishVersion = '2.0.2'
+    publishVersion = '2.1.0'
     desc = 'A base Android seed project（androidx） ,include common activities,uitls,fragment etc。'
     website = 'https://github.com/Android-MI/AndroidFastFrame.git'
     dryRun = false
+}
+
+group = 'com.github.Android-MI'
+version = '2.1.0'
+afterEvaluate {
+    publishing {
+        publications {
+            fastRelease(MavenPublication) {
+                from components.release
+                groupId = 'com.fast.frame'
+                artifactId = 'xFastFrame'
+                version = '2.1.0'
+            }
+        }
+    }
 }
