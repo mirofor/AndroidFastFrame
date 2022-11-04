@@ -7,6 +7,7 @@ import android.widget.TextView;
 /**
  * @author xiaomi
  */
+@SuppressWarnings("unchecked")
 public class ViewHolder {
 
     private SparseArray<View> views;

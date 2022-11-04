@@ -6,7 +6,7 @@ import com.demo.frame.R;
 import com.demo.frame.ui.ActivityCommon;
 import com.fast.library.ui.ContentView;
 import com.fast.library.view.RoundButton;
-import com.vondear.rxtool.view.RxToast;
+import com.tamsiree.rxkit.view.RxToast;
 
 import androidx.annotation.Nullable;
 import butterknife.BindView;

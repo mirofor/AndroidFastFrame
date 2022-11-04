@@ -6,10 +6,10 @@ import com.fast.library.http.callback.StringCallBack;
 import com.fast.library.utils.GsonUtils;
 import com.fast.library.utils.LogUtils;
 import com.fast.library.utils.StringUtils;
+import com.fast.library.utils.ToastUtils;
 import com.fast.library.utils.ToolUtils;
 import com.demo.frame.BikeApp;
 import com.demo.frame.utils.XContant;
-import com.vondear.rxtool.view.RxToast;
 
 /**
  * 说明：Api
@@ -154,12 +154,12 @@ public class Api {
                         errorCode == BaseHttpCallBack.ERROR_RESPONSE_TIMEOUT ||
                         errorCode == BaseHttpCallBack.ERROR_RESPONSE_UNKNOWN) {
                     if (listener != null) {
-                        RxToast.error("网络连接超时");
+                        ToastUtils.get().shortToast("网络连接超时");
                         listener.onError(errorCode, "网络连接超时");
                     }
                 } else {
                     if (listener != null) {
-                        RxToast.error(StringUtils.isNotEmpty(msg) ? msg : "请求失败~");
+                        ToastUtils.get().shortToast("请求失败~");
                         listener.onError(errorCode, StringUtils.isNotEmpty(msg) ? msg : "请求失败~");
                     }
                 }
@@ -187,7 +187,8 @@ public class Api {
 //            }
 //        }
         if (StringUtils.isNotEmpty(error) && listener.showToastError()) {
-            RxToast.error(error);
+            ToastUtils.get().shortToast(error);
+
         }
         if (listener != null) {
 //            listener.onError(GsonUtils.optInt(response, "status"), error);

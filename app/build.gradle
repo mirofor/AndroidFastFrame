@@ -108,6 +108,9 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    tasks.withType(JavaCompile) {
+        options.compilerArgs << "-Xlint:unchecked" << "-Werror"
+    }
 }
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
@@ -131,9 +134,9 @@ dependencies {
 //    implementation 'com.github.codbking:PickTime:v1.0.1'
 //    implementation 'org.devio.takephoto:takephoto_library:4.1.0'
 
-    implementation "com.github.vondear.RxTool:RxKit:v2.2.7"
-    implementation "com.github.vondear.RxTool:RxUI:v2.2.7"
-    implementation "com.github.vondear.RxTool:RxFeature:v2.3.9"
+    implementation "com.github.tamsiree.RxTool:RxKit:2.6.3"
+    implementation "com.github.tamsiree.RxTool:RxUI:2.6.3"
+    implementation "com.github.tamsiree.RxTool:RxFeature:2.6.3"
 
 //    implementation 'com.jakewharton:butterknife:10.2.3'
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.3'
@@ -141,8 +144,6 @@ dependencies {
 
     implementation 'com.squareup.retrofit2:retrofit:2.7.1'
     implementation 'com.squareup.retrofit2:converter-gson:2.7.1'
-
-//    implementation 'com.fast.frame:xFastFrame:1.0.3'
 }
 
 

@@ -10,5 +10,5 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="Home"
-        android:textSize="@dimen/text_20" />
+        android:textSize="20sp" />
 </LinearLayout>

@@ -4,7 +4,7 @@ import android.content.Context;
 
 import com.fast.frame.FrameApp;
 import com.fast.library.http.HttpConfig;
-import com.vondear.rxtool.RxTool;
+import com.tamsiree.rxkit.RxTool;
 
 import androidx.multidex.MultiDex;
 

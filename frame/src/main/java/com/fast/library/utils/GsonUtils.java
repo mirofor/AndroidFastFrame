@@ -15,6 +15,7 @@ import java.util.Map;
 /**
  * 说明：Gson工具类
  */
+@SuppressWarnings("unchecked")
 public final class GsonUtils {
 
     private static Gson sGson = null;

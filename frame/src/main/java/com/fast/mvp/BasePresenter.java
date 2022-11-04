@@ -7,6 +7,7 @@ import com.fast.mvp.presenter.MvpPresenter;
  * 说明：BasePresenter
  * @author xiaomi
  */
+@SuppressWarnings("unchecked")
 public abstract class BasePresenter<T extends BaseView> implements MvpPresenter<T> {
 
     private T mMvpView;

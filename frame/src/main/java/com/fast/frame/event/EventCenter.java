@@ -9,6 +9,7 @@ import java.util.HashMap;
  *
  * @author xiaomi
  */
+@SuppressWarnings("unchecked")
 public class EventCenter<T> {
 
     /**

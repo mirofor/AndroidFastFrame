@@ -11,6 +11,7 @@ import org.greenrobot.eventbus.EventBus;
  *
  * @author xiaomi
  */
+@SuppressWarnings("unchecked")
 public class EventUtils {
 
     /**

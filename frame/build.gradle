@@ -9,8 +9,8 @@ android {
     defaultConfig {
         minSdkVersion Integer.parseInt(System.properties['minSdkVersion'])
         targetSdkVersion Integer.parseInt(System.properties['targetSdkVersion'])
-        versionCode 210
-        versionName "2.1.0"
+        versionCode 211
+        versionName "2.1.1"
         javaCompileOptions {
             annotationProcessorOptions {
                 includeCompileClasspath = true
@@ -76,13 +76,12 @@ dependencies {
     api 'com.gyf.immersionbar:immersionbar-components:3.0.0'
 
     api 'com.squareup.okhttp3:okhttp:3.14.4'
-    api 'org.greenrobot:eventbus:3.2.0'
+    api 'org.greenrobot:eventbus:3.3.1'
 
-    api 'androidx.annotation:annotation:1.1.0'
+    api 'androidx.annotation:annotation:1.2.0'
     api 'androidx.appcompat:appcompat:1.2.0'
 
-
-    api 'com.google.code.gson:gson:2.8.6'
+    api 'com.google.code.gson:gson:2.10'
 
     // 添加 ButterKnife 依赖
     api 'com.jakewharton:butterknife:10.2.3'
@@ -100,9 +99,8 @@ publish {
     website = 'https://github.com/Android-MI/AndroidFastFrame.git'
     dryRun = false
 }
-
 group = 'com.github.Android-MI'
-version = '2.1.0'
+version = '2.1.1'
 afterEvaluate {
     publishing {
         publications {
@@ -110,7 +108,7 @@ afterEvaluate {
                 from components.release
                 groupId = 'com.fast.frame'
                 artifactId = 'xFastFrame'
-                version = '2.1.0'
+                version = '2.1.1'
             }
         }
     }

@@ -4,6 +4,7 @@ package com.fast.library.bean;
  * 说明：实体对象模型
  * @author xiaomi
  */
+@SuppressWarnings("unchecked")
 public interface I_POJO {
 
     /**
