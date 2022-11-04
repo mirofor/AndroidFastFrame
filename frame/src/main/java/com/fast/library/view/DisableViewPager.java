@@ -8,6 +8,7 @@ import androidx.viewpager.widget.ViewPager;
 
 /**
  * 说明：禁止滑动的ViewPager
+ * @author xiaomi
  */
 public class DisableViewPager extends ViewPager {
 

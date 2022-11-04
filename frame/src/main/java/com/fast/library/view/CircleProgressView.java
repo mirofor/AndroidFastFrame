@@ -3,6 +3,7 @@ package com.fast.library.view;
 import android.animation.Animator;
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
@@ -19,16 +20,22 @@ import com.fast.library.R;
 
 /**
  * 说明：圈圈ProgressBar
+ *
+ * @author xiaomi
  */
 public class CircleProgressView extends View {
 
-    //圈圈的粗细
+    /**
+     * 圈圈的粗细
+     */
     private float mBorderWidth;
-    //圈圈角度动画时间
+    /**圈圈角度动画时间*/
     private int angleAnimatorDuration;
     private int sweepAnimatorDuration;
     private int minSweepAngle;
-    //圈圈颜色
+    /**
+     * 圈圈颜色
+     */
     private int[] mColors;
 
     private boolean mRunning;
@@ -57,7 +64,7 @@ public class CircleProgressView extends View {
 
     public CircleProgressView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        TypedArray array = context.obtainStyledAttributes(attrs, R.styleable.FastLibCircleProgressBar, defStyleAttr, 0);
+        @SuppressLint("CustomViewStyleable") TypedArray array = context.obtainStyledAttributes(attrs, R.styleable.FastLibCircleProgressBar, defStyleAttr, 0);
         mBorderWidth = array.getDimension(R.styleable.FastLibCircleProgressBar_FastLibborder, 4.0f);
         angleAnimatorDuration = array.getInt(R.styleable.FastLibCircleProgressBar_FastLibangleAnimationDurationMillis, 2000);
         sweepAnimatorDuration = array.getInt(R.styleable.FastLibCircleProgressBar_FastLibsweepAnimationDurationMillis, 900);
@@ -153,6 +160,8 @@ public class CircleProgressView extends View {
                     mColors[1] = getResources().getColor(colors[1]);
                     mColors[2] = getResources().getColor(colors[2]);
                     mColors[3] = getResources().getColor(colors[3]);
+                    break;
+                default:
                     break;
             }
         }

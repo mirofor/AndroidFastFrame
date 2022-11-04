@@ -10,8 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
-
-import com.fast.library.ui.ToastUtils;
+import com.fast.library.utils.ToastUtils;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
@@ -22,6 +21,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 /**
  * 说明：BaseDialogFragment
+ * @author xiaomi
  */
 public abstract class BaseDialogFragment extends AppCompatDialogFragment {
 

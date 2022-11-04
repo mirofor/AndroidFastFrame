@@ -59,7 +59,7 @@ public abstract class ActivityFrame<Presenter extends MvpPresenter> extends Base
         if (isRegisterEventBus()) {
             EventUtils.registerEventBus(this);
         }
-//        初始化LoaderManager
+        //初始化LoaderManager
 //        getSupportLoaderManager().initLoader(createLoaderID(), null, this);
     }
 

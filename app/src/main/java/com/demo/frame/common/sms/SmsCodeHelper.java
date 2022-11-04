@@ -6,6 +6,7 @@ import android.widget.TextView;
 /**
  * 说明：发送短信倒计时
  */
+@SuppressWarnings("unchecked")
 public class SmsCodeHelper<T extends TextView> {
 
     private String tickTextFormat = "%s秒";

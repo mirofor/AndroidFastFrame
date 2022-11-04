@@ -7,7 +7,6 @@ import com.demo.frame.common.ActivityBindFragment;
 
 /**
  * 说明：FragmentConfig
- * @author xiaomi
  */
 public class FragmentConfig{
 
@@ -15,7 +14,7 @@ public class FragmentConfig{
     public static String TITLE = "TITLE";
     public static String URL = "URL";
     public static String URL_CONTENT = "URL_CONTENT";
-    public static String USE_RECEIVED_TITLE = "USE_RECEIVED_TITLE";
+
 
     private FragmentConfig(){}
 
@@ -32,6 +31,7 @@ public class FragmentConfig{
         if (activityBindFragment != null && activityBindFragment.getIntent() != null &&
                 activityBindFragment.getIntent().getExtras() != null &&
                 activityBindFragment.getIntent().getExtras().containsKey(FRAGMENT_CONFIG_KEY)){
+
             return (FragmentBind) FragmentBind.instantiate(activityBindFragment,
                     activityBindFragment.getIntent().getExtras().getString(FRAGMENT_CONFIG_KEY),activityBindFragment.getIntent().getExtras());
         }else {

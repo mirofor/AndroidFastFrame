@@ -21,9 +21,11 @@
             android:orientation="vertical">
 
             <TextView
+                style="@style/H1Text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center|left" />
+                android:gravity="center|left"
+                android:text="标题" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -34,7 +36,8 @@
 
                 <ImageView
                     android:layout_width="25dp"
-                    android:layout_height="26dp" />
+                    android:layout_height="26dp"
+                    android:background="@drawable/ic_wy_login_username" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -51,6 +54,7 @@
                     android:layout_height="match_parent"
                     android:background="@null"
                     android:gravity="center|left"
+                    android:hint="请输入手机号"
                     android:inputType="number"
                     android:maxLength="11"
                     android:paddingLeft="@dimen/dp_10"
@@ -76,7 +80,8 @@
 
                 <ImageView
                     android:layout_width="25dp"
-                    android:layout_height="26dp"/>
+                    android:layout_height="26dp"
+                    android:background="@drawable/ic_wy_login_password" />
 
                 <EditText
                     android:id="@+id/et_smart_login_mobile_code"
@@ -155,8 +160,8 @@
             <TextView
                 android:id="@+id/tv_smart_login_btn"
                 style="@style/StyleBtn"
-                android:text="登录"
-                android:layout_marginTop="@dimen/dp_50" />
+                android:layout_marginTop="@dimen/dp_50"
+                android:text="登录" />
         </LinearLayout>
     </LinearLayout>
 

@@ -7,6 +7,7 @@ import androidx.annotation.ColorInt;
 /**
  * 说明：SmsCodeConfig
  */
+@SuppressWarnings("unchecked")
 public class SmsCodeConfig<T extends TextView>{
     private T view;
     private @ColorInt

@@ -4,6 +4,7 @@ import com.fast.library.utils.StringUtils;
 
 /**
  * 说明：包装参数
+ * @author xiaomi
  */
 public final class Part {
 

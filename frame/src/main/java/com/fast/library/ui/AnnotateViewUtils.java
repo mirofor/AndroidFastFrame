@@ -1,5 +1,6 @@
 package com.fast.library.ui;
 
+
 import android.app.Activity;
 
 import com.fast.library.utils.ToolUtils;
@@ -10,6 +11,7 @@ import androidx.fragment.app.Fragment;
 
 /**
  * 说明：注解工具类[Activity,Fragment]
+ * @author xiaomi
  */
 
 public class AnnotateViewUtils {

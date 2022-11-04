@@ -1,5 +1,6 @@
 package com.fast.library.ui;
 
+import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -15,17 +16,26 @@ import androidx.fragment.app.Fragment;
 
 /**
  * 说明：SupportFragment
+ *
+ * @author xiaomi
  */
 public abstract class SupportFragment extends Fragment implements OnClickListener {
 
-    public static final String TAG = SupportFragment.class.getSimpleName();
+    protected Context context;
     protected View fragmentRootView;
     private int resId = 0;
 
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        setViewBefor(context);
+        this.context = context;
+        setViewBefore(context);
+    }
+
+    protected void runOnUiThread(Runnable runnable) {
+        if (context instanceof Activity) {
+            ((Activity) context).runOnUiThread(runnable);
+        }
     }
 
     protected abstract View inflaterView(LayoutInflater inflater,
@@ -46,6 +56,7 @@ public abstract class SupportFragment extends Fragment implements OnClickListene
 
     /**
      * 说明：获取数据
+     *
      * @param bundle bundle
      */
     protected void getBundleData(Bundle bundle) {
@@ -53,13 +64,15 @@ public abstract class SupportFragment extends Fragment implements OnClickListene
 
     /**
      * 说明：初始化数据onActivityCreated
+     *
      * @param savedInstanceState bundle
-     * @param view view
+     * @param view               view
      */
     protected abstract void onInit(Bundle savedInstanceState, View view);
 
     /**
      * 说明：初始化数据onCreateView
+     *
      * @param view view
      */
     protected void onInitCreateView(View view) {
@@ -70,12 +83,13 @@ public abstract class SupportFragment extends Fragment implements OnClickListene
      *
      * @param context
      */
-    protected void setViewBefor(Context context) {
+    protected void setViewBefore(Context context) {
     }
 
     /**
      * 说明：点击事件
-     * @param v view
+     *
+     * @param v  view
      * @param id id
      */
     protected void clickView(View v, int id) {
@@ -83,6 +97,7 @@ public abstract class SupportFragment extends Fragment implements OnClickListene
 
     /**
      * 说明：点击事件
+     *
      * @param v view
      */
     @Override
@@ -92,8 +107,9 @@ public abstract class SupportFragment extends Fragment implements OnClickListene
 
     /**
      * onCreateView
-     * @param inflater LayoutInflater
-     * @param container ViewGroup Container
+     *
+     * @param inflater           LayoutInflater
+     * @param container          ViewGroup Container
      * @param savedInstanceState Bundle
      * @return View
      */

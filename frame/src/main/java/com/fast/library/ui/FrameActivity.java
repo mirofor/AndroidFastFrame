@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.ViewGroup;
 
 import com.fast.library.utils.LogUtils;
 
@@ -12,6 +13,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 /**
  * 说明：FrameActivity为Activity基类
+ * @author xiaomi
  */
 public abstract class FrameActivity extends AppCompatActivity implements OnClickListener,
         I_Broadcast, I_Activity, I_SkipActivity,I_Service{
@@ -116,6 +118,13 @@ public abstract class FrameActivity extends AppCompatActivity implements OnClick
         }
         currentSupportFragment = targetFragment;
         transaction.commitAllowingStateLoss();
+    }
+
+    protected void removeFromParent(View view) {
+        ViewGroup viewGroup = (ViewGroup) view.getParent();
+        if (viewGroup != null) {
+            viewGroup.removeView(view);
+        }
     }
 }
 

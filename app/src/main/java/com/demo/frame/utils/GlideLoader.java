@@ -16,16 +16,16 @@ import java.io.FileOutputStream;
 
 /**
  * 说明：Glide工具类
+ *
+ * @author xiaomi
  */
 public class GlideLoader {
-
 
     private GlideLoader(Context context) {
         if (context == null) {
             throw new NullPointerException("context is null");
         }
     }
-
     /////////////////////////////////////////////////////
 
     /**
@@ -37,6 +37,11 @@ public class GlideLoader {
     public static void into(ImageView iv, String url) {
         if (iv != null && !StringUtils.isEmpty(url)) {
             Glide.with(iv.getContext()).load(url).into(iv);
+        }
+    }
+    public static void into(ImageView iv, String url,int defImg) {
+        if (iv != null && !StringUtils.isEmpty(url)) {
+            Glide.with(iv.getContext()).load(url).error(defImg).into(iv);
         }
     }
 
@@ -92,7 +97,7 @@ public class GlideLoader {
     }
 
     /**
-     * 说明：保存为PNG
+     * 说明：保存为JPG
      *
      * @param bitmap
      * @param path
@@ -112,48 +117,6 @@ public class GlideLoader {
     public static void saveWEBP(Bitmap bitmap, String path, SaveImageListener listener) {
         save(bitmap, path, Bitmap.CompressFormat.WEBP, 100, listener);
     }
-
-    /**
-     * 说明：保存图片-格式PNG
-     *
-     * @param context
-     * @param url
-     * @param path
-     * @param listener
-     */
-//    public static void saveImage(Context context, final String url, final String path, final SaveImageListener listener) {
-//        if (StringUtils.isEmpty(url) || StringUtils.isEmpty(path)) {
-//            return;
-//        }
-//        bitmap(context, url, new BitmapListener() {
-//            @Override
-//            public void onStart() {
-//                if (listener != null) {
-//                    listener.onStart();
-//                }
-//            }
-//
-//            @Override
-//            public void onSuccess(Bitmap bitmap) {
-//                String type = url.substring(url.lastIndexOf('.'));
-//                if (StringUtils.isEqualsIgnoreCase(type, "jpg")) {
-//                    saveJPG(bitmap, path, listener);
-//                } else if (StringUtils.isEqualsIgnoreCase(type, "webp")) {
-//                    saveWEBP(bitmap, path, listener);
-//                } else {
-//                    savePNG(bitmap, path, listener);
-//                }
-//            }
-//
-//            @Override
-//            public void onFail(Exception e) {
-//                if (listener != null) {
-//                    listener.onFail(e);
-//                }
-//            }
-//        });
-//
-//    }
 
     /**
      * 说明：保存图片

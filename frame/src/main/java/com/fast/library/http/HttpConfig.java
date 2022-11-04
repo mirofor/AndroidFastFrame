@@ -1,16 +1,20 @@
 package com.fast.library.http;
 
 import android.text.TextUtils;
+
 import com.fast.library.FastFrame;
 import com.fast.library.utils.FrameConstant;
 import com.fast.library.utils.LogUtils;
 import com.fast.library.utils.StringUtils;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.Proxy;
 import java.util.ArrayList;
 import java.util.List;
+
 import javax.net.ssl.HostnameVerifier;
+
 import okhttp3.Authenticator;
 import okhttp3.Cache;
 import okhttp3.CertificatePinner;
@@ -24,10 +28,11 @@ import okio.Buffer;
 
 /**
  * 说明：Http配置器
+ * 初始化HttpConfig
+ * HttpConfig.Builder httpBuilder = new HttpConfig.Builder(this);
+ * httpBuilder.build().init();
  *
- *         //初始化HttpConfig
- *                 HttpConfig.Builder httpBuilder = new HttpConfig.Builder(this);
- *                 httpBuilder.build().init();
+ * @author xiaomi
  */
 public class HttpConfig {
 
@@ -67,7 +72,7 @@ public class HttpConfig {
     //默认配置
     private static HttpConfig mDefaultHttpConfig;
 
-    private HttpConfig(Builder builder){
+    private HttpConfig(Builder builder) {
         this.mCommonHeader = builder.mCommonHeader;
         this.mCommonParams = builder.mCommonParams;
         this.mCertificateList = builder.mCertificateList;
@@ -91,16 +96,16 @@ public class HttpConfig {
     /**
      * 说明：初始化
      */
-    public void init(){
-        if (mHttpConfig != null){
+    public void init() {
+        if (mHttpConfig != null) {
             return;
-        }else {
+        } else {
             this.mOkHttpClient = OkHttpFactory.create(this);
             mHttpConfig = this;
         }
     }
 
-    public static class Builder{
+    public static class Builder {
         private Proxy proxy;
         private Dispatcher dispatcher;
         private CookieJar cookieJar;
@@ -131,7 +136,7 @@ public class HttpConfig {
         //设置信任所有证书（开发模式使用）
         private boolean mTrustAll;
 
-        public Builder(){
+        public Builder() {
             this.mCertificateList = new ArrayList<>();
             this.networkInterceptorList = new ArrayList<>();
             this.interceptorList = new ArrayList<>();
@@ -143,32 +148,35 @@ public class HttpConfig {
 
         /**
          * 说明：添加公共参数
+         *
          * @param params 参数
          * @return Builder
          */
-        public Builder setCommonParams(List<Part> params){
+        public Builder setCommonParams(List<Part> params) {
             this.mCommonParams = params;
             return this;
         }
 
         /**
          * 说明：添加公共Header
+         *
          * @param header header
          * @return Builder
          */
-        public Builder setCommonHeaders(Headers header){
+        public Builder setCommonHeaders(Headers header) {
             this.mCommonHeader = header;
             return this;
         }
 
         /**
          * 说明：添加证书
+         *
          * @param certificates certificates
          * @return Builder
          */
-        public Builder setCertificates(InputStream...certificates){
-            for (InputStream is : certificates){
-                if (is != null){
+        public Builder setCertificates(InputStream... certificates) {
+            for (InputStream is : certificates) {
+                if (is != null) {
                     mCertificateList.add(is);
                 }
             }
@@ -177,12 +185,13 @@ public class HttpConfig {
 
         /**
          * 说明：添加证书
+         *
          * @param certificates certificates...
          * @return Builder
          */
-        public Builder setCertificates(String...certificates){
-            for (String s : certificates){
-                if (!StringUtils.isEmpty(s)){
+        public Builder setCertificates(String... certificates) {
+            for (String s : certificates) {
+                if (!StringUtils.isEmpty(s)) {
                     mCertificateList.add(new Buffer().writeUtf8(s).inputStream());
                 }
             }
@@ -196,41 +205,45 @@ public class HttpConfig {
 
         /**
          * 说明：设置超时时间
-         * @param timeout  超时时间
+         *
+         * @param timeout 超时时间
          * @return Builder
          */
-        public Builder setTimeout(int timeout){
+        public Builder setTimeout(int timeout) {
             this.mTimeout = timeout;
             return this;
         }
 
         /**
          * 说明：开启调试模式（输出Log日志）
+         *
          * @param debug true/false
          * @return 调试模式
          */
-        public Builder setDebug(boolean debug){
+        public Builder setDebug(boolean debug) {
             this.mDebug = debug;
             return this;
         }
 
         /**
          * 说明：设置信任所有证书（开发模式使用）
+         *
          * @param trust
          * @return
          */
-        public Builder setTrustAll(boolean trust){
+        public Builder setTrustAll(boolean trust) {
             this.mTrustAll = trust;
             return this;
         }
 
         /**
          * 说明：设置网络拦截器
+         *
          * @param interceptors 拦截器
          * @return Builder
          */
-        public Builder setNetworkInterceptors(List<Interceptor> interceptors){
-            if (interceptors != null){
+        public Builder setNetworkInterceptors(List<Interceptor> interceptors) {
+            if (interceptors != null) {
                 networkInterceptorList.addAll(interceptors);
             }
             return this;
@@ -238,11 +251,12 @@ public class HttpConfig {
 
         /**
          * 说明：设置网络拦截器
+         *
          * @param interceptors
          * @return
          */
-        public Builder setNetworkInterceptors(Interceptor interceptors){
-            if (interceptors != null){
+        public Builder setNetworkInterceptors(Interceptor interceptors) {
+            if (interceptors != null) {
                 networkInterceptorList.add(interceptors);
             }
             return this;
@@ -250,46 +264,51 @@ public class HttpConfig {
 
         /**
          * 说明：应用网络拦截器
+         *
          * @param interceptors 拦截器
          * @return Builder
          */
-        public Builder setInterceptors(List<Interceptor> interceptors){
+        public Builder setInterceptors(List<Interceptor> interceptors) {
             this.interceptorList = interceptors;
             return this;
         }
 
         /**
          * 说明：失败重试
+         *
          * @param retryConnectionFailue
          * @return Builder
          */
-        public Builder setRetryConnectionFailue(boolean retryConnectionFailue){
+        public Builder setRetryConnectionFailue(boolean retryConnectionFailue) {
             this.retryConnectionFailure = retryConnectionFailue;
             return this;
         }
 
         /**
          * 说明：设置重定向
+         *
          * @param redirect
          * @return Builder
          */
-        public Builder setRedirect(boolean redirect){
+        public Builder setRedirect(boolean redirect) {
             this.redirects = redirect;
             return this;
         }
 
         /**
          * 说明：设置SSL重定向
+         *
          * @param redirects
          * @return Builder
          */
-        public Builder setSslRedirect(boolean redirects){
+        public Builder setSslRedirect(boolean redirects) {
             this.sslRedirects = redirects;
             return this;
         }
 
         /**
          * 设置cookie jar
+         *
          * @param cookieJar
          * @return Builder
          */
@@ -300,6 +319,7 @@ public class HttpConfig {
 
         /**
          * 设置缓存
+         *
          * @param cache
          * @return Builder
          */
@@ -311,7 +331,8 @@ public class HttpConfig {
         /**
          * 设置缓存-并且添加网络拦截器修改响应头(有无网络都先读缓存)
          * 强制响应缓存者根据该值校验新鲜性.即与自身的Age值,与请求时间做比较.如果超出max-age值,则强制去服务器端验证.以确保返回一个新鲜的响应.
-         * @param cache cache
+         *
+         * @param cache     cache
          * @param cacheTime 缓存时间 单位秒
          * @return Builder
          */
@@ -324,7 +345,8 @@ public class HttpConfig {
         /**
          * 设置缓存-并且添加网络拦截器修改响应头(有无网络都先读缓存)
          * 允许缓存者发送一个过期不超过指定秒数的陈旧的缓存.
-         * @param cache cache
+         *
+         * @param cache     cache
          * @param cacheTime 缓存时间 单位秒
          * @return Builder
          */
@@ -335,7 +357,8 @@ public class HttpConfig {
 
         /**
          * 设置缓存-并且添加网络拦截器修改响应头(有无网络都先读缓存)
-         * @param cache cache
+         *
+         * @param cache             cache
          * @param cacheControlValue Cache-Control值
          * @return Builder
          */
@@ -357,6 +380,7 @@ public class HttpConfig {
 
         /**
          * 设置Authenticator
+         *
          * @param authenticator authenticator
          * @return Builder
          */
@@ -372,6 +396,7 @@ public class HttpConfig {
 
         /**
          * 设置Dispatcher实例
+         *
          * @param dispatcher dispatcher
          * @return Builder
          */
@@ -380,29 +405,31 @@ public class HttpConfig {
             return this;
         }
 
-        public HttpConfig build(){
+        public HttpConfig build() {
             return new HttpConfig(this);
         }
     }
 
     /**
      * 说明：获取Http配置器
+     *
      * @return HttpConfig
      */
-    public static HttpConfig get(){
-        if (mHttpConfig == null){
+    public static HttpConfig get() {
+        if (mHttpConfig == null) {
             return getDefaultHttpConfig();
-        }else {
+        } else {
             return mHttpConfig;
         }
     }
 
     /**
      * 说明：获取默认的配置器
+     *
      * @return HttpConfig
      */
-    private static HttpConfig getDefaultHttpConfig(){
-        if (mDefaultHttpConfig == null){
+    private static HttpConfig getDefaultHttpConfig() {
+        if (mDefaultHttpConfig == null) {
             mDefaultHttpConfig = new Builder().setTimeout(FrameConstant.Http.TIMEOUT).build();
             mDefaultHttpConfig.init();
         }
@@ -411,9 +438,10 @@ public class HttpConfig {
 
     /**
      * 说明：获取OkHttpClient客户端
+     *
      * @return OkHttpClient
      */
-    public OkHttpClient getOkHttpClient(){
+    public OkHttpClient getOkHttpClient() {
         return mOkHttpClient;
     }
 
@@ -432,31 +460,35 @@ public class HttpConfig {
 
     /**
      * 说明：获取超时时间
+     *
      * @return 超时时间
      */
     public int getTimeout() {
-        LogUtils.d("HttpConfig timeout = "+mTimeout);
+        LogUtils.d("HttpConfig timeout = " + mTimeout);
         return mTimeout;
     }
 
     /**
      * 说明：是否开启调试
+     *
      * @return 是否调试模式
      */
-    public boolean getDebug(){
+    public boolean getDebug() {
         return mDebug;
     }
 
     /**
      * 说明：信任所有证书（开发模式使用）
+     *
      * @return 是否信任证书
      */
-    public boolean getTrustAll(){
+    public boolean getTrustAll() {
         return mTrustAll;
     }
 
     /**
      * 说明：获取头信息
+     *
      * @return Headers
      */
     public Headers getCommonHeader() {
@@ -472,15 +504,15 @@ public class HttpConfig {
         return interceptorList;
     }
 
-    public boolean getRetryConnectionFailure(){
+    public boolean getRetryConnectionFailure() {
         return retryConnectionFailure;
     }
 
-    public boolean getRedirects(){
+    public boolean getRedirects() {
         return redirects;
     }
 
-    public boolean getSslRedirects(){
+    public boolean getSslRedirects() {
         return sslRedirects;
     }
 
@@ -510,36 +542,38 @@ public class HttpConfig {
 
     /**
      * 说明：修改公共请求参数信息
-     * @param key key
+     *
+     * @param key   key
      * @param value value
      */
-    public void updateCommonParams(String key,String value){
+    public void updateCommonParams(String key, String value) {
         boolean add = false;
         List<Part> commonParams = getCommonParams();
-        if (commonParams != null){
-            for (Part part:commonParams){
-                if (part != null && TextUtils.equals(part.getKey(),key)){
+        if (commonParams != null) {
+            for (Part part : commonParams) {
+                if (part != null && TextUtils.equals(part.getKey(), key)) {
                     part.setValue(value);
                     add = true;
                     break;
                 }
             }
         }
-        if (!add){
-            commonParams.add(new Part(key,value));
+        if (!add) {
+            commonParams.add(new Part(key, value));
         }
     }
 
     /**
      * 说明：修改公共header信息
-     * @param key key
+     *
+     * @param key   key
      * @param value value
      */
-    public void updateCommonHeader(String key,String value){
+    public void updateCommonHeader(String key, String value) {
         Headers headers = getCommonHeader();
-        if (headers == null){
+        if (headers == null) {
             headers = new Headers.Builder().build();
         }
-        this.mCommonHeader = headers.newBuilder().set(key,value).build();
+        this.mCommonHeader = headers.newBuilder().set(key, value).build();
     }
 }

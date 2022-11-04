@@ -14,9 +14,12 @@ import javax.net.ssl.SSLSocketFactory;
 import javax.net.ssl.TrustManager;
 import javax.net.ssl.X509TrustManager;
 
+/**
+ * @author xiaomi
+ */
 public class CompatSSLSocketFactory extends SSLSocketFactory {
 
-    private static final String PROTOCOL_ARRAY[] = {"SSLv3", "TLSv1", "TLSv1.1", "TLSv1.2"};
+    private static final String[] PROTOCOL_ARRAY = {"SSLv3", "TLSv1", "TLSv1.1", "TLSv1.2"};
 
     private static final X509TrustManager DEFAULT_TRUST_MANAGERS = new X509TrustManager() {
         @Override

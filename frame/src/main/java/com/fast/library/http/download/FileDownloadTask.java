@@ -20,6 +20,7 @@ import okhttp3.Response;
 
 /**
  * 说明：文件下载任务
+ * @author xiaomi
  */
 public class FileDownloadTask extends AsyncTask<Void,Long,Boolean>{
 

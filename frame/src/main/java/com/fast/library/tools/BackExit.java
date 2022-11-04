@@ -4,6 +4,7 @@ import com.fast.library.ui.ActivityStack;
 
 /**
  * 说明：默认退出处理
+ * @author xiaomi
  */
 public class BackExit {
 

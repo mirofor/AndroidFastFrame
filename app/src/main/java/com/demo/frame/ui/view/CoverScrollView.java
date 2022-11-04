@@ -5,9 +5,9 @@ import android.util.AttributeSet;
 import android.widget.ScrollView;
 
 /**
- * Created by aimi on 2018/6/13.
+ * @author aimi
+ * @date 2018/6/13
  */
-
 public class CoverScrollView extends ScrollView {
 
     public CoverScrollView(Context context, AttributeSet attrs) {

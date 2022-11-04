@@ -8,8 +8,9 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.6.1'
-        classpath 'com.novoda:bintray-release:0.9.1'
+        classpath 'com.novoda:bintray-release:0.9.2'
         classpath 'com.jakewharton:butterknife-gradle-plugin:10.2.3'
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.0'
 
     }
 }
@@ -24,24 +25,26 @@ buildscript {
 
 allprojects {
     repositories {
+
         maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
         maven{ url 'http://maven.aliyun.com/nexus/content/repositories/jcenter'}
         google()
-        jcenter()
         mavenCentral()
         maven { url "https://jitpack.io"}
+        jcenter()
+        maven { url 'https://dl.bintray.com/brightmi/maven' }
     }
 
     //加上这些
-    tasks.withType(Javadoc) {
-        options {
-            encoding "UTF-8"
-            charSet 'UTF-8'
-            links "http://docs.oracle.com/javase/7/docs/api/"
-        }
-        options.addStringOption('Xdoclint:none', '-quiet')
-        options.addStringOption('encoding', 'UTF-8')
-    }
+//    tasks.withType(Javadoc) {
+//        options {
+//            encoding "UTF-8"
+//            charSet 'UTF-8'
+//            links "http://docs.oracle.com/javase/7/docs/api/"
+//        }
+//    }
+//
+    tasks.getByPath(":frame:javadocRelease").enabled = false
 }
 
 task clean(type: Delete) {

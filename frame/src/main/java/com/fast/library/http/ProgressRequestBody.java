@@ -12,6 +12,7 @@ import okio.Sink;
 
 /**
  * 说明：带处理进度的请求体
+ * @author xiaomi
  */
 public class ProgressRequestBody extends RequestBody{
     //请求体

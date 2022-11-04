@@ -15,7 +15,8 @@
 
         <ImageView
             android:layout_width="20dp"
-            android:layout_height="20dp" />
+            android:layout_height="20dp"
+            android:src="@drawable/ic_smart_title_back" />
     </LinearLayout>
 
     <TextView

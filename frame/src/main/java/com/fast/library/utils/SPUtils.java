@@ -11,8 +11,8 @@ import java.util.Map;
 
 /**
  * 说明：SharedPreferences操作工具类
+ * @author xiaomi
  */
-
 public final class SPUtils {
 
     private static Map<String,SharedPreferences> spMap = new HashMap<>();
@@ -77,7 +77,7 @@ public final class SPUtils {
      * @param value
      */
     public void write(String key, String value) {
-        spMap.get(fileName).edit().putString(encodeKey(key), encodeValue(value)).commit();
+        spMap.get(fileName).edit().putString(encodeKey(key), encodeValue(value)).apply();
     }
 
     /*********************读方法*********************************/
@@ -168,14 +168,14 @@ public final class SPUtils {
      * @param key
      */
     public void remove(String key) {
-        spMap.get(fileName).edit().remove(encodeKey(key)).remove(key).commit();
+        spMap.get(fileName).edit().remove(encodeKey(key)).remove(key).apply();
     }
 
     /**
      * 说明：清空
      */
     public void clear() {
-        spMap.get(fileName).edit().clear().commit();
+        spMap.get(fileName).edit().clear().apply();
     }
 
     private String encodeKey(String key){

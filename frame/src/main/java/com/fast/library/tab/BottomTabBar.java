@@ -113,7 +113,6 @@ public class BottomTabBar extends LinearLayout implements ViewPager.OnPageChange
                         if (this.mReplaceLayout == 0) {
                             throw new IllegalStateException("Must input ReplaceLayout of mReplaceLayout");
                         }
-
 //                        this.relaceFrament(i);
 
                         this.showOrHideFragment(mReplaceLayout, i);

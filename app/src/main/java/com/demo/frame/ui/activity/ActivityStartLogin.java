@@ -3,19 +3,15 @@ package com.demo.frame.ui.activity;
 import android.view.View;
 
 import com.demo.frame.R;
-import com.demo.frame.helper.RouterHelper;
 import com.demo.frame.ui.ActivityCommon;
 import com.fast.library.ui.ContentView;
 import com.fast.library.view.RoundButton;
-import com.vondear.rxtool.view.RxToast;
+import com.tamsiree.rxkit.view.RxToast;
 
 import androidx.annotation.Nullable;
 import butterknife.BindView;
 import butterknife.OnClick;
 
-/**
- * @author xiaomi
- */
 @ContentView(R.layout.activity_smart_start_login)
 public class ActivityStartLogin extends ActivityCommon {
 
@@ -28,12 +24,10 @@ public class ActivityStartLogin extends ActivityCommon {
     public void onClick(View view) {
         switch (view.getId()) {
 
-            case R.id.btn_start_login:
+            case R.id.btn_start_login:// 登录
                 RxToast.success("登录");
-
-                RouterHelper.startHomePage(this);
                 break;
-            case R.id.btn_start_register:
+            case R.id.btn_start_register://注册
                 RxToast.success("注册");
                 break;
 
@@ -42,5 +36,9 @@ public class ActivityStartLogin extends ActivityCommon {
         }
     }
 
+    @Override
+    public void onBackPressed() {
+        finish();
+    }
 
 }

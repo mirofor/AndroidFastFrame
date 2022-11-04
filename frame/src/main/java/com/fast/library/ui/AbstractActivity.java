@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 /**
  * 说明：Activity基类
+ * @author xiaomi
  */
 public abstract class AbstractActivity extends FrameActivity{
 

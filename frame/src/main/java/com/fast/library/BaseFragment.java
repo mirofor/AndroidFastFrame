@@ -8,13 +8,15 @@ import android.view.ViewGroup;
 
 import com.fast.library.http.HttpTaskKey;
 import com.fast.library.ui.SupportFragment;
-import com.fast.library.ui.ToastUtils;
+import com.fast.library.utils.ToastUtils;
 
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 
 /**
  * 说明：Fragment基类(V4)
+ *
+ * @author xiaomi
  */
 public abstract class BaseFragment extends SupportFragment implements HttpTaskKey {
 
@@ -24,7 +26,7 @@ public abstract class BaseFragment extends SupportFragment implements HttpTaskKe
     @Override
     protected View inflaterView(LayoutInflater inflater, ViewGroup container, Bundle bundle) {
         mFragmentActivity = getActivity();
-        return inflater.inflate(getRootViewResID(),null);
+        return inflater.inflate(getRootViewResID(), null);
     }
 
     @Override
@@ -34,19 +36,23 @@ public abstract class BaseFragment extends SupportFragment implements HttpTaskKe
 
     /***************************************************************************************/
 
-    public void shortToast(int res){
+    public void shortToast(int res) {
         ToastUtils.get().shortToast(res);
     }
-    public void shortToast(String res){
+
+    public void shortToast(String res) {
         ToastUtils.get().shortToast(res);
     }
-    public void longToast(String res){
+
+    public void longToast(String res) {
         ToastUtils.get().longToast(res);
     }
-    public void longToast(int res){
+
+    public void longToast(int res) {
         ToastUtils.get().longToast(res);
     }
-    public void cancelToast(){
+
+    public void cancelToast() {
         ToastUtils.get().cancelToast();
     }
 
@@ -54,6 +60,7 @@ public abstract class BaseFragment extends SupportFragment implements HttpTaskKe
 
     /**
      * 容器
+     *
      * @param containerId 容器
      */
     public void setContainerId(int containerId) {
@@ -68,6 +75,7 @@ public abstract class BaseFragment extends SupportFragment implements HttpTaskKe
 
     /**
      * Activity跳转
+     *
      * @param cls 类
      */
     public void skipActivity(Class<?> cls) {
@@ -76,7 +84,8 @@ public abstract class BaseFragment extends SupportFragment implements HttpTaskKe
     }
 
     /**
-     *  Activity跳转
+     * Activity跳转
+     *
      * @param intent intent
      */
     public void skipActivity(Intent intent) {
@@ -86,7 +95,8 @@ public abstract class BaseFragment extends SupportFragment implements HttpTaskKe
 
     /**
      * Activity跳转
-     * @param cls Activity
+     *
+     * @param cls    Activity
      * @param bundle 携带数据
      */
     public void skipActivity(Class<?> cls, Bundle bundle) {
@@ -96,15 +106,17 @@ public abstract class BaseFragment extends SupportFragment implements HttpTaskKe
 
     /**
      * Activity跳转
+     *
      * @param cls Activity
      */
     public void showActivity(Class<?> cls) {
-        Intent intent = new Intent(mFragmentActivity,cls);
+        Intent intent = new Intent(mFragmentActivity, cls);
         mFragmentActivity.startActivity(intent);
     }
 
     /**
      * Activity跳转
+     *
      * @param intent intent
      */
     public void showActivity(Intent intent) {
@@ -112,23 +124,22 @@ public abstract class BaseFragment extends SupportFragment implements HttpTaskKe
     }
 
     public void showActivity(Class<?> cls, Bundle bundle) {
-        Intent intent = new Intent(mFragmentActivity,cls);
+        Intent intent = new Intent(mFragmentActivity, cls);
         intent.putExtras(bundle);
         mFragmentActivity.startActivity(intent);
     }
 
     /***************************************************************************************/
 
-    /***************************************************************************************/
-
     /**
      * getSupportFragmentManager
+     *
      * @return FragmentManager
      */
     public FragmentManager getSupportFragmentManager() {
-        if (mFragmentActivity != null){
+        if (mFragmentActivity != null) {
             return mFragmentActivity.getSupportFragmentManager();
-        }else {
+        } else {
             return null;
         }
     }

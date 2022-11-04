@@ -6,7 +6,9 @@ import java.util.List;
 
 /**
  * 说明：返回结果集合
+ * @author xiaomi
  */
+@SuppressWarnings("unchecked")
 public class ResponseResult<T> implements Serializable{
 
     private static final long serialVersionUID = 1L;

@@ -72,9 +72,17 @@ public final class ToolUtils {
             PackageInfo pi = pm.getPackageInfo(FastFrame.getApplication().getPackageName(),
                     PackageManager.GET_ACTIVITIES);
             if (pi != null) {
+
                 String versionName = pi.versionName == null ? "null"
                         : pi.versionName;
-                String versionCode = pi.versionCode + "";
+                String versionCode =  "";
+
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+                    versionCode = pi.getLongVersionCode()+"";
+                } else {
+                    versionCode = pi.versionCode+"";
+                }
+
                 infos.put("versionName", versionName);
                 infos.put("versionCode", versionCode);
             }

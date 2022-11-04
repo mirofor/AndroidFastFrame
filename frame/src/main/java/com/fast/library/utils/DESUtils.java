@@ -8,6 +8,9 @@ import javax.crypto.Cipher;
 import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
 
+/**
+ * @author xiaomi
+ */
 public class DESUtils {
     private static byte[] iv = { 1, 2, 3, 4, 5, 6, 7, 8 };
 

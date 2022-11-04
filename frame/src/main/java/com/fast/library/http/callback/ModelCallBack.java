@@ -5,7 +5,9 @@ import java.lang.reflect.Type;
 
 /**
  * 说明：返回Bean对象
+ * @author xiaomi
  */
+@SuppressWarnings("unchecked")
 public abstract class ModelCallBack<T> extends BaseHttpCallBack<T>{
 
     public ModelCallBack(){

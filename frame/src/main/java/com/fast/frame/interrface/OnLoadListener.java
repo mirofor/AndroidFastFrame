@@ -1,5 +1,5 @@
 package com.fast.frame.interrface;
-
+@SuppressWarnings("unchecked")
 public abstract class OnLoadListener<T>{
     public void onStart(){}
     public void onFinish(){}

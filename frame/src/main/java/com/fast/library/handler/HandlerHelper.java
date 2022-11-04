@@ -5,6 +5,7 @@ import android.os.Message;
 
 /**
  * 说明：Handler帮助类
+ * @author xiaomi
  */
 public class HandlerHelper extends Handler{
 

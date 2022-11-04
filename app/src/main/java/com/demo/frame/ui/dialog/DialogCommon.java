@@ -4,7 +4,7 @@ import android.content.Context;
 
 import com.demo.frame.R;
 import com.fast.library.dialog.BaseDialog;
-import com.fast.library.ui.ToastUtils;
+import com.fast.library.utils.ToastUtils;
 
 import androidx.annotation.StringRes;
 import butterknife.ButterKnife;

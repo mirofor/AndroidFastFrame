@@ -16,7 +16,9 @@ import androidx.annotation.Size;
 
 /**
  * 说明：View的帮助类，赋值等功能
+ * @author xiaomi
  */
+@SuppressWarnings("unchecked")
 public final class ViewTools {
 
     public interface Direction{

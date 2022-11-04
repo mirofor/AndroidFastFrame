@@ -1,5 +1,6 @@
 package com.fast.frame;
 
+import android.annotation.SuppressLint;
 import android.app.Application;
 
 import com.fast.library.FastFrame;
@@ -12,6 +13,7 @@ import java.lang.reflect.Method;
 /**
  * @author xiaomi
  */
+@SuppressWarnings("unchecked")
 public class FrameApp extends Application{
 
     private HttpConfig.Builder mHttpBuilder;
@@ -25,11 +27,11 @@ public class FrameApp extends Application{
             mHttpBuilder.build().init();
         }
         FrameCrashHandler.getInstance().init();
-        disableApiDialog();
+//        disableApiDialog();
     }
 
     protected HttpConfig.Builder setHttpBuilder(){
-        HttpConfig.Builder builder = new HttpConfig.Builder();//配置HttpConfig
+        HttpConfig.Builder builder = new HttpConfig.Builder();
         builder.setDebug(setDebug());
         return builder;
     }
@@ -46,7 +48,7 @@ public class FrameApp extends Application{
      */
     public void disableApiDialog() {
         try {
-            Class aClass = Class.forName("android.content.pm.PackageParser$Package");
+            @SuppressLint("PrivateApi") Class aClass = Class.forName("android.content.pm.PackageParser$Package");
             Constructor declaredConstructor = aClass.getDeclaredConstructor(String.class);
             declaredConstructor.setAccessible(true);
         } catch (Exception e) {
@@ -54,11 +56,11 @@ public class FrameApp extends Application{
         }
 
         try {
-            Class clazz = Class.forName("android.app.ActivityThread");
+            @SuppressLint("PrivateApi") Class clazz = Class.forName("android.app.ActivityThread");
             Method currentActivityThread = clazz.getDeclaredMethod("currentActivityThread");
             currentActivityThread.setAccessible(true);
             Object activityThread = currentActivityThread.invoke(null);
-            Field mHiddenApiWarningShown = clazz.getDeclaredField("mHiddenApiWarningShown");
+            @SuppressLint("SoonBlockedPrivateApi") Field mHiddenApiWarningShown = clazz.getDeclaredField("mHiddenApiWarningShown");
             mHiddenApiWarningShown.setAccessible(true);
             mHiddenApiWarningShown.setBoolean(activityThread, true);
         } catch (Exception e) {

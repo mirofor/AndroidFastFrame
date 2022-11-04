@@ -8,10 +8,7 @@ import android.widget.TextView;
 import com.demo.frame.R;
 import com.demo.frame.helper.RouterHelper;
 import com.demo.frame.ui.ActivityCommon;
-import com.fast.library.tools.ViewTools;
 import com.fast.library.ui.ContentView;
-import com.fast.library.utils.AndroidInfoUtils;
-import com.fast.library.utils.LogUtils;
 import com.fast.library.view.RoundButton;
 
 import androidx.annotation.Nullable;
@@ -61,15 +58,6 @@ public class ActivityStart extends ActivityCommon {
     @Override
     public void onInitStart() {
         super.onInitStart();
-        LogUtils.e("【ActivityStart onInitStart】");
-        ViewTools.setText(tvVersionName, AndroidInfoUtils.versionName());
-        rbSkip.setOnClickListener(v -> {
-
-            RouterHelper.startLoginTip(this);
-            finish();
-        });
-
-//        LoaderManager.getInstance(this).initLoader(createLoaderID(), null, this);
         handlerAction();
 
     }

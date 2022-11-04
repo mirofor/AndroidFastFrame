@@ -5,10 +5,8 @@ project.ext {
 
     //1.关于SDK version
     compileSdkVersion = 28
-    buildToolsVersion='28.0.2'
-
-    //提到21 把是否会好很多
-    minSdkVersion = 19
+    buildToolsVersion='28.0.3'
+    minSdkVersion = 21
     targetSdkVersion = 28
 
     //2.关于Debug和Realease 的不同配置
@@ -18,7 +16,7 @@ project.ext {
     targetCompatibility = JavaVersion.VERSION_1_8
 
     //4.support Lib Version ,最好全部使用同一个版本号
-    supportLibraryVersion = '28.1.0'
+    supportLibraryVersion = '28.0.3'
 
     //5.
 //    versionCode = 1

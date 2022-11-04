@@ -13,6 +13,7 @@ import java.io.File;
 
 /**
  * 说明：Http请求网络工具类
+ * @author xiaomi
  */
 public class HttpUtils {
 

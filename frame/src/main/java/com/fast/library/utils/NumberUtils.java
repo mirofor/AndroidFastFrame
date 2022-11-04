@@ -7,8 +7,8 @@ import java.text.DecimalFormat;
 
 /**
  * 说明：数字工具类
+ * @author xiaomi
  */
-
 public final class NumberUtils {
 
     /**

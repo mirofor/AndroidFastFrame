@@ -1,6 +1,7 @@
 apply plugin: 'com.android.library'
 apply plugin: 'com.novoda.bintray-release'
 apply plugin: 'com.jakewharton.butterknife'
+apply plugin: 'com.github.dcendents.android-maven'
 
 android {
     compileSdkVersion Integer.parseInt(System.properties['compileSdkVersion'])
@@ -8,12 +9,18 @@ android {
     defaultConfig {
         minSdkVersion Integer.parseInt(System.properties['minSdkVersion'])
         targetSdkVersion Integer.parseInt(System.properties['targetSdkVersion'])
-        versionCode 201
-        versionName "2.0.1"
+        versionCode 211
+        versionName "2.1.1"
         javaCompileOptions {
             annotationProcessorOptions {
                 includeCompileClasspath = true
             }
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
     packagingOptions {
@@ -62,7 +69,6 @@ allprojects {
 
 dependencies {
     api fileTree(include: ['*.jar'], dir: 'libs')
-    api 'com.google.code.gson:gson:2.8.6'
 
     // 基础依赖包，必须要依赖
     api 'com.gyf.immersionbar:immersionbar:3.0.0'
@@ -70,23 +76,40 @@ dependencies {
     api 'com.gyf.immersionbar:immersionbar-components:3.0.0'
 
     api 'com.squareup.okhttp3:okhttp:3.14.4'
-    api 'org.greenrobot:eventbus:3.2.0'
+    api 'org.greenrobot:eventbus:3.3.1'
+
+    api 'androidx.annotation:annotation:1.2.0'
+    api 'androidx.appcompat:appcompat:1.2.0'
+
+    api 'com.google.code.gson:gson:2.10'
 
     // 添加 ButterKnife 依赖
     api 'com.jakewharton:butterknife:10.2.3'
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.3'
-
-    api 'androidx.annotation:annotation:1.1.0'
-    api 'androidx.appcompat:appcompat:1.2.0'
 }
 
 //gradlew clean build bintrayUpload -PbintrayUser=brightmi -PbintrayKey=BINTRAY_KEY -PdryRun=false
 publish {
+    repoName = 'maven'
     userOrg = 'brightmi'
     groupId = 'com.fast.frame'
     artifactId = 'xFastFrame'
-    publishVersion = '2.0.1'
-    desc = 'A base Android seed project（Android X appcompat） ,include common activities,uitls,fragment etc。'
+    publishVersion = '2.1.0'
+    desc = 'A base Android seed project（androidx） ,include common activities,uitls,fragment etc。'
     website = 'https://github.com/Android-MI/AndroidFastFrame.git'
     dryRun = false
+}
+group = 'com.github.Android-MI'
+version = '2.1.1'
+afterEvaluate {
+    publishing {
+        publications {
+            fastRelease(MavenPublication) {
+                from components.release
+                groupId = 'com.fast.frame'
+                artifactId = 'xFastFrame'
+                version = '2.1.1'
+            }
+        }
+    }
 }

@@ -15,7 +15,6 @@ public abstract class BaseRequest {
 
     private RequestParams requestParams = new RequestParams();
     private String key;
-    private String newLng, newlat;
 
     public BaseRequest() {
     }
@@ -49,11 +48,6 @@ public abstract class BaseRequest {
 //        addParams("lng", StringUtils.isNotEmpty(newLng) ? newLng : String.valueOf(LocationHelper.lng));
 //        addParams("lat", StringUtils.isNotEmpty(newlat) ? newlat : String.valueOf(LocationHelper.lat));
         return requestParams;
-    }
-
-    public void setLocation(double lng, double lat) {
-        this.newLng = String.valueOf(lng);
-        this.newlat = String.valueOf(lat);
     }
 
     public abstract void add(RequestParams requestParams);

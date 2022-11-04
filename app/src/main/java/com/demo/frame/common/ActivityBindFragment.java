@@ -6,17 +6,16 @@ import android.view.View;
 import com.demo.frame.R;
 import com.demo.frame.common.fragment.FragmentBind;
 import com.demo.frame.common.fragment.FragmentConfig;
-import com.demo.frame.ui.ActivityCommon;
+import com.demo.frame.ui.ActivityBase;
 import com.fast.library.ui.ContentView;
 
 import androidx.appcompat.widget.Toolbar;
 
 /**
  * 说明：ActivityBindFragment
- * @author xiaomi
  */
 @ContentView(R.layout.activity_bind_fragment)
-public class ActivityBindFragment extends ActivityCommon {
+public class ActivityBindFragment extends ActivityBase {
 
     private FragmentBind mFragment;
 
@@ -94,4 +93,15 @@ public class ActivityBindFragment extends ActivityCommon {
             mFragment.onActivityResult(requestCode,resultCode,data);
         }
     }
+
+//    @NonNull
+//    @Override
+//    public Loader onCreateLoader(int id, @Nullable Bundle args) {
+//        return null;
+//    }
+//
+//    @Override
+//    public void onLoadFinished(@NonNull Loader loader, Object data) {
+//
+//    }
 }

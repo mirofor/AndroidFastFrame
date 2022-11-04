@@ -5,7 +5,9 @@ import com.fast.library.utils.GsonUtils;
 
 /**
  * 说明：Bean继承该类
+ * @author xiaomi
  */
+@SuppressWarnings("unchecked")
 public class Pojo implements I_POJO {
     @Override
     public String getType() {

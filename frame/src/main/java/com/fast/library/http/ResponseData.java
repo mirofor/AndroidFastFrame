@@ -6,17 +6,36 @@ import okhttp3.Response;
 
 /**
  * 说明：Http响应内容
+ *
+ * @author xiaomi
  */
 public class ResponseData {
+    /**
+     * Http是否无响应
+     */
+    private boolean responseNull;
+    /**
+     * 是否请求超时
+     */
+    private boolean timeout;
 
-    private boolean responseNull;//Http是否无响应
-    private boolean timeout;//是否请求超时
-
-    private int code;//http code
-    private String message;//http响应消息
-    private String response;//http响应结果
-    private boolean success;//是否成功
-    private Headers headers;//http headers
+    private int code;
+    /**
+     * http响应消息
+     */
+    private String message;
+    /**
+     * http响应结果
+     */
+    private String response;
+    /**
+     * 是否成功
+     */
+    private boolean success;
+    /**
+     * http headers
+     */
+    private Headers headers;
     private Response httpResponse;
 
     public Headers getHeaders() {

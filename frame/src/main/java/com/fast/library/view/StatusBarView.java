@@ -6,6 +6,7 @@ import android.view.View;
 
 /**
  * 说明：状态栏
+ * @author xiaomi
  */
 public class StatusBarView extends View {
     public StatusBarView(Context context, AttributeSet attrs) {
