@@ -4,7 +4,6 @@ import android.content.Context;
 
 import com.fast.frame.FrameApp;
 import com.fast.library.http.HttpConfig;
-import com.tamsiree.rxkit.RxTool;
 
 import androidx.multidex.MultiDex;
 
@@ -15,7 +14,6 @@ public class BikeApp extends FrameApp {
     @Override
     public void onCreate() {
         super.onCreate();
-        RxTool.init(this);
         disableApiDialog();
     }
 

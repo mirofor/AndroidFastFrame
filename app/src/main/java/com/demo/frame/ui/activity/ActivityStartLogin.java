@@ -5,8 +5,9 @@ import android.view.View;
 import com.demo.frame.R;
 import com.demo.frame.ui.ActivityCommon;
 import com.fast.library.ui.ContentView;
+import com.fast.library.utils.ToastUtils;
 import com.fast.library.view.RoundButton;
-import com.tamsiree.rxkit.view.RxToast;
+//import com.tamsiree.rxkit.view.RxToast;
 
 import androidx.annotation.Nullable;
 import butterknife.BindView;
@@ -25,10 +26,12 @@ public class ActivityStartLogin extends ActivityCommon {
         switch (view.getId()) {
 
             case R.id.btn_start_login:// 登录
-                RxToast.success("登录");
+                ToastUtils.get().shortToast("登录")
+//                RxToast.success("登录");
                 break;
             case R.id.btn_start_register://注册
-                RxToast.success("注册");
+//                RxToast.success("注册");
+                ToastUtils.get().shortToast("注册")
                 break;
 
             default:
